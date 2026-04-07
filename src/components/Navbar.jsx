@@ -13,18 +13,14 @@ export default function Navbar() {
                 <div className="container">
                 <Link className="navbar-brand site-brand" to="/">
                     <img
-                    src="/yarn(1).png"
+                    src="/logo-small.png"
                     height="80"
-                    className="site-brand__img"
-                    alt="Mascot"
+                    alt="Logo"
                     loading="eager"
                     onError={(e) => {
                         e.currentTarget.style.display = 'none'
                     }}
                     />
-                    <span className="site-brand__title">
-                    Capitana Uncina
-                    </span>
                 </Link>
 
                 <button
@@ -42,23 +38,23 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="mainNav">
                     <ul className="navbar-nav ms-lg-auto">
                     <li className="nav-item">
-                        <NavLink className={navLinkClassName} to="/projects">
-                        Progetti
+                        <NavLink className={navLinkClassName} to="/servizi">
+                        Servizi
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className={navLinkClassName} to="/yarns">
-                        Filati
+                        <NavLink className={navLinkClassName} to="/staff">
+                        Staff
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className={navLinkClassName} to="/crafts">
-                        Tecniche
+                        <NavLink className={navLinkClassName} to="/lavora-con-noi">
+                        Lavora con noi
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className={navLinkClassName} to="/categories">
-                        Fibre
+                        <NavLink className={navLinkClassName} to="/contatti">
+                        Contatti
                         </NavLink>
                     </li>
                     </ul>

@@ -6,41 +6,53 @@
   --logo-main: #2C67A0;
 }
 
-/* debug */
-
-/* body {
-    width: 100vw;
-    height: 100vh;
-} */
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+}
 
 body {
-    background-color: var(--logo-main);
-    /* background-image: url("./assets/scan.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-    h1 {
-        color: white
-    }
+  /* background-color: var(--logo-main); */
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  flex: 1;
+  background-image: url("/gruppo-3.jpeg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  overflow: hidden;
 }
 
 a:link,
 a:link:active,
 a:visited,
 a:visited:active {
-  color: #F37046;
+  color: var(--logo-main);
 }
 
 /* #region Navbar */
 
 .site-navbar {
-  background: linear-gradient(180deg, #d7d27a 0%, var(--warm-900) 55%, #b8b252 100%);
+  background: white;
+  min-height: 10vh;
+  padding: 0;
 }
 
 /* Make the mobile navbar toggler more visible */
 .site-navbar .navbar-toggler {
-  border: 2px solid rgba(255, 255, 255, 0.92);
-  background: rgba(255, 255, 255, 0.12);
+  color: var(--logo-main);
+  border: 2px solid var(--logo-main);
+  background: white;
 }
 
 .site-navbar .navbar-toggler:focus {
@@ -49,7 +61,7 @@ a:visited:active {
 
 /* Brighter + thicker hamburger icon (overrides Bootstrap default) */
 .site-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232C67A0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Center nav links when the collapse menu is open (mobile/tablet) */
@@ -63,5 +75,7 @@ a:visited:active {
 .site-navbar .navbar-collapse.collapsing .nav-link {
   justify-content: center;
 }
+
+
 
 /* #endregion Navbar */
