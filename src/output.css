@@ -665,8 +665,9 @@ video {
   background-size: cover;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .px-4 {
@@ -677,6 +678,11 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-3 {
@@ -692,6 +698,10 @@ video {
   text-align: center;
 }
 
+.font-customTitle {
+  font-family: Mixta Sharp Alt Bold, sans-serif;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -705,10 +715,6 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .text-white {
@@ -755,6 +761,18 @@ body,
   box-sizing: border-box;
   min-height: 100%;
   height: 100%;
+}
+
+@font-face {
+  font-family: "Mixta Sharp Alt";
+
+  src: url('../assets/fonts/MixtaSharpAltRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Mixta Sharp Alt Bold";
+
+  src: url('../assets/fonts/MixtaSharpAltBold.otf') format('opentype');
 }
 
 img {

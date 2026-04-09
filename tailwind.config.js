@@ -16,6 +16,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        customTitle: ['Mixta Sharp Alt Bold', 'sans-serif'],
+        customBody: ['Mixta Sharp Alt', 'sans-serif']
       },
     },
   },

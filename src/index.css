@@ -24,6 +24,16 @@ body,
   height: 100%;
 }
 
+@font-face {
+  font-family: "Mixta Sharp Alt";
+  src: url('../assets/fonts/MixtaSharpAltRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Mixta Sharp Alt Bold";
+  src: url('../assets/fonts/MixtaSharpAltBold.otf') format('opentype');  
+}
+
 img {
   max-width: 100%;
   max-height: 100%;

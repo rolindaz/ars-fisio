@@ -6,7 +6,7 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
 
             <div className="absolute inset-0 bg-black/40" />
             <div className="relative text-center px-4 md:px-0 max-w-3xl text-white">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                <h1 className="text-4xl md:text-6xl font-customTitle mb-4">
                     {title}
                 </h1>
 

@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 bg-white shadow-md z-50" style={{height: "var(--header-height)"}}>
-            <div className="max-w-6xl h-full mx-auto p-1 flex justify-between items-center">
+            <div className="max-w-6xl h-full mx-auto px-3 py-1 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="h-full">
                     <img
