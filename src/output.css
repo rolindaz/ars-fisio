@@ -554,46 +554,20 @@ video {
   display: none;
 }
 
-.container {
-  width: 100%;
+.absolute {
+  position: absolute;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
-.collapse {
-  visibility: collapse;
+.relative {
+  position: relative;
 }
 
 .sticky {
   position: sticky;
+}
+
+.inset-0 {
+  inset: 0px;
 }
 
 .top-0 {
@@ -609,12 +583,12 @@ video {
   margin-right: auto;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .flex {
@@ -625,12 +599,16 @@ video {
   display: none;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
 
-.max-w-6 {
-  max-width: 1.5rem;
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-6xl {
@@ -649,16 +627,33 @@ video {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-6 {
   gap: 1.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-black\/40 {
+  background-color: rgb(0 0 0 / 0.4);
+}
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 143 113 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -666,18 +661,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.p-4 {
-  padding: 1rem;
+.bg-cover {
+  background-size: cover;
 }
 
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-4 {
@@ -685,13 +674,22 @@ video {
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-center {
+  text-align: center;
 }
 
 .text-2xl {
@@ -699,15 +697,35 @@ video {
   line-height: 2rem;
 }
 
-.text-primary {
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(107 143 113 / var(--tw-text-opacity, 1));
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-all {
@@ -725,28 +743,30 @@ video {
     sans-serif;
   /* Theme colors */
   --logo-main: #2C67A0;
+  /* Standard heights */
+  --header-height: 12vh;
 }
 
 html,
 body,
 #root {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   min-height: 100%;
   height: 100%;
 }
 
-.app-shell {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .hero {
-  flex: 1;
+  height: 88vh;
   background-image: url("/gruppo-3.jpeg");
   background-repeat: no-repeat;
   background-position: top;
-  background-size: cover;
   overflow: hidden;
 }
 
@@ -761,6 +781,10 @@ a:visited:active {
 
 /* #endregion Navbar */
 
+.hover\:bg-primary\/90:hover {
+  background-color: rgb(107 143 113 / 0.9);
+}
+
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
@@ -768,5 +792,20 @@ a:visited:active {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
