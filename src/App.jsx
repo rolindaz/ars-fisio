@@ -5,7 +5,11 @@ function App() {
   return (
     <div className="app-shell">
       <Navbar />
-      <div className="hero"></div>
+      <div className="hero">
+        <h1 className="text-4xl text-primary">
+          Tailwind is working
+        </h1>
+      </div>
     </div>
   )
 }

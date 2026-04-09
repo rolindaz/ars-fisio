@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
@@ -14,9 +19,6 @@ body,
   height: 100%;
 }
 
-body {
-  /* background-color: var(--logo-main); */
-}
 
 .app-shell {
   min-height: 100%;
@@ -41,41 +43,6 @@ a:visited:active {
 }
 
 /* #region Navbar */
-
-.site-navbar {
-  background: white;
-  min-height: 10vh;
-  padding: 0;
-}
-
-/* Make the mobile navbar toggler more visible */
-.site-navbar .navbar-toggler {
-  color: var(--logo-main);
-  border: 2px solid var(--logo-main);
-  background: white;
-}
-
-.site-navbar .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.35);
-}
-
-/* Brighter + thicker hamburger icon (overrides Bootstrap default) */
-.site-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232C67A0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Center nav links when the collapse menu is open (mobile/tablet) */
-.site-navbar .navbar-collapse.show .navbar-nav,
-.site-navbar .navbar-collapse.collapsing .navbar-nav {
-  width: 100%;
-  text-align: center;
-}
-
-.site-navbar .navbar-collapse.show .nav-link,
-.site-navbar .navbar-collapse.collapsing .nav-link {
-  justify-content: center;
-}
-
 
 
 /* #endregion Navbar */

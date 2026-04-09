@@ -9,9 +9,9 @@ export default function Navbar() {
     return (
         <>
             {/* Navbar */} 
-            <nav className="navbar navbar-expand-lg navbar-dark site-navbar">
-                <div className="container">
-                <Link className="navbar-brand site-brand" to="/">
+            <nav>
+                <div>
+                <Link to="/">
                     <img
                     src="/logo-small.png"
                     height="80"
@@ -23,7 +23,7 @@ export default function Navbar() {
                     />
                 </Link>
 
-                <button
+                {/* <button
                     className="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
@@ -58,7 +58,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     </ul>
-                </div>
+                </div> */}
                 </div>
             </nav>
         </>
