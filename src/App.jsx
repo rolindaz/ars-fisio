@@ -1,17 +1,26 @@
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+
+import Home from "./pages/Home";
+import Staff from "./pages/Staff";
+import Servizi from "./pages/Servizi";
+import Contatti from "./pages/Contatti";
+import LavoraConNoi from "./pages/LavoraConNoi";
 
 function App() {
-
   return (
-    <div className="app-shell">
-      <Navbar />
-      <div className="hero">
-        <h1 className="text-4xl text-primary">
-          Tailwind is working
-        </h1>
-      </div>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="staff" element={<Staff />} />
+          <Route path="servizi" element={<Servizi />} />
+          <Route path="contatti" element={<Contatti />} />
+          <Route path="lavora-con-noi" element={<LavoraConNoi />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
