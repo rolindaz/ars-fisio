@@ -16,7 +16,7 @@ const services = [
   },
 ];
 
-const ServicesPreview = () => {
+export default function ServicesPreview() {
   return (
     <Section>
       <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
@@ -50,5 +50,3 @@ const ServicesPreview = () => {
     </Section>
   );
 };
-
-export default ServicesPreview;

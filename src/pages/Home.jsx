@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import MapSection from "../components/MapSection";
 import ReviewsSection from "../components/ReviewsSection";
 import ServicesPreview from "../components/ServicesPreview";
 import StaffPreview from "../components/StaffPreview";
@@ -10,6 +11,7 @@ export default function Home() {
       <ReviewsSection/>
       <ServicesPreview/>
       <StaffPreview/>
+      <MapSection/>
     </>
   )
 }

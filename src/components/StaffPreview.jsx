@@ -16,7 +16,7 @@ const staff = [
   },
 ];
 
-const StaffPreview = () => {
+export default function StaffPreview() {
   return (
     <Section>
       <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
@@ -50,5 +50,3 @@ const StaffPreview = () => {
     </Section>
   );
 };
-
-export default StaffPreview;

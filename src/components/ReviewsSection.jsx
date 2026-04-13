@@ -10,7 +10,7 @@ import Section from "./Section";
 const REVIEWS_URL = "/reviews.json";
 
 
-const ReviewsSection = () => {
+export default function ReviewsSection() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -56,5 +56,3 @@ const ReviewsSection = () => {
     </Section>
   );
 };
-
-export default ReviewsSection;
