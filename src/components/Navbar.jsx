@@ -21,7 +21,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Navbar */}
-                <nav className="hidden md:flex gap-6 items-center">
+                <nav className="hidden md:flex gap-6 items-center font-body uppercase">
                     <Link to="/servizi">
                         Servizi
                     </Link>
