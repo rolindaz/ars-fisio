@@ -93,7 +93,7 @@ export default function ReviewsSection() {
                     </div>
                     {/* Testo della recensione */}
                     <p className="review-text">
-                      “{review.text || review.review_text}”
+                      {review.text || review.review_text}
                     </p>
                   </div>
                 </Link>
