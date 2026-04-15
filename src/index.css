@@ -182,13 +182,17 @@ img {
     background: #14426d;
     padding: 7px;
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
   }
 
   .hex-container:hover {
     transform: scale(1.05);
-    .glass {
-      backdrop-filter: blur(0px);
-    }
+  }
+
+  .hex-container:hover .glass {
+    opacity: 0.8;
+    backdrop-filter: blur(0px);
   }
 
   .hex-shape {
@@ -219,6 +223,8 @@ img {
       #2c68a01a
     );
     backdrop-filter: blur(3px);
+    opacity: 1;
+    transition: opacity 260ms cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 260ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .hex-content {
