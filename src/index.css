@@ -23,6 +23,20 @@ body,
   height: 100%;
 }
 
+section {
+  margin-bottom: 1rem;
+  padding-block: 1rem;
+}
+
+h2 {
+  font-size: 36px !important;
+  line-height: 2.25rem;
+  font-family: "MixtaSharpAlt";
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 2rem !important;
+}
+
 /* #region Fonts */
 
 @font-face {
@@ -204,6 +218,12 @@ img {
 
   /* #region ServicesPreviewSection */
 
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
   .hex-grid {
     display: none;
     flex-direction: column;
@@ -240,7 +260,17 @@ a:visited:active {
 
 
 @media (min-width: 768px) {
-    .hex-grid {
-        display: flex;
-    }
+
+  /* h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  } */
+
+  .hex-grid {
+    display: flex;
+  }
+
+  .mobile-grid {
+    display: none;
+  }
 }

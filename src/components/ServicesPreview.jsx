@@ -13,11 +13,11 @@ const services = [
 const ServicesPreview = () => {
   return (
     <Section>
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">
-        Our Services
+      <h2>
+        I nostri servizi
       </h2>
 
-      <div className="grid grid-cols-2 md:hidden gap-4">
+      <div className="mobile-grid">
         {services.map((s, i) => (
           <HexCard key={i} {...s} />
         ))}
