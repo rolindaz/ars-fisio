@@ -2,12 +2,16 @@ import Section from "./Section";
 import HexCard from "./HexCard";
 
 const services = [
-  { title: "Physiotherapy", image: "/services/physio.jpg" },
-  { title: "Postural Analysis", image: "/services/posture.jpg" },
-  { title: "Massage Therapy", image: "/services/massage.jpg" },
-  { title: "Rehabilitation", image: "/services/rehab.jpg" },
-  { title: "Sports Therapy", image: "/services/sport.jpg" },
-  { title: "Manual Therapy", image: "/services/manual.jpg" },
+  { title: "Fisioterapia", image: "/services/fisioterapia.png" },
+  { title: "Manipolazione Vertebrale", image: "/services/manipolazione-vertebrale.png" },
+  { title: "Terapia Manuale", image: "/services/terapia-manuale.png" },
+  { title: "Magneto-Terapia", image: "/services/magneto-terapia.png" },
+  { title: "Elettroterapia", image: "/services/elettroterapia.png" },
+  { title: "Onde d'Urto", image: "/services/shock-wave.png" },
+  { title: "Ultrasuoni", image: "/services/ultrasuoni.png" },
+  { title: "Laserterapia", image: "/services/laser.png" },
+  { title: "Tecarterapia", image: "/services/tecarterapia.jpg" },
+  { title: "Osteopatia", image: "/services/osteopathy.png" },
 ];
 
 const ServicesPreview = () => {
@@ -32,9 +36,16 @@ const ServicesPreview = () => {
           ))}
         </div>
         
-        {/* Row 2 (offset) */}
-        <div className="hex-row hex-row-offset">
-          {services.slice(3, 6).map((s, i) => (
+        {/* Row 2 */}
+        <div className="hex-row hex-row-closer">
+          {services.slice(3, 7).map((s, i) => (
+            <HexCard key={i} {...s} />
+          ))}
+        </div>
+
+        {/* Row 3 */}
+        <div className="hex-row hex-row-closer">
+          {services.slice(7, 10).map((s, i) => (
             <HexCard key={i} {...s} />
           ))}
         </div>

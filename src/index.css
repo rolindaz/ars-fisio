@@ -175,20 +175,24 @@ img {
   /* #region HexCard */
 
   .hex-container {
-    width: 10rem;
-    height: 11rem;
+    width: 20rem;
+    height: 21rem;
     position: relative;
+    display: inline-block;
+    background: black;
+    padding: 7px;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   }
 
   .hex-container:hover {
-    .hex-shape {
-      transform: scale(1.05);
-    }
+    transform: scale(1.05);
   }
 
   .hex-shape {
     width: 100%;
     height: 100%;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    border: 5px solid black;
     overflow: hidden;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -228,7 +232,6 @@ img {
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
   }
 
   .hex-row {
@@ -236,8 +239,8 @@ img {
     gap: 1rem;
   }
   
-  .hex-row-offset {
-    margin-left: 5rem;
+  .hex-row-closer {
+    margin-top: -3rem;
   }
 
   /* #endregion ServicesPreviewSection */
