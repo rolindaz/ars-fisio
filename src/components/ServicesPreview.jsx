@@ -23,17 +23,17 @@ const ServicesPreview = () => {
         ))}
       </div>
 
-      <div className="hidden md:flex flex-col items-center gap-6">
+      <div className="hex-grid">
 
         {/* Row 1 */}
-        <div className="flex gap-4">
+        <div className="hex-row">
           {services.slice(0, 3).map((s, i) => (
             <HexCard key={i} {...s} />
           ))}
         </div>
-
+        
         {/* Row 2 (offset) */}
-        <div className="flex gap-4 ml-20">
+        <div className="hex-row hex-row-offset">
           {services.slice(3, 6).map((s, i) => (
             <HexCard key={i} {...s} />
           ))}

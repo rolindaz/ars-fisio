@@ -200,8 +200,27 @@ img {
     line-height: 1.25rem
   }
 
-
   /* #endregion HexCard */
+
+  /* #region ServicesPreviewSection */
+
+  .hex-grid {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hex-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .hex-row-offset {
+    margin-left: 5rem;
+  }
+
+  /* #endregion ServicesPreviewSection */
 
 /* #endregion ServicesPreview */
 
@@ -216,3 +235,12 @@ a:visited:active {
 
 
 /* #endregion Navbar */
+
+
+
+
+@media (min-width: 768px) {
+    .hex-grid {
+        display: flex;
+    }
+}
