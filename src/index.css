@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
@@ -53,6 +53,106 @@ img {
   background-position: top;
   overflow: hidden;
 }
+
+/* #region ReviewsSection */
+
+.swiper-container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.swiper-slide-custom {
+  background-color: #2c67a09c;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+  MIN-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+
+.swiper-pagination {
+  position: static !important;
+  margin-top: .5rem;
+}
+
+.review-star {
+  width: 18px;
+}
+
+.full-star {
+  color: oklch(85.2% 0.199 91.936);
+}
+
+.empty-star {
+  color: oklch(87.2% 0.01 258.338);
+}
+
+.review-text {
+  margin-bottom: 1rem;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.google-review-pill {
+  background-color: #fff;
+  border-radius: 2.75rem;
+  margin-inline: 1rem;
+  padding-block: .55rem;
+  padding-inline: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.review-stars {
+  display: flex;
+  margin-top: .15rem;
+}
+
+.review-author-name {
+  text-align: end;
+}
+
+.google-logo {
+  max-width: 35px;
+}
+
+.prev-btn {
+  height: 60px;
+  font-size: xx-large;
+  background-color: var(--logo-main);
+  border-radius: 100%;
+  color: #fff;
+}
+
+.next-btn {
+  height: 60px;
+  font-size: xx-large;
+  background-color: var(--logo-main);
+  border-radius: 100%;
+  color: #fff;
+}
+
+.all-reviews {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.all-reviews button {
+  padding: 1rem;
+  color: #fff;
+  background: var(--logo-main);
+  border-radius: 1.75rem;
+}
+
+/* #endregion ReviewsSection */
 
 a:link,
 a:link:active,
