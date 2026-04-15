@@ -155,6 +155,56 @@ img {
 
 /* #endregion ReviewsSection */
 
+
+/* #region ServicesPreview */
+
+  /* #region HexCard */
+
+  .hex-container {
+    width: 10rem;
+    height: 11rem;
+    position: relative;
+  }
+
+  .hex-container:hover {
+    .hex-shape {
+      transform: scale(1.05);
+    }
+  }
+
+  .hex-shape {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .hex-overlay {
+    position: absolute;
+    inset: 0px;
+    background-color: var(--logo-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline: .5rem;
+  }
+
+  .hex-title {
+    color: #fff;
+    font-family: "MixtaSharpAlt";
+    font-weight: 700;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem
+  }
+
+
+  /* #endregion HexCard */
+
+/* #endregion ServicesPreview */
+
 a:link,
 a:link:active,
 a:visited,
