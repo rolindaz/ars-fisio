@@ -10,7 +10,7 @@ export default function Home() {
       <Hero title={'I tuoi fisioterapisti a Roma Nord'}/>
       <ReviewsSection/>
       <ServicesPreview/>
-      <StaffPreview/>
+      <StaffPreview image={'/staff/staff_preview_no_bg_crop.png'}/>
       <MapSection/>
     </>
   )

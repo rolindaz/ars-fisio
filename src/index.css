@@ -8,6 +8,8 @@
 
   /* Theme colors */
   --logo-main: #2C67A0;
+  --logo-gradient: linear-gradient(135deg, #78add8 0%, #2c67a0 42%, #1e4f80 72%, #123250 100%);
+  --logo-gradient-soft: linear-gradient(#d2e0ec 0%, #94bce2 52%, #2c67a0 95%,#235788 100%);
 
   /* Standard heights */
   --header-height: 12vh;
@@ -58,6 +60,17 @@ h2 {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+a:link,
+a:link:active,
+a:visited,
+a:visited:active {
+  color: var(--logo-main);
+}
+
+.bg-logo-gradient {
+  background: var(--logo-gradient);
 }
 
 .hero {
@@ -274,19 +287,51 @@ img {
 
 /* #endregion ServicesPreview */
 
-a:link,
-a:link:active,
-a:visited,
-a:visited:active {
-  color: var(--logo-main);
+
+/* #region StaffPreview */
+
+.staff-preview-container {
+  height: 500px;
+  display: flex;
+  gap: 1rem;
+  padding: .5rem;
 }
 
-/* #region Navbar */
+.staff-preview-visual {
+  position: relative;
+  flex-basis: 60%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.staff-preview-text {
+  flex-basis: 40%;
+}
+
+.staff-preview-img {
+  position: relative;
+  width: 97%;
+}
+
+.staff-preview-bg {
+  background: var(--logo-gradient-soft);
+  position: absolute;
+  width: 100%;
+  height: 70%;
+}
+
+/* #endregion StaffPreview */
 
 
-/* #endregion Navbar */
 
 
+
+
+
+
+
+/* #region Responsive */
 
 
 @media (min-width: 768px) {
@@ -304,3 +349,5 @@ a:visited:active {
     display: none;
   }
 }
+
+/* #endregion Responsive */
