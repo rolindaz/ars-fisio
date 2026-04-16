@@ -168,12 +168,12 @@ a:visited:active {
 }
 
 .all-reviews {
-  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
 }
 
-.all-reviews button {
+.standard-btn {
+  margin-top: 1.5rem;
   padding: 1rem;
   color: #fff;
   background: var(--logo-main);
@@ -293,7 +293,7 @@ a:visited:active {
 .staff-preview-container {
   height: 500px;
   display: flex;
-  gap: 1rem;
+  gap: 1.75rem;
   padding: .5rem;
 }
 
@@ -307,6 +307,10 @@ a:visited:active {
 
 .staff-preview-text {
   flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
 }
 
 .staff-preview-img {

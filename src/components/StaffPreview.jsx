@@ -5,7 +5,7 @@ export default function StaffPreview({text, image}) {
   return (
     <Section>
       <h2>
-        Lo Staff
+        Chi siamo
       </h2>
 
       <div className="staff-preview-container">
@@ -14,18 +14,19 @@ export default function StaffPreview({text, image}) {
           <img className="staff-preview-img" src={image} alt="" />
         </div>
         <div className="staff-preview-text">
-          {text}
+          <p>
+            {text}
+          </p>
+          <div className="text-center">
+        <Link to="/staff">
+          <button className="standard-btn">
+            Conosciamoci meglio!
+          </button>
+        </Link>
+          </div>
         </div>
       </div>
 
-      <div className="text-center mt-10">
-        <Link
-          to="/staff"
-          className="inline-block bg-primary text-white px-6 py-3 rounded-full"
-        >
-          Conosciamoci meglio!
-        </Link>
-      </div>
     </Section>
   );
 };

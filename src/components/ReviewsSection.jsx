@@ -116,7 +116,7 @@ export default function ReviewsSection() {
         target="_blank"
         rel="noopener noreferrer"
         >
-          <button>
+          <button className="standard-btn">
             Vedi tutte le nostre recensioni
           </button>
         </a>
