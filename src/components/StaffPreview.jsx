@@ -17,12 +17,17 @@ export default function StaffPreview({text, image}) {
           <p>
             {text}
           </p>
-          <div className="text-center">
-        <Link to="/staff">
-          <button className="standard-btn">
-            Conosciamoci meglio!
-          </button>
-        </Link>
+          <div className="button-container">
+            <Link to="/staff">
+              <button className="standard-btn">
+                Conosciamoci meglio!
+              </button>
+            </Link>
+            <Link to="/lavora-con-noi">
+              <button className="inverted-btn">
+                Unisciti al team!
+              </button>
+            </Link>
           </div>
         </div>
       </div>
