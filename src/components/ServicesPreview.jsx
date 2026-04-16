@@ -1,18 +1,6 @@
 import Section from "./Section";
 import HexCard from "./HexCard";
-
-const services = [
-  { title: "Fisioterapia", image: "/services/fisioterapia.png" },
-  { title: "Manipolazione Vertebrale", image: "/services/manipolazione-vertebrale.png" },
-  { title: "Terapia Manuale", image: "/services/terapia-manuale.png" },
-  { title: "Magneto-Terapia", image: "/services/magneto-terapia.png" },
-  { title: "Elettroterapia", image: "/services/elettroterapia.png" },
-  { title: "Onde d'Urto", image: "/services/shock-wave.png" },
-  { title: "Ultrasuoni", image: "/services/ultrasuoni.png" },
-  { title: "Laserterapia", image: "/services/laser.png" },
-  { title: "Tecarterapia", image: "/services/tecarterapia.jpg" },
-  { title: "Osteopatia", image: "/services/osteopathy.png" },
-];
+import services from "../../assets/services/services.js";
 
 const ServicesPreview = () => {
   return (

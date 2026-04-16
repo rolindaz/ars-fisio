@@ -18,7 +18,7 @@ export default function StaffPreview({text, image}) {
             {text}
           </p>
           <div className="button-container">
-            <Link to="/staff">
+            <Link to="/chi-siamo">
               <button className="standard-btn">
                 Conosciamoci meglio!
               </button>
