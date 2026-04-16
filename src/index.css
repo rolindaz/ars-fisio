@@ -81,6 +81,9 @@ a:visited:active {
   overflow: hidden;
 }
 
+/* #region HomePage */
+
+
 /* #region ReviewsSection */
 
 .swiper-container {
@@ -328,6 +331,55 @@ a:visited:active {
 /* #endregion StaffPreview */
 
 
+/* #region MapSection */
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tabs-button {
+  padding-inline: 1.25rem;
+  padding-block: .5rem;
+  border-radius: 2rem;
+  transition-property: color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.active-tab {
+  background-color: var(--logo-main);
+  color: white;
+}
+
+.inactive-tab {
+  background-color: #fff;
+  color: rgb(75 85 99);
+}
+
+.inactive-tab:hover {
+  background-color: rgb(243 244 246);
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0px;
+}
+
+/* #endregion MapSection */
+
+/* #endregion HomePage */
 
 
 

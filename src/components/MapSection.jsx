@@ -1,75 +1,57 @@
+import { useState } from "react";
 import Section from "./Section";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-
-const containerStyle = {
-  width: "100%",
-  height: "400px",
-};
-
-const center = {
-  lat: 41.9947, // Center between the two locations
-  lng: 12.4076,
-};
 
 const locations = [
   {
-    position: { lat: 41.9728017, lng: 12.4415325 },
-    label: "Studio 1",
+    name: "Ars Fisio - Grottarossa",
+    address: "Via di Grottarossa, 194 - 00189 Roma (RM)",
+    map: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13858.014976000197!2d12.4421594!3d41.9731397!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f67619971b349%3A0x825a842c657fbf57!2sArs%20Fisio%20Grottarossa!5e1!3m2!1sen!2sit!4v1776339830058!5m2!1sen!2sit",
   },
   {
-    position: { lat: 42.0167025, lng: 12.3736546 },
-    label: "Studio 2",
+    name: "Ars Fisio - Olgiata",
+    address: "Via Cassia, 1839 - 00123 Roma (RM)",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.1332154541674!2d12.37365461198444!3d42.01670245660437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f5d1beab88a69%3A0x565ca23d44998575!2sArs%20Fisio%20Cassia!5e1!3m2!1sen!2sit!4v1776339922100!5m2!1sen!2sit"
   },
 ];
 
 export default function MapSection() {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: "AIzaSyAaUwXcNHVrH_mgIMAqS5QX6OuJWO7ihWk"
-  });
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Section bg="bg-neutral">
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
+    <Section>
+      <h2>
         Dove siamo
       </h2>
 
-      {/* Location cards */}
-      <div className="grid md:grid-cols-2 gap-6 mb-10">
-        <div className="bg-white p-6 rounded-2xl shadow-md">
-          <h3 className="font-heading text-xl font-semibold mb-2">
-            Ars Fisio Grottarossa
-          </h3>
-          <p className="text-gray-600">Via di Grottarossa, 194 - 00189 Roma</p>
-          <a href="tel:+39123456789" className="text-primary mt-2 block">Chiamaci ora</a>
-        </div>
-        <div className="bg-white p-6 rounded-2xl shadow-md">
-          <h3 className="font-heading text-xl font-semibold mb-2">
-            Ars Fisio Cassia
-          </h3>
-          <p className="text-gray-600">Via Cassia, 1839 - 00123 Roma</p>
-          <a href="tel:+39123456789" className="text-primary mt-2 block">Chiamaci ora</a>
-        </div>
+      {/* Tabs */}
+      <div className="tabs-container">
+        {locations.map((loc, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveTab(index)}
+            className={`
+              tabs-button
+              ${
+                activeTab === index
+                  ? "active-tab"
+                  : "inactive-tab"
+              }
+            `}
+          >
+            {loc.name}
+          </button>
+        ))}
       </div>
 
       {/* Map */}
-      <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-md">
-        {isLoaded ? (
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={11}
-          >
-            {locations.map((loc, idx) => (
-              <Marker key={idx} position={loc.position} label={loc.label} />
-            ))}
-          </GoogleMap>
-        ) : (
-          <div>
-            Caricamento...
-          </div>
-        )}
+      <div className="map-container">
+        <iframe
+          key={activeTab} // forces reload on tab change
+          src={locations[activeTab].map}
+          className="map-iframe"
+          loading="lazy"
+        ></iframe>
       </div>
     </Section>
   );
-}
+};
