@@ -8,8 +8,8 @@ export default function LavoraConNoi() {
   return (
     <>
       <div className="bg-wwu">
-        <div className="w-full h-full overlay-wwu">
-          <div className="max-w-3xl mx-auto py-6">
+        <div className="overlay-wwu">
+          <div className="container-wwu">
           {/* Header */}
           <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-gray-800">
@@ -38,7 +38,7 @@ export default function LavoraConNoi() {
             data-netlify="true"
             encType="multipart/form-data"
             onSubmit={() => setSubmitted(true)}
-            className="wwu-form shadow-md space-y-6"
+            className="form-wwu shadow-md space-y-6"
           >
             {/* Netlify hidden input */}
             <input type="hidden" name="form-name" value="work-with-us" />
