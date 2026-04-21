@@ -31,6 +31,7 @@ export default function LavoraConNoi() {
             </p>
           </div>
           ) : (
+          /* Form di contatto */
           <form
             name="lavora-con-noi"
             method="POST"
@@ -42,55 +43,55 @@ export default function LavoraConNoi() {
             {/* Netlify hidden input */}
             <input type="hidden" name="form-name" value="work-with-us" />
 
-            {/* Name */}
+            {/* Nome e Cognome */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-1 text-gray-700">
+              <label className="label-form-wwu">
                 Nome e Cognome *
               </label>
               <input
                 type="text"
                 name="nome"
                 required
-                className="w-full p-3 rounded-lg bg-white/40 border border-white/50 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60 transition"
+                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
             {/* Email */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-1 text-gray-700">
+              <label className="label-form-wwu">
                 Indirizzo Email *
               </label>
               <input
                 type="email"
                 name="email"
                 required
-                className="w-full p-3 rounded-lg bg-white/40 border border-white/50 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60 transition"
+                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
             {/* Phone */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-1 text-gray-700">
+              <label className="label-form-wwu">
                 Numero di Telefono *
               </label>
               <input
                 type="tel"
                 name="telefono"
                 required
-                className="w-full p-3 rounded-lg bg-white/40 border border-white/50 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60 transition"
+                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
             {/* Message */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-1 text-gray-700">
+              <label className="label-form-wwu">
                 Il tuo messaggio *
               </label>
               <textarea
                 name="messaggio"
                 rows="4"
                 required
-                className="w-full p-3 rounded-lg bg-white/40 border border-white/50 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60 transition"
+                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               ></textarea>
             </div>
 
