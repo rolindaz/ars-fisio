@@ -538,6 +538,35 @@ a:visited:active {
 
 /* #endregion Servizi */
 
+/* #region LavoraConNoi */
+
+.bg-wwu {
+  background-image: url("/gruppo-doors.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay-wwu {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(3px);
+}
+
+.wwu-form {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* #endregion LavoraConNoi */
+
+
 /* #region Responsive */
 
 

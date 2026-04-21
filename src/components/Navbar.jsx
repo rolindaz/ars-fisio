@@ -25,8 +25,8 @@ export default function Navbar() {
                     <Link to="/servizi">
                         Servizi
                     </Link>
-                    <Link to="/staff">
-                        Staff
+                    <Link to="/chi-siamo">
+                        Chi Siamo
                     </Link>
                     <Link to="/lavora-con-noi">
                         Lavora con noi
