@@ -19,21 +19,21 @@ export default function Servizi() {
             style={{
               backgroundImage: `url("/logo-fisio-no-text.svg")`,
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "contain",
+              backgroundPosition: "top center",
+              backgroundSize: "cover",
             }}
           >
           </div>
-            <div className="overlay-services relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-40 max-w-5xl mx-auto px-4">
+            <div className="overlay-services relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 max-w-5xl mx-auto px-4">
               {/* LEFT COLUMN */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {left.map((s, i) => (
                   <ServiceCard key={i} {...s} align="right" delay={i*100} />
                 ))}
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {right.map((s, i) => (
                   <ServiceCard key={i} {...s} align="left" delay={i*100} />
                 ))}
