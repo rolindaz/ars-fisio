@@ -8,11 +8,10 @@ export default function LavoraConNoi() {
   return (
     <>
       <div className="bg-wwu">
-        <div className="overlay-wwu">
           <div className="container-wwu">
           {/* Header */}
-          <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-gray-800">
+          <div className="header-wwu">
+          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Entra a far parte del nostro team
           </h1>
           <p className="text-gray-700">
@@ -129,7 +128,6 @@ export default function LavoraConNoi() {
           </form>
           )}
           </div>
-        </div>
       </div>
     </>
     )}
