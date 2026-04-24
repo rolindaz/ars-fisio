@@ -2,7 +2,7 @@ export default function TeamCard({ name, image, description, socials }) {
   return (
     <div className="group perspective">
       
-      <div className="relative w-full h-80 transition-transform duration-500 transform-style preserve-3d group-hover:rotate-y-180">
+      <div className="team-card-inner relative h-80 w-full transition-transform duration-500 transform-style">
 
         {/* FRONT */}
         <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/40 shadow-md">

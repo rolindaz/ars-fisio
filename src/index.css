@@ -56,28 +56,6 @@ h3 {
   text-align: center;
 }
 
-/* Negative margins handling */
-
-.neg-mx-1 {
-  margin-left: -13rem;
-}
-
-.neg-mx-2 {
-  margin-left: -15rem;
-}
-
-.neg-mx-3 {
-  margin-left: -18rem;
-}
-
-.neg-mx-4 {
-  margin-left: -10rem;
-}
-
-.neg-mx-5 {
-  margin-left: -6rem;
-}
-
 /* #region Fonts */
 
 @font-face {
@@ -586,6 +564,34 @@ a:visited:active {
 /* #endregion LavoraConNoi */
 
 
+/* #region ChiSiamo */
+
+.perspective {
+  perspective: 1000px;
+}
+
+.group:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* #endregion ChiSiamo */
+
+
+/* #region Animazioni */
+
 @keyframes slideLeft {
   from {
     opacity: 0;
@@ -615,6 +621,8 @@ a:visited:active {
 .animate-slide-right {
   animation: slideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+/* #endregion Animazioni */
 
 
 /* #region Responsive */
