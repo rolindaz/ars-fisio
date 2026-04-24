@@ -12,7 +12,7 @@ module.exports = {
         neutral: "#F7F7F7",
         dark: "#1F2937",
         logo: "#236BA4",
-        logoDark: "#3D464B"
+        logoDark: "#3D464B",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

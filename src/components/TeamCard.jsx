@@ -2,25 +2,24 @@ export default function TeamCard({ name, image, description, socials }) {
   return (
     <div className="group perspective">
       
-      <div className="team-card-inner relative h-80 w-full transition-transform duration-500 transform-style">
+      <div className="team-card-inner transform-style">
 
-        {/* FRONT */}
-        <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/40 shadow-md">
+        {/* Davanti */}
+        <div className="team-card-inner-front backface-hidden">
+
+          <div className="team-card-inner-front-bg"/>
 
           {/* Image */}
-          <div
-            className="h-full w-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${image})` }}
-          />
+          <img className="relative" src={image} alt="" />
 
           {/* Overlay name */}
-          <div className="absolute bottom-0 w-full bg-black/40 text-white text-center py-3">
+          <div className="absolute bottom-0 w-full bg-black/40 rounded-3xl text-white text-center py-3">
             <h3 className="font-heading text-lg">{name}</h3>
           </div>
         </div>
 
         {/* BACK */}
-        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-6 bg-white/40 backdrop-blur-md border border-white/40 shadow-md flex flex-col justify-between">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col justify-between">
 
           <div>
             <h3 className="font-heading text-lg mb-2 text-gray-800">

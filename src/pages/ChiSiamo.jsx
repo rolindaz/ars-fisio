@@ -4,8 +4,6 @@ import terapisti from "../../assets/staff/terapisti";
 import reception from "../../assets/staff/reception";
 
 export default function ChiSiamo() {
-  const firstRow = terapisti.slice(0, 2);
-  const rest = terapisti.slice(2);
 
   return (
     <Section>
@@ -19,14 +17,7 @@ export default function ChiSiamo() {
           <div className="space-y-8">
             {/* FIRST ROW (2 centered) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {firstRow.map((p, i) => (
-                <TeamCard key={i} {...p} />
-              ))}
-            </div>
-
-            {/* REST (3 per row) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {rest.map((p, i) => (
+              {terapisti.map((p, i) => (
                 <TeamCard key={i} {...p} />
               ))}
             </div>
@@ -39,7 +30,7 @@ export default function ChiSiamo() {
             Reception
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {reception.map((p, i) => (
               <TeamCard key={i} {...p} />
             ))}

@@ -566,8 +566,19 @@ a:visited:active {
 
 /* #region ChiSiamo */
 
-.perspective {
+/* #region TeamCard */
+
+/* .perspective {
   perspective: 1000px;
+} */
+
+.team-card-inner {
+  position: relative;
+  height: 25rem;
+  width: 100%;
+  /* transition-property: transform; */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 .group:hover .team-card-inner {
@@ -586,6 +597,27 @@ a:visited:active {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.team-card-inner-front {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: absolute;
+  inset: 0px;
+  overflow: hidden;
+}
+
+.team-card-inner-front-bg {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 55%;
+  width: 100%;
+  border-radius: 1.5rem;
+  background: var(--logo-gradient-soft);
+}
+
+/* #endregion TeamCard */
+
 
 /* #endregion ChiSiamo */
 

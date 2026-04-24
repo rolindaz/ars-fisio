@@ -10,7 +10,7 @@ export default function StaffPreview({text, image}) {
 
       <div className="staff-preview-container">
         <div className="staff-preview-visual">
-          <div className="staff-preview-bg"></div>
+          <div className="staff-preview-bg"/>
           <img className="staff-preview-img" src={image} alt="" />
         </div>
         <div className="staff-preview-text">
