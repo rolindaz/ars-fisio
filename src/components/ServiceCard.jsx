@@ -15,7 +15,7 @@ export default function ServiceCard({
           className={`inner-card group flex justify-between items-center gap-2 rounded-xl bg-white/30 backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:shadow-lg hover:-translate-y-1 ${align === "right" ? "flex-row-reverse text-right" : ""}`}
         >
           {/* Text */}
-          <div className={`py-3 ${align === "right" ? "pe-3" : "ps-3"}`}>
+          <div className={`py-5 ${align === "right" ? "pe-6" : "ps-6"}`}>
             <h3
               className={`text-base font-heading font-semibold text-gray-800 mb-2 ${align === "right" ? "text-right" : "text-left"}`}
             >
