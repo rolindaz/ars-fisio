@@ -14,7 +14,7 @@ const HexCard = ({ title, image }) => {
         {/* Glass layer */}
         <div className="glass" />
         <div className="hex-content">
-          <span className="hex-title">
+          <span className="hex-title font-heading">
             {title}
           </span>
         </div>

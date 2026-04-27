@@ -15,10 +15,10 @@ module.exports = {
         logoDark: "#3D464B",
       },
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
+        sans: ["Noto Sans", "sans-serif"],
         heading: ['SN Pro', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
-        paragraph: ['Open Sans', 'sans-serif'],
+        paragraph: ['Noto Sans', 'sans-serif'],
         quote: ['DM Sans', 'sans-serif']
       },
     },
