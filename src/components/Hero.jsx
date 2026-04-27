@@ -25,7 +25,7 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
 
             <div className="hero-shell relative z-10">
                 <div className="hero-copy">
-                <h1 className="hero-title font-heading text-4xl md:text-6xl mb-4">
+                <h1 className="hero-title w-full font-heading text-4xl mb-4">
                     {title}
                 </h1>
 

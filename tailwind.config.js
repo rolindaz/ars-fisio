@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Noto Sans", "sans-serif"],
-        heading: ['SN Pro', 'sans-serif'],
+        heading: ['Alan Sans', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
         paragraph: ['Noto Sans', 'sans-serif'],
         quote: ['DM Sans', 'sans-serif']
