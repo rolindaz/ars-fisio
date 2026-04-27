@@ -18,7 +18,8 @@ module.exports = {
         sans: ["Open Sans", "sans-serif"],
         heading: ['Poltawski Nowy', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
-        paragraph: ['Open Sans', 'sans-serif']
+        paragraph: ['Open Sans', 'sans-serif'],
+        quote: ['DM Sans', 'sans-serif']
       },
     },
   },

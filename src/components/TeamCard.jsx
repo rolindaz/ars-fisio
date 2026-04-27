@@ -27,7 +27,7 @@ export default function TeamCard({
             </div>
 
             <div className="absolute corners-inverted inset-0 backface-hidden rotate-y-180 flex flex-col justify-center px-5 bg-[#2c68a059]">
-              <div className="absolute top-0 left-0 text-[#2C67A0]/10 text-[400px]">
+              <div className="absolute top-0 left-0 text-[#2C67A0]/10 text-[400px] font-quote">
                 “
               </div>
               <div className="text-base text-gray-700">
