@@ -568,14 +568,16 @@ a:visited:active {
 
 /* #region TeamCard */
 
-/* .perspective {
+.perspective {
   perspective: 1000px;
-} */
+}
+
+.group:hover .team-card-flip-inner {
+  transform: rotateY(180deg);
+}
 
 .team-card-inner {
   position: relative;
-  height: 25rem;
-  width: 100%;
   /* transition-property: transform; */
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
@@ -610,13 +612,21 @@ a:visited:active {
 .team-card-inner-front-bg {
   position: absolute;
   bottom: 0;
-  height: 75%;
+  height: 100%;
   width: 100%;
-  background: var(--logo-gradient-soft);
+  background: var(--logo-main);
 }
 
 .team-card-caption {
   margin-block: 1rem;
+}
+
+.corners {
+  border-radius: 4.5rem 0 4.5rem 0;
+}
+
+.corners-inverted {
+  border-radius: 0 4.5rem 0 4.5rem;
 }
 
 /* #endregion TeamCard */

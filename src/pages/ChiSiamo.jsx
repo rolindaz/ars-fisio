@@ -17,15 +17,15 @@ export default function ChiSiamo() {
           </h2>
 
           <div className="space-y-8">
-            {/* FIRST ROW (2 centered) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-center">
+            {/* FIRST ROW (Ale&Flami) */}
+            <div className="flex justify-center">
               {firstRow.map((p, i) => (
                 <TeamCard key={i} {...p} variant="large" />
               ))}
             </div>
 
             {/* REST (3 per row) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-14 gap-y-6 mt-12">
               {rest.map((p, i) => (
                 <TeamCard key={i} {...p} />
               ))}
@@ -39,12 +39,10 @@ export default function ChiSiamo() {
             Reception
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-            <div className="hidden md:block" />
+          <div className="flex gap-10 mt-12 justify-center">
             {reception.map((p, i) => (
               <TeamCard key={i} {...p} />
             ))}
-            <div className="hidden md:block" />
           </div>
         </div>
       </div>

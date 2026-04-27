@@ -1,9 +1,11 @@
 const reception = [
   { 
     name: "Romina Ruggiero",
-    caption: "responsabile del Front Office",
+    caption: "Responsabile del Front Office",
     image: "/staff/reception/rominaNoBg.png",
-    description: "Mi occupo dell’accoglienza dei pazienti, della gestione degli appuntamenti e dell'organizzazione dello studio, con l'obiettivo di offrire un servizio efficiente e attento alle esigenze di ciascuno. Sono il primo punto di contatto: per questo metto al centro ascolto, disponibilità e attenzione, per farvi sentire a vostro agio fin dal primo momento. Sono a disposizione per informazioni e prenotazioni.",
+    description: ["Mi occupo dell’accoglienza dei pazienti, della gestione degli appuntamenti e dell'organizzazione dello studio, con l'obiettivo di offrire un servizio efficiente e attento alle esigenze di ciascuno.",
+    "Sono il primo punto di contatto: per questo metto al centro ascolto, disponibilità e attenzione, per farvi sentire a vostro agio fin dal primo momento.",
+    "Sono a disposizione per informazioni e prenotazioni."],
     socialMedia: ""  
   },
   { 

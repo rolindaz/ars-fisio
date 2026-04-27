@@ -4,71 +4,64 @@ export default function TeamCard({
   image,
   description,
   socials,
-  variant = "normal",
+  variant,
 }) {
+  const descriptionParagraphs = Array.isArray(description)
+    ? description
+    : description
+      ? [description]
+      : [];
+
   return (
-    /* Old version */
-    /* <div className="group perspective mx-12">
-      <div>
-        <div className="team-card-inner transform-style">
-          <div className="team-card-inner-front backface-hidden">
-            <div className="team-card-inner-front-bg" />
+    <>
+      {/* Old version */}
+      <div className="group perspective mx-12">
+        <div className="flex flex-col items-center">
+          <div className={`team-card-inner corners transform-style flex items-end justify-center overflow-visible bg-transparent
+          ${variant === "large" ? "w-[380px] h-[480px] shadow-2xl mb-6" : "w-[350px] h-[450px] shadow-xl mb-4"}
+        `}>
+            <div className="team-card-inner-front backface-hidden">
+              <div className="team-card-inner-front-bg corners" />
 
-            <img className="relative" src={image} alt="" />
-          </div>
-
-          <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col justify-center">
-            <div>
-              <p className="text-base text-gray-700">{description}</p>
+              <img className="relative z-10 object-contain max-h-full px-8" src={image} alt="" />
             </div>
 
-            {socials && (
-              <div className="flex gap-3 mt-4">
-                {socials.map((s, i) => (
-                  <a key={i} href={s.link} target="_blank" rel="noreferrer">
-                    {s.icon}
-                  </a>
+            <div className="absolute corners-inverted inset-0 backface-hidden rotate-y-180 flex flex-col justify-center px-5 bg-[#2c68a059]">
+              <div className="absolute top-0 left-0 text-[#2C67A0]/10 text-[400px]">
+                “
+              </div>
+              <div className="text-base text-gray-700">
+                {descriptionParagraphs.map((paragraph, index) => (
+                  <p
+                    key={`${name}-paragraph-${index}`}
+                    className={index < descriptionParagraphs.length - 1 ? "mb-3" : ""}
+                  >
+                    {paragraph}
+                  </p>
                 ))}
               </div>
-            )}
+
+              {socials && (
+                <div className="flex gap-3 mt-4">
+                  {socials.map((s, i) => (
+                    <a key={i} href={s.link} target="_blank" rel="noreferrer">
+                      {s.icon}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="team-card-caption">
+            <h3 className="font-heading text-lg text-center">
+              {name}
+            </h3>
+            <h4 className="text-center">
+              {caption}
+            </h4>
           </div>
         </div>
-        <div className="team-card-caption">
-          <h3 className="font-heading text-lg text-left">{name}</h3>
-          <h4>{caption}</h4>
-        </div>
       </div>
-    </div> */
-
-    /* New no flip */
-    <div className="flex flex-col items-center text-center">
-      <div
-        className={`
-          relative flex items-end justify-center overflow-visible
-          ${variant === "large" ? "w-[390px] h-[520px]" : "w-[280px] h-[280px]"}
-        `}
-      >
-       
-        <div className="absolute bottom-0 w-full h-[75%] bg-[#2C67A0] rounded-md" />
-
-       
-        <img
-          src={image}
-          alt={name}
-          className="relative z-10 object-contain max-h-full"
-        />
-      </div>
-
-      
-      <div className="mt-4 max-w-xs">
-        <h3 className="font-semibold text-lg text-gray-800">{name}</h3>
-
-        <p className="text-sm text-gray-500 uppercase tracking-wide mb-2">
-          {caption}
-        </p>
-
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-      </div>
-    </div>
+    </>
   );
 }
