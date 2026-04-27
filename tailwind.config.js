@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Open Sans", "sans-serif"],
-        heading: ['Poltawski Nowy', 'sans-serif'],
+        heading: ['SN Pro', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
         paragraph: ['Open Sans', 'sans-serif'],
         quote: ['DM Sans', 'sans-serif']
