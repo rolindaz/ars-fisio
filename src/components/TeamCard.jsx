@@ -5,6 +5,7 @@ export default function TeamCard({
   description,
   socials,
   variant,
+  margin
 }) {
   const descriptionParagraphs = Array.isArray(description)
     ? description
@@ -14,11 +15,10 @@ export default function TeamCard({
 
   return (
     <>
-      {/* Old version */}
-      <div className="group perspective mx-12">
+      <div className="group perspective w-full">
         <div className="flex flex-col items-center">
           <div className={`team-card-inner corners transform-style flex items-end justify-center overflow-visible bg-transparent
-          ${variant === "large" ? "w-[380px] h-[480px] shadow-2xl mb-6" : "w-[350px] h-[450px] shadow-xl mb-4"}
+          ${variant === "large" ? "w-[380px] h-[480px] shadow-2xl mb-6" : "w-[350px] h-[450px] shadow-xl mb-4"} ${margin === "start" ? "ml-14" : margin === "end" ? "mr-14" : ""}
         `}>
             <div className="team-card-inner-front backface-hidden">
               <div className="team-card-inner-front-bg corners" />
@@ -56,7 +56,7 @@ export default function TeamCard({
             <h3 className="font-heading text-lg text-center">
               {name}
             </h3>
-            <h4 className="text-center">
+            <h4 className="text-center text-[var(--subtitle-info)]">
               {caption}
             </h4>
           </div>

@@ -15,8 +15,8 @@ module.exports = {
         logoDark: "#3D464B",
       },
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
-        heading: ['MixtaSharpAlt', 'sans-serif'],
+        sans: ["Open Sans", "sans-serif"],
+        heading: ['Poltawski Nowy', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
         paragraph: ['Open Sans', 'sans-serif']
       },

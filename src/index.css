@@ -8,6 +8,7 @@
 
   /* Theme colors */
   --logo-main: #2C67A0;
+  --subtitle-info: #6b7280;
   --logo-gradient: linear-gradient(135deg, #78add8 0%, #2c67a0 42%, #1e4f80 72%, #123250 100%);
   --logo-gradient-soft: linear-gradient(#d2e0ec 0%, #94bce2 52%, #2c67a0 95%,#235788 100%);
 
@@ -578,9 +579,9 @@ a:visited:active {
 
 .team-card-inner {
   position: relative;
-  /* transition-property: transform; */
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 650ms;
 }
 
 .group:hover .team-card-inner {
