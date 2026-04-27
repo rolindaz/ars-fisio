@@ -609,11 +609,14 @@ a:visited:active {
 
 .team-card-inner-front-bg {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 55%;
+  bottom: 0;
+  height: 75%;
   width: 100%;
-  border-radius: 1.5rem;
   background: var(--logo-gradient-soft);
+}
+
+.team-card-caption {
+  margin-block: 1rem;
 }
 
 /* #endregion TeamCard */

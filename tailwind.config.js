@@ -15,7 +15,7 @@ module.exports = {
         logoDark: "#3D464B",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
         heading: ['MixtaSharpAlt', 'sans-serif'],
         body: ['MixtaSharpAlt', 'sans-serif'],
         paragraph: ['Open Sans', 'sans-serif']
