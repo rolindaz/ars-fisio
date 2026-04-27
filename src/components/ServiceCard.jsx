@@ -9,10 +9,10 @@ export default function ServiceCard({
     <>
       <div
         style={{ animationDelay: `${delay}ms` }}
-        className={`${align === "right" ? "animate-slide-right" : "animate-slide-left"}`}
+        className={`w-full ${align === "right" ? "animate-slide-right" : "animate-slide-left"}`}
       >
         <div
-          className={`inner-card group flex justify-between items-center gap-2 rounded-xl bg-white/30 backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:shadow-lg hover:-translate-y-1 ${align === "right" ? "flex-row-reverse text-right" : ""}`}
+          className={`inner-card group flex w-full items-center justify-between gap-2 rounded-xl bg-white/30 backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:-translate-y-1 hover:shadow-lg ${align === "right" ? "flex-row-reverse text-right" : ""}`}
         >
           {/* Text */}
           <div className={`py-5 ${align === "right" ? "pe-6" : "ps-6"}`}>

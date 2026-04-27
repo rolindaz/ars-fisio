@@ -24,7 +24,7 @@ export default function Servizi() {
             }}
           >
           </div>
-            <div className="overlay-services relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 max-w-5xl mx-auto px-4">
+            <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 md:grid-cols-2 md:gap-32">
               {/* LEFT COLUMN */}
               <div className="flex flex-col gap-8">
                 {left.map((s, i) => (
