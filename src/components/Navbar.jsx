@@ -80,7 +80,7 @@ export default function Navbar() {
                             key={item.to}
                             to={item.to}
                             onClick={()=>setOpen(false)}
-                            className={`text-center font-heading uppercase text-[var(--logo-main)] transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
+                            className={`text-center font-heading text-[1.1rem] leading-6 uppercase text-[var(--logo-main)] transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
                         >
                             {item.label}
                         </Link>
