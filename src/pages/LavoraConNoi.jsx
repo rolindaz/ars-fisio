@@ -4,6 +4,7 @@ import Section from "../components/Section";
 export default function LavoraConNoi() {
 
   const [submitted, setSubmitted] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState("Nessun file selezionato");
 
   return (
     <>
@@ -97,14 +98,28 @@ export default function LavoraConNoi() {
 
             {/* File upload */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-1 text-gray-700">
+              <label className="block text-sm font-medium mb-3 text-gray-700">
                 Carica il tuo CV *
               </label>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <label
+                  htmlFor="cv-upload"
+                  className="inline-flex w-max cursor-pointer items-center rounded-full bg-white/50 px-4 py-2 text-sm font-medium text-(--logo-dark) transition hover:bg-white/70"
+                >
+                  Scegli file
+                </label>
+                <span className="text-sm text-gray-700">{selectedFileName}</span>
+              </div>
               <input
+                id="cv-upload"
                 type="file"
                 name="cv"
                 required
-                className="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-white/50 file:text-gray-800 hover:file:bg-white/70"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+                  setSelectedFileName(file ? file.name : "Nessun file selezionato");
+                }}
+                className="sr-only"
               />
             </div>
 
