@@ -1066,6 +1066,14 @@ a:visited:active {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 767px) {
+  .bg-wwu {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.892) 0%), url("/logo-fisio-only-spine.svg");
+    background-position: center top;
+    background-size: contain;
+  }
+}
+
 /* .overlay-wwu {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(1px);
@@ -1096,6 +1104,12 @@ a:visited:active {
   align-items: stretch;
   border: 1px solid rgba(255, 255, 255, 0.4);
   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
+}
+
+@media (max-width: 767px) {
+  .form-wwu {
+    backdrop-filter: none;
+  }
 }
 
 .label-form-wwu {

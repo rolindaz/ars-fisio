@@ -23,7 +23,7 @@ export default function Contatti() {
             Siamo a disposizione per informazioni e appuntamenti
           </h1>
           <p className="text-base leading-7 text-[var(--subtitle-info)] md:text-lg">
-            Puoi scriverci via email, contattarci su WhatsApp oppure
+            Puoi scriverci via email, telefonarci oppure
             raggiungerci nelle nostre sedi. Qui trovi anche gli orari di
             apertura aggiornati.
           </p>
