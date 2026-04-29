@@ -5,7 +5,7 @@ export default function LavoraConNoi() {
 
   return (
     <>
-      <div className="bg-wwu">
+      <div className="bg-wwu lavora-con-noi-page">
           <div className="container-wwu">
             <div className="header-wwu">
               <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">

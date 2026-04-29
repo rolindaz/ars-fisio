@@ -1116,6 +1116,10 @@ a:visited:active {
   padding-block: 2.5rem;
 }
 
+.lavora-con-noi-page {
+  margin-bottom: -2.5rem;
+}
+
 .container-wwu--submitted {
   min-height: calc(100svh - var(--header-height));
   display: flex;
