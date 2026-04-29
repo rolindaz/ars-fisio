@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SocialLinks from "./SocialLinks";
 
 const footerLinks = {
     privacy: "/privacy-policy",
@@ -24,6 +25,12 @@ function Footer() {
                     <p className="site-footer-copy text-sm md:text-base">
                         Trademark 2026 Ars Fisio. All rights reserved.
                     </p>
+                    <div className="flex items-center gap-3 pt-2">
+                        <span className="text-[11px] font-heading uppercase tracking-[0.18em] text-white/65">
+                            Social
+                        </span>
+                        <SocialLinks theme="dark" />
+                    </div>
                 </div>
 
                 <div className="site-footer-meta flex flex-col gap-3 text-sm md:items-end">
