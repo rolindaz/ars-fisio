@@ -57,6 +57,8 @@ body,
   box-sizing: border-box;
   min-height: 100%;
   height: 100%;
+  width: 100%;
+  overflow-x: clip;
 }
 
 section {
@@ -106,7 +108,7 @@ a:visited:active {
 }
 
 .hero {
-  min-height: calc(100svh - var(--header-height));
+  height: calc(100svh - var(--header-height));
   align-items: center;
   background-image: url("/staff/grp-vertical-mobile-bg.jpeg");
   background-repeat: no-repeat;
@@ -130,7 +132,7 @@ a:visited:active {
 
 .hero-shell {
   display: flex;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   padding-inline: 1rem;
 }
@@ -142,7 +144,7 @@ a:visited:active {
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  height: 100%;
   position: relative;
   margin: 0 auto;
   max-width: 48rem;
