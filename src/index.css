@@ -285,6 +285,16 @@ a:visited:active {
   margin-top: .5rem;
 }
 
+.swiper-pagination-bullet {
+  background: var(--subtitle-info) !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--logo-main) !important;
+  opacity: 1 !important;
+}
+
 .review-star {
   width: 18px;
 }
@@ -423,14 +433,15 @@ a:visited:active {
     margin-top: 1rem;
     position: relative;
     display: inline-block;
-    background: #14426d;
+    background: rgba(20, 66, 109, 0.8);
     padding: 7px;
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
   }
 
   .hex-container:hover {
+    background: #14426d;
     transform: scale(1.05);
   }
 
@@ -498,6 +509,10 @@ a:visited:active {
     gap: 1rem;
   }
 
+  .services-preview-content {
+    margin-top: 2rem;
+  }
+
   .hex-grid {
     display: none;
     flex-direction: column;
@@ -516,7 +531,7 @@ a:visited:active {
   }
   
   .hex-row-closer {
-    margin-top: -3rem;
+    margin-top: -3.75rem;
   }
 
   .services-preview-cta {
@@ -1056,7 +1071,7 @@ a:visited:active {
   font-weight: 600;
   line-height: 1;
   box-shadow: var(--button-shadow);
-  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease, opacity 180ms ease;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1), filter 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), gap 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .booking-button__label {
@@ -1097,7 +1112,7 @@ a:visited:active {
   max-width: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-width 220ms ease, opacity 180ms ease, margin 220ms ease;
+  transition: max-width 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms cubic-bezier(0.22, 1, 0.36, 1) 70ms, margin 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .booking-button--compact:hover,

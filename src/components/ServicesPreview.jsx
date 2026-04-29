@@ -10,7 +10,7 @@ const ServicesPreview = () => {
         I nostri servizi
       </h2>
 
-      <div className="mobile-grid">
+      <div className="mobile-grid services-preview-content">
         {services.map((s, i) => (
           <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
             <HexCard {...s} />
@@ -18,7 +18,7 @@ const ServicesPreview = () => {
         ))}
       </div>
 
-      <div className="hex-grid">
+      <div className="hex-grid services-preview-content">
 
         {/* Row 1 */}
         <div className="hex-row">
