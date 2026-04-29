@@ -38,6 +38,13 @@ const ServicesPreview = () => {
         </div>
       </div>
 
+      <div className="services-preview-cta services-preview-cta--mobile">
+        <span className="services-preview-cta__eyebrow">... e molto altro!</span>
+        <Link to="/servizi" className="booking-button booking-button--full home-section-button services-preview-cta__button">
+          Scopri tutti i nostri servizi
+        </Link>
+      </div>
+
       <div className="hex-grid services-preview-content">
 
         {/* Row 1 */}
