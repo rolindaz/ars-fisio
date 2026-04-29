@@ -987,12 +987,20 @@ a:visited:active {
 
 .team-card-back {
   overflow: hidden;
+  background-image: url("/logo-fisio-no-text.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  border: 1px solid rgba(44, 103, 160, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -18px 24px -22px rgba(28, 73, 112, 0.12), 0 20px 40px -28px rgba(18, 50, 80, 0.34);
+}
+
+.team-card-back-bg {
+  width: 100%;
+  height: 100%;
   background:
     radial-gradient(circle at top left, rgba(168, 202, 227, 0.22) 0%, rgba(168, 202, 227, 0) 38%),
     linear-gradient(180deg, rgba(234, 244, 251, 0.9) 0%, rgba(207, 225, 239, 0.82) 100%);
-  border: 1px solid rgba(44, 103, 160, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -18px 24px -22px rgba(28, 73, 112, 0.12), 0 20px 40px -28px rgba(18, 50, 80, 0.34);
-  backdrop-filter: blur(12px);
 }
 
 .team-card-description,
