@@ -98,17 +98,17 @@ export default function LavoraConNoi() {
 
             {/* File upload */}
             <div className="w-full">
-              <label className="block text-sm font-medium mb-3 text-gray-700">
+              <label className="label-form-wwu">
                 Carica il tuo CV *
               </label>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="input-form-wwu flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <label
                   htmlFor="cv-upload"
-                  className="inline-flex w-max cursor-pointer items-center rounded-full bg-white/50 px-4 py-2 text-sm font-medium text-(--logo-dark) transition hover:bg-white/70"
+                  className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
                 >
                   Scegli file
                 </label>
-                <span className="text-sm text-gray-700">{selectedFileName}</span>
+                <span className="text-sm text-[var(--logo-dark)]/80">{selectedFileName}</span>
               </div>
               <input
                 id="cv-upload"
