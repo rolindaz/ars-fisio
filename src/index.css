@@ -730,8 +730,26 @@ a:visited:active {
   width: 40%;
   display: flex;
   justify-content: space-around;
+  align-items: stretch;
   gap: 1rem;
   flex-wrap: wrap;
+  text-align: center;
+}
+
+.button-container .booking-button {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .button-container {
+    width: min(28rem, 100%);
+    justify-content: center;
+  }
+
+  .button-container .booking-button {
+    min-width: 12.75rem;
+  }
 }
 
 /* #endregion StaffPreview */
