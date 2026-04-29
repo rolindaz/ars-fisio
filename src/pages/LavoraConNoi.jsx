@@ -113,7 +113,7 @@ export default function LavoraConNoi() {
               <input type="checkbox" required className="mt-1" />
               <span>
                 Autorizzo il trattamento dei miei dati personali in conformità con l'
-                <a href="/privacy" className="underline text-primary">
+                <a href="/privacy-policy" className="underline text-primary">
                   informativa sulla privacy
                 </a>.
               </span>
