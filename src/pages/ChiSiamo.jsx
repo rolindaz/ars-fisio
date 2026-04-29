@@ -19,9 +19,9 @@ export default function ChiSiamo() {
             Un team giovane, dinamico e multidisciplinare che unisce esperienza clinica, formazione costante e attenzione individuale nella ricerca della miglior soluzione per ogni paziente.
           </p>
 
-          <div className="space-y-10 md:space-y-12">
+          <div className="space-y-16 md:space-y-20">
             {/* FIRST ROW (Ale&Flami) */}
-            <div className="team-pair-row flex flex-col items-center gap-8 md:flex-row md:justify-center">
+            <div className="team-pair-row flex flex-col items-center gap-14 md:flex-row md:justify-center md:gap-20">
               {firstRow.map((p, i) => (
                 <TeamCard
                   key={i}
@@ -32,7 +32,7 @@ export default function ChiSiamo() {
             </div>
 
             {/* REST (2 per row) */}
-            <div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+            <div className="grid grid-cols-1 justify-items-center gap-14 md:grid-cols-2 md:gap-x-20 md:gap-y-16">
               {rest.map((p, i) => (
                 <TeamCard key={i} {...p} />
               ))}
@@ -49,7 +49,7 @@ export default function ChiSiamo() {
             L'accoglienza di Ars Fisio: cortesia, ascolto e flessibilità.
           </p>
 
-          <div className="team-pair-row flex flex-col items-center justify-center gap-8 pt-4 md:flex-row">
+          <div className="team-pair-row flex flex-col items-center justify-center gap-14 pt-4 md:flex-row md:gap-20">
             {reception.map((p, i) => (
               <TeamCard key={i} {...p} />
             ))}

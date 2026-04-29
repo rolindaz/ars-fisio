@@ -1,9 +1,11 @@
 const terapisti = [
   { 
     name: "Alessio Papaianopol",
-    caption: "",
+    caption: "Fisioterapista e osteopata in formazione",
     image: "/staff/terapisti/alessioNoBg.png",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui laudantium, deserunt iusto cupiditate fugiat ducimus molestiae doloribus. Laboriosam tempore aliquam facilis perferendis.",
+    description: ["Sono specializzato in terapia manuale e tecniche osteopatiche.",
+    "Mi occupo del trattamento di atleti, professionisti e non, per il recupero e la prevenzione degli infortuni.",
+    "Specializzato in Crossfit, Calisthenics e sport da combattimento (MMA, judo, BJJ)."],
     socialMedia: ""  
   },
   { 

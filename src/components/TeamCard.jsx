@@ -17,7 +17,7 @@ export default function TeamCard({
       <div className="group perspective mx-auto w-fit">
         <div className="flex flex-col items-center">
           <div className={`team-card-inner corners transform-style flex items-end justify-center overflow-visible bg-transparent
-          ${variant === "large" ? "h-[467px] w-[362px] shadow-2xl mb-6" : "h-[447px] w-[342px] shadow-xl mb-4"}
+          h-[430px] w-[320px] shadow-xl mb-4 sm:h-[447px] sm:w-[342px] md:h-[467px] md:w-[362px] md:shadow-2xl md:mb-6
         `}>
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
