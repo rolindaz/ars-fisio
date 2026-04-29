@@ -42,7 +42,7 @@ export default function LavoraConNoi() {
             className="form-wwu shadow-md space-y-6"
           >
             {/* Netlify hidden input */}
-            <input type="hidden" name="form-name" value="work-with-us" />
+            <input type="hidden" name="form-name" value="lavora-con-noi" />
 
             {/* Nome e Cognome */}
             <div className="w-full">
@@ -114,7 +114,7 @@ export default function LavoraConNoi() {
                 id="cv-upload"
                 type="file"
                 name="cv"
-                required
+                /* required */
                 onChange={(event) => {
                   const file = event.target.files?.[0];
                   setSelectedFileName(file ? file.name : "Nessun file selezionato");
