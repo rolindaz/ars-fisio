@@ -824,6 +824,19 @@ a:visited:active {
   backdrop-filter: blur(0.5px);
 }
 
+.servizi-page-bg {
+  background-image: url("/logo-fisio-no-text.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .servizi-page-bg {
+    display: none;
+  }
+}
+
 /* #region ServiceCard */
 
 .service-card-target {
@@ -841,6 +854,16 @@ a:visited:active {
   border: 1px solid rgba(44, 103, 160, 0.08);
 }
 
+.service-card-bg {
+  border-radius: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.22;
+  filter: saturate(0.9);
+  z-index: 0;
+}
+
 .service-card-surface::before {
   content: "";
   position: absolute;
@@ -856,7 +879,7 @@ a:visited:active {
   z-index: 0;
 }
 
-.service-card-surface > * {
+.service-card-surface > :not(.service-card-bg) {
   position: relative;
   z-index: 1;
 }
@@ -875,18 +898,14 @@ a:visited:active {
 
 .service-card-description-wrap {
   display: flex;
-  align-items: center;
-  min-height: calc(1.5em * 5);
+  align-items: flex-start;
+  width: 100%;
 }
 
 .service-card-description {
   color: var(--text-info);
   line-height: 1.5;
-  line-clamp: 5;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  width: 100%;
 }
 
 .service-card-cta {
@@ -912,6 +931,23 @@ a:visited:active {
     filter 180ms ease;
 }
 
+@media (max-width: 767px) {
+  .service-card-target .inner-card {
+    min-height: 18.5rem;
+    align-items: center;
+  }
+
+  .service-card-copy {
+    align-self: center;
+    height: auto;
+    min-height: 0;
+  }
+
+  .service-card-cta {
+    margin-top: 0;
+  }
+}
+
 .service-card-cta:hover,
 .service-card-cta:focus-visible {
   transform: translateY(-1px);
@@ -930,6 +966,25 @@ a:visited:active {
 .service-card-target .inner-card {
   transform-origin: center;
   min-height: 16rem;
+}
+
+@media (min-width: 768px) {
+  .service-card-bg {
+    opacity: 0.08;
+  }
+
+  .service-card-description-wrap {
+    align-items: center;
+    min-height: calc(1.5em * 5);
+  }
+
+  .service-card-description {
+    line-clamp: 5;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 .service-card-target--highlighted .inner-card {

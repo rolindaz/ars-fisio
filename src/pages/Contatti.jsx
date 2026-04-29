@@ -19,7 +19,7 @@ export default function Contatti() {
     <>
       <Section className="max-w-6xl space-y-10 py-14">
         <header className="max-w-3xl space-y-4">
-          <h1 className="mb-0">
+          <h1 className="mb-0 font-heading text-logo leading-10">
             Siamo a disposizione per informazioni e appuntamenti
           </h1>
           <p className="text-base leading-7 text-[var(--subtitle-info)] md:text-lg">

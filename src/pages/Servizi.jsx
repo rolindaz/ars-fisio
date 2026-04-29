@@ -45,16 +45,7 @@ export default function Servizi() {
         </h1>
 
         <div className="relative">
-          <div
-            className="pointer-events-none absolute inset-0 flex justify-center opacity-40"
-            style={{
-              backgroundImage: `url("/logo-fisio-no-text.svg")`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "top center",
-              backgroundSize: "cover",
-            }}
-          >
-          </div>
+          <div className="servizi-page-bg pointer-events-none absolute inset-0 flex justify-center opacity-40"></div>
             <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2 md:gap-32">
               {/* LEFT COLUMN */}
               <div className="flex flex-col gap-10 md:gap-12">
