@@ -15,7 +15,8 @@ const terapisti = [
     description: [
       "Mi sono specializzata in posturale secondo Mézières e riabilitazione di spalla.",
       "Occupandomi anche di pazienti sportivi, coniugo il trattamento delle problematiche dovute alla postura al ricondizionamento muscolare per contrastare i disturbi durante le attività sportive e della vita quotidiana.",
-      "Sono specializzata nelle patologie di spalla e di colonna e nella cura della diastasi addominale, ho approfondito lo studio di alcune tecniche osteopatiche come Strain Counterstrain.",
+      "Sono specializzata nelle patologie di spalla e di colonna e nella cura della diastasi addominale.", 
+      "Ho inoltre approfondito lo studio di alcune tecniche osteopatiche come Strain Counterstrain.",
     ],
     socialMedia: ""  
   },
