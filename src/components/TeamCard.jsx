@@ -29,7 +29,9 @@ export default function TeamCard({
       return false;
     }
 
-    return window.matchMedia("(hover: none), (pointer: coarse), (max-width: 767px)").matches;
+    return window.matchMedia(
+      "(hover: none), (pointer: coarse), (max-width: 767px)",
+    ).matches;
   };
 
   const handleToggleFlip = (event) => {
@@ -148,12 +150,11 @@ export default function TeamCard({
           >
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
-
-              <img
-                className="relative z-10 object-contain max-h-full px-6"
-                src={image}
-                alt=""
-              />
+              <div className="h-[90%]">
+                <img className="relative z-10 object-cover object-bottom max-h-full"
+                  src={image}
+                  alt=""/>
+              </div>
             </div>
 
             <div className="team-card-back absolute corners-inverted inset-0 backface-hidden rotate-y-180">
