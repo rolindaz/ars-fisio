@@ -49,7 +49,12 @@ export default function Navbar() {
                         aria-label={open ? "Chiudi menu" : "Apri menu"}
                     >
                         {open ? (
-                            "x"
+                            <img
+                                src="/close.png"
+                                alt=""
+                                className="h-5 w-5 object-contain"
+                                aria-hidden="true"
+                            />
                         ) : (
                             <img
                                 src="/hamburger.png"
