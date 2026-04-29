@@ -1,6 +1,7 @@
 import Section from "./Section";
 import HexCard from "./HexCard";
 import services from "../../assets/services/services.js";
+import { Link } from "react-router-dom";
 
 const ServicesPreview = () => {
   return (
@@ -31,11 +32,11 @@ const ServicesPreview = () => {
           ))}
         </div>
 
-        {/* Row 3 */}
-        <div className="hex-row hex-row-closer">
-          {services.slice(7, 10).map((s, i) => (
-            <HexCard key={i} {...s} />
-          ))}
+        <div className="services-preview-cta hex-row-closer">
+          <span className="services-preview-cta__eyebrow">... e molto altro!</span>
+          <Link to="/servizi" className="booking-button booking-button--full services-preview-cta__button">
+            Scopri tutti i nostri servizi
+          </Link>
         </div>
 
       </div>
