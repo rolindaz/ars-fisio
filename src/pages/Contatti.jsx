@@ -70,7 +70,7 @@ export default function Contatti() {
         </div>
       </Section>
 
-      <MapSection />
+      <MapSection showCta={false} />
     </>
   );
 }

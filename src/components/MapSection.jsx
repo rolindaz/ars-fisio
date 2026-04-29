@@ -15,7 +15,7 @@ const locations = [
   },
 ];
 
-export default function MapSection() {
+export default function MapSection({ showCta = true }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -48,12 +48,13 @@ export default function MapSection() {
         ></iframe>
       </div>
 
-      {/* Contatti connection */}
-      <div className="map-button-container flex justify-center mt-8">
-        <Link to="/contatti" className="booking-button booking-button--full home-section-button">
-          Vieni a trovarci
-        </Link>
-      </div>
+      {showCta && (
+        <div className="map-button-container flex justify-center mt-8">
+          <Link to="/contatti" className="booking-button booking-button--full home-section-button">
+            Vieni a trovarci
+          </Link>
+        </div>
+      )}
     </Section>
   );
 }
