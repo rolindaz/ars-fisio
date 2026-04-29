@@ -2,6 +2,14 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import SocialLinks from "./SocialLinks"
 import BookingButton from "./BookingButton"
+import SiteBar from "./SiteBar"
+
+const navLinks = [
+    { label: "Servizi", to: "/servizi" },
+    { label: "Chi Siamo", to: "/chi-siamo" },
+    { label: "Lavora con noi", to: "/lavora-con-noi" },
+    { label: "Contatti", to: "/contatti" },
+];
 
 export default function Navbar() {
 
@@ -9,64 +17,46 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 bg-white shadow-md z-50" style={{height: "var(--header-height)"}}>
-            <div className="max-w-6xl h-full mx-auto px-3 py-1 flex justify-between items-center gap-4">
-                {/* Logo */}
-                <Link to="/" className="h-full">
-                    <img
-                    src="/logo-fisio.svg"
-                    alt="Logo Ars Fisio"
-                    loading="eager"
-                    onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-                    }}
+            <div className="max-w-6xl h-full mx-auto px-3 py-1">
+                <div className="hidden h-full md:flex md:items-center">
+                    <SiteBar
+                        links={navLinks}
+                        wrapperClassName="w-full items-center gap-6"
+                        logoClassName="h-[4.5rem] w-auto md:h-[5rem]"
+                        navClassName="hidden md:flex flex-1 items-center justify-center gap-6 font-heading uppercase"
+                        linkClassName="text-[var(--logo-main)] transition-colors hover:text-[var(--logo-dark)]"
+                        actionsClassName="hidden md:flex items-center gap-4"
                     />
-                </Link>
-
-                {/* Navbar */}
-                <nav className="hidden md:flex gap-6 items-center font-heading uppercase">
-                    <Link to="/servizi">
-                        Servizi
-                    </Link>
-                    <Link to="/chi-siamo">
-                        Chi Siamo
-                    </Link>
-                    <Link to="/lavora-con-noi">
-                        Lavora con noi
-                    </Link>
-                    <Link to="/contatti">
-                        Contatti
-                    </Link>
-                </nav>
-
-                <div className="hidden md:flex items-center gap-5">
-                    <div className="flex items-center gap-3">
-                        <SocialLinks />
-                    </div>
-                    <BookingButton />
                 </div>
 
-                {/* Burger Menu Icon */}
-                <button className="md:hidden text-2xl" onClick={()=>setOpen(!open)}>
-                    {open ? "x" : "☰"}
-                </button>
+                <div className="flex h-full items-center justify-between gap-4 md:hidden">
+                    <Link to="/" className="inline-flex items-center shrink-0">
+                        <img
+                        src="/logo-fisio.svg"
+                        alt="Logo Ars Fisio"
+                        className="h-[4.5rem] w-auto"
+                        loading="eager"
+                        onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                        }}
+                        />
+                    </Link>
+
+                    <button className="text-2xl" onClick={()=>setOpen(!open)}>
+                        {open ? "x" : "☰"}
+                    </button>
+                </div>
             </div>
 
             {/* Burger Menu */}
             {open && (
                 <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-4 transition-all duration-300">
                     <BookingButton className="justify-center self-start" />
-                    <Link to="/servizi" onClick={()=>setOpen(false)}>
-                        Servizi
-                    </Link>
-                    <Link to="/staff" onClick={()=>setOpen(false)}>
-                        Staff
-                    </Link>
-                    <Link to="/lavora-con-noi" onClick={()=>setOpen(false)}>
-                        Lavora con noi
-                    </Link>
-                    <Link to="/contatti" onClick={()=>setOpen(false)}>
-                        Contatti
-                    </Link>
+                    {navLinks.map((item) => (
+                        <Link key={item.to} to={item.to} onClick={()=>setOpen(false)}>
+                            {item.label}
+                        </Link>
+                    ))}
                     <div className="flex items-center justify-between border-t border-slate-200 pt-3">
                         <SocialLinks />
                     </div>

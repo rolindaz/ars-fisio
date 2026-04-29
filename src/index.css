@@ -839,6 +839,39 @@ a:visited:active {
   color: var(--subtitle-info);
 }
 
+.site-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.site-bar__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-self: start;
+}
+
+.site-bar__logo {
+  width: auto;
+}
+
+.site-bar__nav {
+  justify-self: center;
+}
+
+.site-bar__actions {
+  min-width: 0;
+  justify-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+  row-gap: 0.65rem;
+}
+
 .site-footer__row {
   position: relative;
   z-index: 1;
@@ -965,6 +998,16 @@ a:visited:active {
 
   .booking-overlay {
     right: 0.85rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .site-bar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(0, 1fr);
+  }
+
+  .site-bar__actions {
+    max-width: 13.5rem;
   }
 }
 
