@@ -43,6 +43,8 @@ export default function Navbar() {
                         />
                     </Link>
 
+                    <BookingButton className="mobile-nav-booking justify-center" />
+
                     <button
                         className="inline-flex h-14 w-14 items-center justify-center"
                         onClick={()=>setOpen(!open)}
@@ -83,7 +85,6 @@ export default function Navbar() {
                             {item.label}
                         </Link>
                     ))}
-                    <BookingButton className={`justify-center self-center transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`} />
                     <div className={`flex items-center justify-center border-t border-slate-200 pt-3 transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}>
                         <SocialLinks />
                     </div>
