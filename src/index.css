@@ -172,6 +172,7 @@ a:visited:active {
 
 @media (min-width: 768px) {
   .hero {
+    height: 88vh;
     background-image: none;
   }
 
