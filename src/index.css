@@ -1151,6 +1151,10 @@ a:visited:active {
   transform: rotateY(180deg);
 }
 
+.team-card-inner--flipped {
+  transform: rotateY(180deg);
+}
+
 .transform-style {
   transform-style: preserve-3d;
 }

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function TeamCard({
   name,
   caption,
@@ -6,20 +8,61 @@ export default function TeamCard({
   socials,
   variant,
 }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const descriptionParagraphs = Array.isArray(description)
     ? description
     : description
       ? [description]
       : [];
 
+  const isTapFlipContext = () => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return window.matchMedia("(hover: none), (pointer: coarse), (max-width: 767px)").matches;
+  };
+
+  const handleToggleFlip = (event) => {
+    if (!isTapFlipContext()) {
+      return;
+    }
+
+    if (event.target.closest("a")) {
+      return;
+    }
+
+    setIsFlipped((current) => !current);
+  };
+
+  const handleKeyDown = (event) => {
+    if (!isTapFlipContext()) {
+      return;
+    }
+
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    setIsFlipped((current) => !current);
+  };
+
   return (
     <>
       <div className="group perspective mx-auto w-fit">
         <div className="flex flex-col items-center">
           <div
-            className={`team-card-inner corners transform-style flex items-end justify-center overflow-visible bg-transparent
-          h-[430px] w-[310px] shadow-xl mb-4 sm:h-[447px] sm:w-[332px] md:h-[477px] md:w-[362px] md:shadow-2xl md:mb-6
+            className={`team-card-inner ${isFlipped ? "team-card-inner--flipped" : ""} corners transform-style flex items-end justify-center overflow-visible bg-transparent
+          h-[460px] w-[340px] shadow-xl mb-4 sm:h-[477px] sm:w-[362px] md:h-[487px] md:w-[372px] md:shadow-2xl md:mb-6
         `}
+            onClick={handleToggleFlip}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
+            aria-pressed={isFlipped}
+            aria-label={`Mostra o nascondi i dettagli di ${name}`}
           >
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
