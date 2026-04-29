@@ -32,7 +32,7 @@ const ServicesPreview = () => {
           ))}
         </div>
 
-        <div className="services-preview-cta hex-row-closer">
+        <div className="services-preview-cta services-preview-cta--lower">
           <span className="services-preview-cta__eyebrow">... e molto altro!</span>
           <Link to="/servizi" className="booking-button booking-button--full services-preview-cta__button">
             Scopri tutti i nostri servizi
