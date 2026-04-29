@@ -714,19 +714,33 @@ a:visited:active {
 
 .service-card-copy {
   display: flex;
+  height: 100%;
   flex: 1 1 auto;
   flex-direction: column;
   gap: 0.9rem;
 }
 
+.service-card-description-wrap {
+  display: flex;
+  align-items: center;
+  min-height: calc(1.5em * 5);
+}
+
 .service-card-description {
   color: var(--text-info);
+  line-height: 1.5;
+  line-clamp: 5;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .service-card-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
   min-height: 2.5rem;
   padding: 0.7rem 1rem;
   border-radius: 999px;

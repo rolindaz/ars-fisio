@@ -9,13 +9,13 @@ const services = [
     slug: "manipolazione-vertebrale",
     title: "Manipolazione Vertebrale",
     image: "/services/manipolazione-vertebrale.png",
-    description: "La manipolazione vertebrale consiste nella manipolazione della colonna vertebrale eseguita per indurre un rilassamento muscolare, migliorare il movimento e ridurre il dolore."
+    description: "Manipolazione della colonna vertebrale eseguita per indurre un rilassamento muscolare, migliorare il movimento e ridurre il dolore."
     },
   { 
     slug: "terapia-manuale",
     title: "Terapia Manuale",
     image: "/services/terapia-manuale.png",
-    description: "Tipo di fisioterapia di stampo anglosassone che si basa su tecniche di mobilizzazione articolare e esercizio terapeutico."
+    description: "Tipo di fisioterapia di stampo anglosassone che si basa su tecniche di mobilizzazione articolare ed esercizio terapeutico."
     },
   { 
     slug: "magneto-terapia",
@@ -33,25 +33,25 @@ const services = [
     slug: "onde-d-urto",
     title: "Onde d'Urto",
     image: "/services/shock-wave.png",
-    description: "Elettromedicale che attraverso uno stimolo meccanico crea neoangiogenesi. Utilissima nelle calcificazioni e nelle tendiniti croniche."
+    description: "Elettromedicale che crea neoangiogenesi attraverso uno stimolo meccanico. Utilissima nelle calcificazioni e nelle tendiniti croniche."
     },
   { 
     slug: "ultrasuoni",
     title: "Ultrasuoni",
     image: "/services/ultrasuoni.png",
-    description: "Elettromedicale che attraverso gli ultrasuoni stimola la zona trattata riducendone lo stato infiammatorio."
+    description: "Elettromedicale che stimola la zona trattata attraverso gli ultrasuoni, riducendone lo stato infiammatorio."
     },
   { 
     slug: "laserterapia",
     title: "Laserterapia",
     image: "/services/laser.png",
-    description: "Elettromedicale che attraverso una fonte luminosa va a ridurre lo stato infiammatorio della zona e aumentare l energia di quel tessuto."
+    description: "Elettromedicale che riduce lo stato infiammatorio attraverso una fonte luminosa, aumentando l'energia del tessuto nella zona trattata."
     },
   { 
     slug: "tecarterapia",
     title: "Tecarterapia",
     image: "/services/tecarterapia.jpg",
-    description: "Elettromedicale che attraverso il campo elettromagnetico consente di ridurre creare calore all' interno del tessuto, ridurre lo stato infiammatorio e richiamare sangue nella zona. Riducendo la tensione muscolare e diminuendo il dolore."
+    description: "Elettromedicale che crea calore all'interno del tessuto attraverso il campo elettromagnetico,  richiamando sangue nella zona trattata e riducendo lo stato infiammatorio, il dolore e la tensione muscolare."
     },
   { 
     slug: "osteopatia",
