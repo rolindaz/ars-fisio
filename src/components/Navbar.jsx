@@ -18,7 +18,7 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 bg-white shadow-md z-50" style={{height: "var(--header-height)"}}>
-            <div className="max-w-6xl h-full mx-auto px-3 py-1">
+            <div className="max-w-6xl h-full mx-auto px-3 py-0.5 md:py-1">
                 <div className="hidden h-full md:flex md:items-center">
                     <SiteBar
                         links={navLinks}
@@ -30,12 +30,12 @@ export default function Navbar() {
                     />
                 </div>
 
-                <div className="flex h-full items-center justify-between gap-4 md:hidden">
+                <div className="flex h-full items-center justify-between gap-3 md:hidden">
                     <Link to="/" className="inline-flex items-center shrink-0">
                         <img
                         src="/logo-fisio.svg"
                         alt="Logo Ars Fisio"
-                        className="h-[4.5rem] w-auto"
+                        className="h-[4rem] w-auto"
                         loading="eager"
                         onError={(e) => {
                             e.currentTarget.style.display = 'none'
@@ -43,8 +43,21 @@ export default function Navbar() {
                         />
                     </Link>
 
-                    <button className="text-2xl" onClick={()=>setOpen(!open)}>
-                        {open ? "x" : "☰"}
+                    <button
+                        className="inline-flex h-14 w-14 items-center justify-center text-2xl"
+                        onClick={()=>setOpen(!open)}
+                        aria-label={open ? "Chiudi menu" : "Apri menu"}
+                    >
+                        {open ? (
+                            "x"
+                        ) : (
+                            <img
+                                src="/hamburger.png"
+                                alt=""
+                                className="h-10 w-10 object-contain"
+                                aria-hidden="true"
+                            />
+                        )}
                     </button>
                 </div>
             </div>
@@ -52,13 +65,18 @@ export default function Navbar() {
             {/* Burger Menu */}
             {open && (
                 <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-4 transition-all duration-300">
-                    <BookingButton className="justify-center self-start" />
                     {navLinks.map((item) => (
-                        <Link key={item.to} to={item.to} onClick={()=>setOpen(false)}>
+                        <Link
+                            key={item.to}
+                            to={item.to}
+                            onClick={()=>setOpen(false)}
+                            className="text-center font-heading uppercase text-[var(--logo-main)]"
+                        >
                             {item.label}
                         </Link>
                     ))}
-                    <div className="flex items-center justify-between border-t border-slate-200 pt-3">
+                    <BookingButton className="justify-center self-center" />
+                    <div className="flex items-center justify-center border-t border-slate-200 pt-3">
                         <SocialLinks />
                     </div>
                 </div>
