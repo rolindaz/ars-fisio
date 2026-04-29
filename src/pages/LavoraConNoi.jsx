@@ -36,13 +36,13 @@ export default function LavoraConNoi() {
           <form
             name="lavora-con-noi"
             method="POST"
-            netlify
+            data-netlify="true"
             encType="multipart/form-data"
             onSubmit={() => setSubmitted(true)}
             className="form-wwu shadow-md space-y-6"
           >
             {/* Netlify hidden input */}
-            {/* <input type="hidden" name="form-name" value="lavora-con-noi" /> */}
+            <input type="hidden" name="form-name" value="lavora-con-noi" />
 
             {/* Nome e Cognome */}
             <div className="w-full">
