@@ -10,6 +10,13 @@ export default function TeamCard({
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const lastTapToggleRef = useRef(0);
+  const tapGestureRef = useRef({
+    pointerId: null,
+    startedAt: 0,
+    startX: 0,
+    startY: 0,
+    moved: false,
+  });
 
   const descriptionParagraphs = Array.isArray(description)
     ? description
@@ -37,8 +44,60 @@ export default function TeamCard({
     setIsFlipped((current) => !current);
   };
 
+  const resetTapGesture = () => {
+    tapGestureRef.current = {
+      pointerId: null,
+      startedAt: 0,
+      startX: 0,
+      startY: 0,
+      moved: false,
+    };
+  };
+
+  const handlePointerDown = (event) => {
+    if (event.pointerType === "mouse" || !isTapFlipContext()) {
+      return;
+    }
+
+    tapGestureRef.current = {
+      pointerId: event.pointerId,
+      startedAt: Date.now(),
+      startX: event.clientX,
+      startY: event.clientY,
+      moved: false,
+    };
+  };
+
+  const handlePointerMove = (event) => {
+    const activeGesture = tapGestureRef.current;
+    if (event.pointerId !== activeGesture.pointerId) {
+      return;
+    }
+
+    const deltaX = Math.abs(event.clientX - activeGesture.startX);
+    const deltaY = Math.abs(event.clientY - activeGesture.startY);
+
+    if (deltaX > 10 || deltaY > 10) {
+      tapGestureRef.current.moved = true;
+    }
+  };
+
   const handlePointerUp = (event) => {
     if (event.pointerType === "mouse") {
+      return;
+    }
+
+    const activeGesture = tapGestureRef.current;
+    if (event.pointerId !== activeGesture.pointerId) {
+      return;
+    }
+
+    const pressDuration = Date.now() - activeGesture.startedAt;
+    const shouldIgnoreTap = activeGesture.moved || pressDuration > 250;
+
+    resetTapGesture();
+
+    if (shouldIgnoreTap) {
       return;
     }
 
@@ -52,15 +111,8 @@ export default function TeamCard({
     handleToggleFlip(event);
   };
 
-  const handleTouchEnd = (event) => {
-    const now = Date.now();
-    if (now - lastTapToggleRef.current < 350) {
-      return;
-    }
-
-    lastTapToggleRef.current = now;
-
-    handleToggleFlip(event);
+  const handlePointerCancel = () => {
+    resetTapGesture();
   };
 
   const handleKeyDown = (event) => {
@@ -84,8 +136,10 @@ export default function TeamCard({
             className={`team-card-inner ${isFlipped ? "team-card-inner--flipped" : ""} corners transform-style flex items-end justify-center overflow-visible bg-transparent
           h-[460px] w-[340px] shadow-xl mb-4 sm:h-[477px] sm:w-[362px] md:h-[487px] md:w-[372px] md:shadow-2xl md:mb-6
         `}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
-            onTouchEnd={handleTouchEnd}
+            onPointerCancel={handlePointerCancel}
             onKeyDown={handleKeyDown}
             role="button"
             tabIndex={0}

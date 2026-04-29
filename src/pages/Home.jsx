@@ -20,7 +20,7 @@ export default function Home() {
       />
       <ServicesPreview/>
       <ReviewsSection/>
-      <StaffPreview image={'/staff/staff_preview_no_bg_crop.png'} text={"Lo studio nasce dalla collaborazione tra due colleghi esperti, ma soprattutto due amici che hanno deciso di lavorare insieme. La nostra mission è quella di portare la fisioterapia di alto livello a Roma Nord."}/>
+      <StaffPreview image={'/staff/staff_preview_no_bg_crop.png'} text={"Abbiamo aperto Ars Fisio per portare la fisioterapia di alto livello a Roma Nord."}/>
       <MapSection/>
     </>
   )
