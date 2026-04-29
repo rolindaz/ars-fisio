@@ -44,48 +44,51 @@ export default function Navbar() {
                     </Link>
 
                     <button
-                        className="inline-flex h-14 w-14 items-center justify-center text-2xl"
+                        className="inline-flex h-14 w-14 items-center justify-center"
                         onClick={()=>setOpen(!open)}
                         aria-label={open ? "Chiudi menu" : "Apri menu"}
+                        aria-expanded={open}
                     >
-                        {open ? (
-                            <img
-                                src="/close.png"
-                                alt=""
-                                className="h-5 w-5 object-contain"
-                                aria-hidden="true"
-                            />
-                        ) : (
+                        <span className="relative inline-flex h-10 w-10 items-center justify-center">
                             <img
                                 src="/hamburger.png"
                                 alt=""
-                                className="h-10 w-10 object-contain"
+                                className={`absolute h-10 w-10 object-contain transition-all duration-300 ease-out ${open ? "scale-75 opacity-0 rotate-90" : "scale-100 opacity-100 rotate-0"}`}
                                 aria-hidden="true"
                             />
-                        )}
+                            <img
+                                src="/close.png"
+                                alt=""
+                                className={`absolute h-6 w-6 object-contain transition-all duration-300 ease-out ${open ? "scale-100 opacity-100 rotate-0" : "scale-75 opacity-0 -rotate-90"}`}
+                                aria-hidden="true"
+                            />
+                        </span>
                     </button>
                 </div>
             </div>
 
             {/* Burger Menu */}
-            {open && (
-                <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-4 transition-all duration-300">
+            <div
+                className={`md:hidden overflow-hidden bg-white px-4 transition-all duration-300 ease-out ${open ? "max-h-[28rem] pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"}`}
+                aria-hidden={!open}
+            >
+                <div className={`flex flex-col gap-4 pt-1 transition-all duration-300 ease-out ${open ? "translate-y-0" : "-translate-y-2"}`}>
                     {navLinks.map((item) => (
                         <Link
                             key={item.to}
                             to={item.to}
                             onClick={()=>setOpen(false)}
-                            className="text-center font-heading uppercase text-[var(--logo-main)]"
+                            className={`text-center font-heading uppercase text-[var(--logo-main)] transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
                         >
                             {item.label}
                         </Link>
                     ))}
-                    <BookingButton className="justify-center self-center" />
-                    <div className="flex items-center justify-center border-t border-slate-200 pt-3">
+                    <BookingButton className={`justify-center self-center transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`} />
+                    <div className={`flex items-center justify-center border-t border-slate-200 pt-3 transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}>
                         <SocialLinks />
                     </div>
                 </div>
-            )}
+            </div>
         </header>
     )
 }

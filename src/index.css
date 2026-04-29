@@ -104,7 +104,7 @@ a:visited:active {
 }
 
 .hero {
-  height: 88vh;
+  height: 100vh;
   align-items: center;
   background-image: url("/staff/grp-vertical-mobile-bg.jpeg");
   background-repeat: no-repeat;
