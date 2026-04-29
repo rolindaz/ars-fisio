@@ -713,13 +713,25 @@ a:visited:active {
   justify-content: center;
 }
 
+@media (max-width: 767px) {
+  .staff-preview-visual {
+    width: 80%;
+  }
+}
+
 .staff-preview-text {
   width: 80%;
 }
 
 .staff-preview-img {
   position: relative;
-  width: 100%;
+  width: 90%;
+}
+
+@media (max-width: 767px) {
+  .staff-preview-img {
+    width: 100%;
+  }
 }
 
 .staff-preview-bg {
@@ -1165,10 +1177,6 @@ a:visited:active {
   perspective: 1000px;
 }
 
-.group:hover .team-card-flip-inner {
-  transform: rotateY(180deg);
-}
-
 .team-card-inner {
   position: relative;
   transition-property: transform;
@@ -1176,8 +1184,14 @@ a:visited:active {
   transition-duration: 650ms;
 }
 
-.group:hover .team-card-inner {
-  transform: rotateY(180deg);
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .team-card-flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .group:hover .team-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .team-card-inner--flipped {

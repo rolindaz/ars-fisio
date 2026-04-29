@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function TeamCard({
   name,
@@ -9,6 +9,7 @@ export default function TeamCard({
   variant,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const lastTapToggleRef = useRef(0);
 
   const descriptionParagraphs = Array.isArray(description)
     ? description
@@ -36,6 +37,32 @@ export default function TeamCard({
     setIsFlipped((current) => !current);
   };
 
+  const handlePointerUp = (event) => {
+    if (event.pointerType === "mouse") {
+      return;
+    }
+
+    const now = Date.now();
+    if (now - lastTapToggleRef.current < 350) {
+      return;
+    }
+
+    lastTapToggleRef.current = now;
+
+    handleToggleFlip(event);
+  };
+
+  const handleTouchEnd = (event) => {
+    const now = Date.now();
+    if (now - lastTapToggleRef.current < 350) {
+      return;
+    }
+
+    lastTapToggleRef.current = now;
+
+    handleToggleFlip(event);
+  };
+
   const handleKeyDown = (event) => {
     if (!isTapFlipContext()) {
       return;
@@ -57,7 +84,8 @@ export default function TeamCard({
             className={`team-card-inner ${isFlipped ? "team-card-inner--flipped" : ""} corners transform-style flex items-end justify-center overflow-visible bg-transparent
           h-[460px] w-[340px] shadow-xl mb-4 sm:h-[477px] sm:w-[362px] md:h-[487px] md:w-[372px] md:shadow-2xl md:mb-6
         `}
-            onClick={handleToggleFlip}
+            onPointerUp={handlePointerUp}
+            onTouchEnd={handleTouchEnd}
             onKeyDown={handleKeyDown}
             role="button"
             tabIndex={0}
