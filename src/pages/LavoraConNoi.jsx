@@ -1,14 +1,12 @@
 import { useState } from "react";
 
 export default function LavoraConNoi() {
-  const [submitted, setSubmitted] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState("Nessun file selezionato");
 
   return (
     <>
       <div className="bg-wwu">
-          <div className={`container-wwu ${submitted ? "container-wwu--submitted" : ""}`}>
-          {!submitted && (
+          <div className="container-wwu">
             <div className="header-wwu">
               <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
                 Entra a far parte del nostro team
@@ -17,27 +15,13 @@ export default function LavoraConNoi() {
                 Siamo sempre alla ricerca di professionisti determinati con cui avviare una collaborazione duratura. Contattaci!
               </p>
             </div>
-          )}
 
-          {/* Success message */}
-          {submitted ? (
-          <div className="form-wwu form-wwu--success shadow-md text-center">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Grazie per averci scritto.
-            </h2>
-            <p className="text-gray-700 leading-7">
-              Abbiamo ricevuto la tua candidatura con successo.
-              Ti ricontatteremo il prima possibile se il tuo profilo sara in linea con le nostre esigenze.
-            </p>
-          </div>
-          ) : (
-          /* Form di contatto */
           <form
             name="lavora-con-noi"
             method="POST"
             data-netlify="true"
             encType="multipart/form-data"
-            onSubmit={() => setSubmitted(true)}
+            action={"/success"}
             className="form-wwu shadow-md space-y-6"
           >
             {/* Netlify hidden input */}
@@ -149,8 +133,8 @@ export default function LavoraConNoi() {
               <span className="booking-button__label">Invia</span>
             </button>
           </form>
-          )}
           </div>
       </div>
     </>
-    )}
+    )
+}
