@@ -176,7 +176,6 @@ a:visited:active {
 
 @media (min-width: 768px) {
   .hero {
-    height: 88vh;
     background-image: none;
   }
 
@@ -727,7 +726,7 @@ a:visited:active {
 
 .staff-preview-img {
   position: relative;
-  width: 90%;
+  width: 80%;
 }
 
 @media (max-width: 767px) {
