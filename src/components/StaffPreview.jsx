@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function StaffPreview({ text, image }) {
   return (
-    <Section id="chi-siamo-home">
+    <Section id="chi-siamo-home" desktopAlign="start">
       <h2>Chi siamo</h2>
 
       <div className="staff-preview-container">

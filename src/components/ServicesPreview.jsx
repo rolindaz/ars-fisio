@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ServicesPreview = () => {
   return (
-    <Section id="servizi-home">
+    <Section id="servizi-home" desktopAlign="start">
       <h2 className="font-heading">
         I nostri servizi
       </h2>
