@@ -5,6 +5,7 @@ import BookingButton from "./BookingButton"
 import SiteBar from "./SiteBar"
 
 const navLinks = [
+    { label: "Home", to: "/" },
     { label: "Servizi", to: "/servizi" },
     { label: "Chi Siamo", to: "/chi-siamo" },
     { label: "Lavora con noi", to: "/lavora-con-noi" },
