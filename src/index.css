@@ -1000,6 +1000,10 @@ a:visited:active {
   color: var(--text-info);
 }
 
+.team-card-name {
+  color: var(--logo-main);
+}
+
 .team-card-quote {
   color: rgba(44, 103, 160, 0.12);
   font-size: 320px;

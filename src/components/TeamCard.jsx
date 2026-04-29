@@ -52,7 +52,7 @@ export default function TeamCard({
             </div>
           </div>
           <div className="team-card-caption">
-            <h3 className="font-heading text-lg text-center">
+            <h3 className="team-card-name font-heading text-lg text-center">
               {name}
             </h3>
             <h4 className="team-card-caption-role text-center">
