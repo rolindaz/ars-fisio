@@ -18,7 +18,7 @@ export default function MapSection() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Section>
+    <Section id="dove-siamo-home">
       <h2>
         Dove siamo
       </h2>

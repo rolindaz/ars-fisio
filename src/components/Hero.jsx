@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero({title, subtitle, ctaText, ctaLink}) {
     return (
-        <section className="hero relative">
+        <section id="top" className="hero relative">
             <div className="hero-mobile-overlay absolute inset-0" />
             <div className="hero-media" aria-hidden="true" />
             <div className="hero-panel" aria-hidden="true" />
@@ -39,7 +39,7 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
 
                 {
                     ctaText && ctaLink && (
-                        <a href={ctaLink} className="hero-cta bg-primary hover:bg-primary/90 px-6 py-3 rounded-full text-white text-lg transition">
+                        <a href={ctaLink} className="hero-cta booking-button booking-button--full">
                             {ctaText}
                         </a>
                     )

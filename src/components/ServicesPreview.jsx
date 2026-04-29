@@ -4,7 +4,7 @@ import services from "../../assets/services/services.js";
 
 const ServicesPreview = () => {
   return (
-    <Section>
+    <Section id="servizi-home">
       <h2 className="font-heading">
         I nostri servizi
       </h2>

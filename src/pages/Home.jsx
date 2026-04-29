@@ -7,7 +7,7 @@ import StaffPreview from "../components/StaffPreview";
 export default function Home() {
   return (
     <>
-      <Hero title={'I tuoi fisioterapisti a Roma Nord'}/>
+      <Hero title={'I tuoi fisioterapisti a Roma Nord'} ctaText="Prenota ora" ctaLink="tel:+390696040737" />
       <div className="home-spine-divider" aria-hidden="true">
         <span className="home-spine-divider__glow" />
         <span className="home-spine-divider__line" />

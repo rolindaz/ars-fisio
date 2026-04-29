@@ -27,7 +27,7 @@ export default function ReviewsSection() {
   }, []);
 
   return (
-    <Section>
+    <Section id="recensioni-home">
       <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
         Dicono di noi
       </h2>
@@ -115,10 +115,9 @@ export default function ReviewsSection() {
         href={arsFisioGoogle}
         target="_blank"
         rel="noopener noreferrer"
+        className="booking-button booking-button--full"
         >
-          <button className="standard-btn">
-            Vedi tutte le nostre recensioni
-          </button>
+          Vedi tutte le nostre recensioni
         </a>
       </div>
     </Section>

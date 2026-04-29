@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function StaffPreview({text, image}) {
   return (
-    <Section>
+    <Section id="chi-siamo-home">
       <h2>
         Chi siamo
       </h2>
@@ -18,15 +18,11 @@ export default function StaffPreview({text, image}) {
             {text}
           </p>
           <div className="button-container">
-            <Link to="/chi-siamo">
-              <button className="standard-btn">
-                Conosciamoci meglio!
-              </button>
+            <Link to="/chi-siamo" className="booking-button booking-button--full">
+              Conosciamoci meglio!
             </Link>
-            <Link to="/lavora-con-noi">
-              <button className="inverted-btn">
-                Unisciti al team!
-              </button>
+            <Link to="/lavora-con-noi" className="booking-button booking-button--full">
+              Unisciti al team!
             </Link>
           </div>
         </div>
