@@ -1117,6 +1117,13 @@ a:visited:active {
   padding-block: 2.5rem;
 }
 
+.container-wwu--submitted {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header-wwu {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -1133,6 +1140,13 @@ a:visited:active {
   align-items: stretch;
   border: 1px solid rgba(255, 255, 255, 0.4);
   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
+}
+
+.form-wwu--success {
+  width: min(42rem, 100%);
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
 }
 
 @media (max-width: 767px) {

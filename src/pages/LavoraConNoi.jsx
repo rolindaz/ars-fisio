@@ -1,34 +1,33 @@
 import { useState } from "react";
-import Section from "../components/Section";
 
 export default function LavoraConNoi() {
-
   const [submitted, setSubmitted] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState("Nessun file selezionato");
 
   return (
     <>
       <div className="bg-wwu">
-          <div className="container-wwu">
-          {/* Header */}
-          <div className="header-wwu">
-          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Entra a far parte del nostro team
-          </h1>
-          <p className="text-[var(--text-info)]">
-            Siamo sempre alla ricerca di professionisti determinati con cui avviare una collaborazione duratura. Contattaci!
-          </p>
-          </div>
+          <div className={`container-wwu ${submitted ? "container-wwu--submitted" : ""}`}>
+          {!submitted && (
+            <div className="header-wwu">
+              <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+                Entra a far parte del nostro team
+              </h1>
+              <p className="text-[var(--text-info)]">
+                Siamo sempre alla ricerca di professionisti determinati con cui avviare una collaborazione duratura. Contattaci!
+              </p>
+            </div>
+          )}
 
           {/* Success message */}
           {submitted ? (
-          <div className="bg-white/25 backdrop-blur-md border border-white/40 rounded-2xl p-10 text-center text-gray-800 shadow-md">
+          <div className="form-wwu form-wwu--success shadow-md text-center">
             <h2 className="text-2xl font-heading font-bold mb-4">
-              Grazie per averci contattato!
+              Grazie per averci scritto.
             </h2>
-            <p className="text-gray-700">
-              Il tuo messaggio è stato inviato con successo.  
-              Riceverai presto una risposta.
+            <p className="text-gray-700 leading-7">
+              Abbiamo ricevuto la tua candidatura con successo.
+              Ti ricontatteremo il prima possibile se il tuo profilo sara in linea con le nostre esigenze.
             </p>
           </div>
           ) : (
