@@ -1,3 +1,5 @@
+const serviceCardCtaHref = "tel:+390696040737";
+
 export default function ServiceCard({
   slug,
   title,
@@ -19,13 +21,19 @@ export default function ServiceCard({
           className={`service-card-surface inner-card group flex w-full items-center justify-between gap-2 rounded-xl backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:-translate-y-1 hover:shadow-lg ${align === "right" ? "flex-row-reverse text-right" : ""}`}
         >
           {/* Text */}
-          <div className={`py-5 ${align === "right" ? "pe-6" : "ps-6"}`}>
+          <div className={`service-card-copy py-5 ${align === "right" ? "pe-6 items-end" : "ps-6 items-start"}`}>
             <h3
               className={`service-card-title text-base font-heading font-semibold mb-2 ${align === "right" ? "text-right" : "text-left"}`}
             >
               {title}
             </h3>
             <p className="service-card-description text-sm">{description}</p>
+            <a
+              href={serviceCardCtaHref}
+              className={`service-card-cta ${align === "right" ? "self-end" : "self-start"}`}
+            >
+              Richiedi informazioni
+            </a>
           </div>
 
           <div
