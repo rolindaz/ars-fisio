@@ -32,7 +32,7 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
 
                 {
                     subtitle &&
-                    <p className="hero-subtitle text-lg md:text-2xl mb-6">
+                    <p className="hero-subtitle font-sans text-lg md:text-2xl mb-6">
                         {subtitle}
                     </p>
                 }

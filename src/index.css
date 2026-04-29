@@ -127,11 +127,17 @@ a:visited:active {
 }
 
 .hero-shell {
+  min-height: 100%;
   width: 100%;
   padding-inline: 1rem;
 }
 
 .hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  min-height: 100%;
   position: relative;
   margin: 0 auto;
   max-width: 48rem;
@@ -146,20 +152,29 @@ a:visited:active {
   text-shadow: 0 8px 28px rgba(9, 21, 33, 0.28);
 }
 
-.hero-cta {
+.hero-cta.booking-button--full {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-top: 0.5rem;
+  padding: 1.15rem 1.55rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {
+  .hero {
+    background-image: none;
+  }
+
   .hero-mobile-overlay {
     display: none;
   }
 
   .hero-media {
+    display: block;
+    position: absolute;
     inset-block: 0;
+    right: 0;
     width: 73%;
     background-image: url("/staff/gruppo-3.jpeg");
     background-repeat: no-repeat;
@@ -190,15 +205,15 @@ a:visited:active {
 
   .hero-shell {
     display: flex;
-    align-items: start;
-    min-height: 88vh;
+    align-items: stretch;
+    min-height: 100%;
     padding-inline: 3rem;
     z-index: 3;
   }
 
   .hero-copy {
     margin-inline: 0;
-    margin-block: 4.75rem;
+    margin-block: 0;
     max-width: min(29rem, 38%);
     text-align: left;
     color: #123250;
