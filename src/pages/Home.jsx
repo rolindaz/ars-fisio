@@ -18,8 +18,8 @@ export default function Home() {
         ctaText="Prenota ora"
         ctaLink="tel:+390696040737"
       />
-      <ReviewsSection/>
       <ServicesPreview/>
+      <ReviewsSection/>
       <StaffPreview image={'/staff/staff_preview_no_bg_crop.png'} text={"Lo studio nasce dalla collaborazione tra due colleghi esperti, ma soprattutto due amici che hanno deciso di lavorare insieme. La nostra mission è quella di portare la fisioterapia di alto livello a Roma Nord."}/>
       <MapSection/>
     </>
