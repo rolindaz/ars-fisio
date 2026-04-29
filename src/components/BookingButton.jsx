@@ -17,7 +17,9 @@ export default function BookingButton({ compact = false, className = "" }) {
       title="Prenota ora"
     >
       <PhoneIcon />
-      {!compact && <span>Prenota ora</span>}
+      <span className={`booking-button__label ${compact ? "booking-button__label--compact" : ""}`.trim()}>
+        Prenota ora
+      </span>
     </a>
   );
 }
