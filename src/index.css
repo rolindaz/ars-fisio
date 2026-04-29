@@ -970,7 +970,7 @@ a:visited:active {
 
 @media (min-width: 768px) {
   .service-card-bg {
-    opacity: 0.08;
+    display: none;
   }
 
   .service-card-description-wrap {
