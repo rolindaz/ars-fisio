@@ -106,9 +106,9 @@ a:visited:active {
 .hero {
   height: 88vh;
   align-items: center;
-  background-image: url("/gruppo-3.jpeg");
+  background-image: url("/staff/grp-vertical-mobile-bg.jpeg");
   background-repeat: no-repeat;
-  background-position: 72% top;
+  background-position: center 30%;
   background-size: cover;
   overflow: hidden;
 }
@@ -116,8 +116,8 @@ a:visited:active {
 .hero-mobile-overlay {
   background: linear-gradient(
     180deg,
-    rgba(12, 29, 45, 0.48) 0%,
-    rgba(12, 29, 45, 0.36) 100%
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(244, 248, 252, 0.56) 100%
   );
 }
 
@@ -127,6 +127,7 @@ a:visited:active {
 }
 
 .hero-shell {
+  display: flex;
   min-height: 100%;
   width: 100%;
   padding-inline: 1rem;
@@ -134,22 +135,30 @@ a:visited:active {
 
 .hero-copy {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
+  gap: 1.5rem;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   min-height: 100%;
   position: relative;
   margin: 0 auto;
   max-width: 48rem;
+  width: 100%;
   text-align: center;
-  color: white;
+  color: #123250;
+}
+
+.hero-title {
+  color: var(--logo-dark);
 }
 
 .hero-subtitle {
   max-width: 34rem;
   margin-inline: auto;
   line-height: 1.6;
-  text-shadow: 0 8px 28px rgba(9, 21, 33, 0.28);
+  color: #35506a;
+  text-shadow: none;
 }
 
 .hero-cta.booking-button--full {
@@ -212,6 +221,8 @@ a:visited:active {
   }
 
   .hero-copy {
+    gap: 0;
+    align-items: start;
     margin-inline: 0;
     margin-block: 0;
     max-width: min(29rem, 38%);
