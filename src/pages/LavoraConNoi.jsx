@@ -53,7 +53,7 @@ export default function LavoraConNoi() {
                 type="text"
                 name="nome"
                 required
-                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+                className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
@@ -66,7 +66,7 @@ export default function LavoraConNoi() {
                 type="email"
                 name="email"
                 required
-                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+                className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
@@ -79,7 +79,7 @@ export default function LavoraConNoi() {
                 type="tel"
                 name="telefono"
                 required
-                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+                className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               />
             </div>
 
@@ -92,7 +92,7 @@ export default function LavoraConNoi() {
                 name="messaggio"
                 rows="4"
                 required
-                className="input-form-wwu focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+                className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
               ></textarea>
             </div>
 
@@ -101,7 +101,7 @@ export default function LavoraConNoi() {
               <label className="label-form-wwu">
                 Carica il tuo CV *
               </label>
-              <div className="input-form-wwu flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <label
                   htmlFor="cv-upload"
                   className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
@@ -119,27 +119,35 @@ export default function LavoraConNoi() {
                   const file = event.target.files?.[0];
                   setSelectedFileName(file ? file.name : "Nessun file selezionato");
                 }}
-                className="sr-only"
+                className="sr-only text-logoDark"
               />
             </div>
 
             {/* Privacy */}
-            <div className="flex items-start gap-2 text-sm">
-              <input type="checkbox" required className="mt-1" />
-              <span>
-                Autorizzo il trattamento dei miei dati personali in conformità con l'
-                <a href="/privacy-policy" className="underline text-primary">
-                  informativa sulla privacy
-                </a>.
-              </span>
+            <div className="w-full">
+              <div className="input-form-wwu rounded-md flex justify-center">
+                <label className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
+                  <input
+                    type="checkbox"
+                    required
+                    className="h-4 w-4 shrink-0 accent-[var(--logo-dark)]"
+                  />
+                  <span>
+                    Autorizzo il trattamento dei miei dati personali in conformità con l'
+                    <a href="/privacy-policy" className="underline text-logoDark">
+                      informativa sulla privacy
+                    </a>.
+                  </span>
+                </label>
+              </div>
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-max mx-auto bg-primary text-white py-3 px-8 rounded-full hover:bg-primary/90 transition font-medium hover:scale-[1.03] shadow-lg"
+              className="booking-button booking-button--full mx-auto"
             >
-              Invia
+              <span className="booking-button__label">Invia</span>
             </button>
           </form>
           )}
