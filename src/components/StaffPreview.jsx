@@ -15,12 +15,12 @@ export default function StaffPreview({ text, image }) {
           <p className="staff-preview-copy">{text}</p>
         </div>
         <div className="button-container">
-          <Link to="/chi-siamo" className="booking-button booking-button--full">
+          <Link to="/chi-siamo" className="booking-button booking-button--full home-section-button">
             Conosciamoci meglio
           </Link>
           <Link
             to="/lavora-con-noi"
-            className="booking-button booking-button--full"
+            className="booking-button booking-button--full home-section-button"
           >
             Unisciti al team
           </Link>
