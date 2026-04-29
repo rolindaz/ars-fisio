@@ -257,6 +257,11 @@ a:visited:active {
   gap: 0.5rem;
 }
 
+.reviews-swiper-shell {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .swiper-slide-custom {
   background:
     linear-gradient(
@@ -365,6 +370,50 @@ a:visited:active {
   height: 60px;
   width: 60px;
   border-radius: 999px;
+}
+
+@media (max-width: 767px) {
+  .swiper-container {
+    position: relative;
+    width: calc(100% + 1rem);
+    margin-inline: -0.5rem;
+  }
+
+  .reviews-swiper-shell {
+    position: relative;
+    overflow: hidden;
+    padding-inline: 0.25rem;
+  }
+
+  .reviews-swiper-shell::before,
+  .reviews-swiper-shell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .reviews-swiper-shell::before {
+    left: 0;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .reviews-swiper-shell::after {
+    right: 0;
+    background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .reviews-swiper-shell .swiper {
+    overflow: visible;
+  }
+
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
 }
 
 .prev-btn button,
