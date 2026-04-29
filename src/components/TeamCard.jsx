@@ -17,12 +17,12 @@ export default function TeamCard({
       <div className="group perspective mx-auto w-fit">
         <div className="flex flex-col items-center">
           <div className={`team-card-inner corners transform-style flex items-end justify-center overflow-visible bg-transparent
-          ${variant === "large" ? "h-[462px] w-[360px] shadow-2xl mb-6" : "h-[442px] w-[342px] shadow-xl mb-4"}
+          ${variant === "large" ? "h-[467px] w-[362px] shadow-2xl mb-6" : "h-[447px] w-[342px] shadow-xl mb-4"}
         `}>
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
 
-              <img className="relative z-10 object-contain max-h-full px-8" src={image} alt="" />
+              <img className="relative z-10 object-contain max-h-full px-6" src={image} alt="" />
             </div>
 
             <div className="team-card-back absolute corners-inverted inset-0 backface-hidden rotate-y-180 flex flex-col justify-center px-5">
