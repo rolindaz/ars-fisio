@@ -13,10 +13,10 @@ export default function ChiSiamo() {
         {/* THERAPISTS */}
         <div>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8 text-center">
-            Terapisti
+            I terapisti
           </h2>
           <p className="team-section-intro mx-auto max-w-3xl text-center">
-            Un team multidisciplinare che unisce esperienza clinica, esercizio terapeutico e attenzione al percorso individuale di ogni paziente.
+            Un team giovane, dinamico e multidisciplinare che unisce esperienza clinica, formazione costante e attenzione individuale nella ricerca della miglior soluzione per ogni paziente.
           </p>
 
           <div className="space-y-10 md:space-y-12">
@@ -43,10 +43,10 @@ export default function ChiSiamo() {
         {/* RECEPTIONISTS */}
         <div>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8 text-center">
-            Reception
+            La reception
           </h2>
           <p className="team-section-intro mx-auto max-w-2xl text-center">
-            Il primo contatto con Ars Fisio: accoglienza, organizzazione e ascolto per rendere ogni percorso piu semplice fin dall'inizio.
+            L'accoglienza di Ars Fisio: cortesia, ascolto e flessibilità.
           </p>
 
           <div className="team-pair-row flex flex-col items-center justify-center gap-8 pt-4 md:flex-row">

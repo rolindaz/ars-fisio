@@ -948,8 +948,24 @@ a:visited:active {
   position: absolute;
   inset: 0px;
   overflow: hidden;
+  isolation: isolate;
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
+}
+
+.team-card-inner-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.16) 34%, rgba(255, 255, 255, 0.08) 100%),
+    radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.1) 24%, rgba(255, 255, 255, 0) 54%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .team-card-inner-front img {
@@ -964,16 +980,19 @@ a:visited:active {
   height: 100%;
   width: 100%;
   background:
-    radial-gradient(circle at 50% 42%, rgba(180, 211, 233, 0.38) 0%, rgba(123, 171, 207, 0.18) 26%, rgba(98, 153, 198, 0) 54%),
-    linear-gradient(155deg, #4f8dc2 0%, #2c67a0 42%, #174267 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 22px 45px -30px rgba(18, 50, 80, 0.7);
+    radial-gradient(circle at 48% 28%, rgba(214, 231, 244, 0.24) 0%, rgba(154, 193, 222, 0.14) 22%, rgba(98, 153, 198, 0) 52%),
+    linear-gradient(160deg, rgba(120, 173, 216, 0.84) 0%, rgba(44, 103, 160, 0.88) 45%, rgba(23, 66, 103, 0.92) 100%);
+  box-shadow: inset 0 -18px 24px -20px rgba(9, 28, 45, 0.34), 0 24px 48px -30px rgba(18, 50, 80, 0.72);
 }
 
 .team-card-back {
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(240, 247, 253, 0.96) 0%, rgba(222, 236, 247, 0.92) 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 18px 36px -28px rgba(18, 50, 80, 0.28);
-  backdrop-filter: blur(8px);
+  background:
+    radial-gradient(circle at top left, rgba(168, 202, 227, 0.22) 0%, rgba(168, 202, 227, 0) 38%),
+    linear-gradient(180deg, rgba(234, 244, 251, 0.9) 0%, rgba(207, 225, 239, 0.82) 100%);
+  border: 1px solid rgba(44, 103, 160, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68), inset 0 -18px 24px -22px rgba(28, 73, 112, 0.16), 0 20px 40px -28px rgba(18, 50, 80, 0.34);
+  backdrop-filter: blur(12px);
 }
 
 .team-card-description,
