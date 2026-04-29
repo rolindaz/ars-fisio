@@ -11,8 +11,9 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
                     <defs>
                         <linearGradient id="heroSeamGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="white" />
-                            <stop offset="44%" stopColor="rgba(255,255,255,0.98)" />
-                            <stop offset="74%" stopColor="rgba(255,255,255,0.7)" />
+                            <stop offset="40%" stopColor="rgba(255,255,255,0.99)" />
+                            <stop offset="66%" stopColor="rgba(255,255,255,0.82)" />
+                            <stop offset="82%" stopColor="rgba(255,255,255,0.5)" />
                             <stop offset="100%" stopColor="rgba(255,255,255,0)" />
                         </linearGradient>
                     </defs>
