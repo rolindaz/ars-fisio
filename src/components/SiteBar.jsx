@@ -28,10 +28,12 @@ export default function SiteBar({
   wrapperClassName = "",
   logoLinkClassName = "",
   logoClassName = "",
+  navWrapperClassName = "",
   navClassName = "",
   linkClassName = "",
   actionsClassName = "",
   socialTheme = "light",
+  navSupplement = null,
 }) {
   return (
     <div className={`site-bar ${wrapperClassName}`.trim()}>
@@ -47,11 +49,14 @@ export default function SiteBar({
         />
       </Link>
 
-      <nav className={`site-bar__nav ${navClassName}`.trim()}>
-        {links.map((item) => (
-          <SiteBarLink key={item.label} item={item} className={linkClassName} />
-        ))}
-      </nav>
+      <div className={`site-bar__nav ${navWrapperClassName}`.trim()}>
+        <nav className={navClassName}>
+          {links.map((item) => (
+            <SiteBarLink key={item.label} item={item} className={linkClassName} />
+          ))}
+        </nav>
+        {navSupplement}
+      </div>
 
       <div className={`site-bar__actions ${actionsClassName}`.trim()}>
         <SocialLinks theme={socialTheme} />

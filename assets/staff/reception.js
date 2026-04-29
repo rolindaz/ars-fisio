@@ -10,8 +10,10 @@ const reception = [
   },
   { 
     name: "Ilaria Grippi",
+    caption: "Addetta al Front Office",
     image: "/staff/reception/ilariaNoBg.png",
-    description: "La manipolazione vertebrale consiste nella manipolazione della colonna vertebrale eseguita per indurre un rilassamento muscolare, migliorare il movimento e ridurre il dolore.",
+    description: ["Il mio obiettivo è accogliere ogni paziente con un sorriso e la massima disponibilità.",
+    "Mi occupo di ascoltare le vostre necessità e trovare la soluzione organizzativa migliore per rendere il vostro percorso in studio sereno e senza stress, sin dal primo contatto."],
     socialMedia: ""  
   }
 ];

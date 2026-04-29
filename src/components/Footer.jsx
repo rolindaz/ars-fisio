@@ -28,16 +28,17 @@ function Footer() {
         <SiteBar
           links={footerNavLinks}
           wrapperClassName="site-footer__row flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
-          logoClassName="h-16 w-auto md:h-[4.5rem]"
-          navClassName="site-footer__links flex flex-col gap-3 text-sm md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-5 md:gap-y-3 lg:flex-1 lg:px-8"
+          logoClassName="h-[4.5rem] w-auto md:h-[6rem]"
+          navWrapperClassName="site-footer__center flex flex-col items-center justify-center gap-6 lg:flex-1 lg:px-8"
+          navClassName="site-footer__links flex flex-col gap-3 text-sm md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-5 md:gap-y-3"
           linkClassName="site-footer-link"
           actionsClassName="site-footer__actions flex flex-col-reverse items-center justify-center gap-3 lg:min-w-[16rem]"
+          navSupplement={(
+            <p className="site-footer-copy text-xs text-center">
+              ⓒ 2026 Ars Fisio - Tutti i diritti riservati
+            </p>
+          )}
         />
-        <div className="site-footer__row flex justify-center">
-          <p className="site-footer-copy text-xs">
-            ⓒ 2026 Ars Fisio - Tutti i diritti riservati
-          </p>
-        </div>
       </div>
     </footer>
   );

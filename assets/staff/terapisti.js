@@ -27,13 +27,10 @@ const terapisti = [
     socialMedia: ""  
   },
   { 
-    name: "Giacomo",
+    name: "Giacomo Pintaudi",
     caption: "Fisioterapista",
     image: "/staff/terapisti/giacomoNoBg.png",
-    description: ["Sono attualmente in formazione in ginnastica posturale e certificazione CSCS per la preparazione fisica avanzata.",
-    "Nel mio percorso, ho avuto la possibilità di approfondire metodiche come l'idrokinesiterapia e il linfodrenaggio.",
-    "Mi occupo di prevenzione degli infortuni, riabilitazione e miglioramento della performance sportiva.",
-    "Seguo atleti e sportivi a diversi livelli, in particolare nel nuoto e nel crossfit."],
+    description: ["Con l'applicazione della terapia manuale aiuto a rimetterti in piedi da dolori muscolari e articolari e ti aiuto nel rientro in campo dopo un infortunio."],
     socialMedia: ""  
   },
   { 
