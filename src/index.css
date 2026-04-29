@@ -222,79 +222,6 @@ a:visited:active {
 
 /* #region HomePage */
 
-.home-spine-divider {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  margin-top: -1.5rem;
-  margin-bottom: 0.75rem;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.home-spine-divider__glow {
-  position: absolute;
-  inset-inline: 0;
-  top: 50%;
-  height: clamp(4.5rem, 10vw, 7rem);
-  transform: translateY(-50%);
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(44, 103, 160, 0.28) 0%,
-      rgba(44, 103, 160, 0.12) 42%,
-      rgba(44, 103, 160, 0) 76%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(44, 103, 160, 0) 0%,
-      rgba(44, 103, 160, 0.14) 18%,
-      rgba(44, 103, 160, 0.24) 50%,
-      rgba(44, 103, 160, 0.14) 82%,
-      rgba(44, 103, 160, 0) 100%
-    );
-  filter: blur(18px);
-  opacity: 0.9;
-  z-index: 0;
-}
-
-.home-spine-divider__line {
-  display: block;
-  width: 100%;
-  height: clamp(1.35rem, 3.2vw, 2.4rem);
-  background-color: var(--logo-main);
-  -webkit-mask-image: url("/spine-line.svg");
-  mask-image: url("/spine-line.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .home-spine-divider {
-    margin-top: -2.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .home-spine-divider__glow {
-    height: clamp(5.5rem, 8vw, 8rem);
-    filter: blur(24px);
-  }
-
-  .home-spine-divider__line {
-    height: clamp(1.75rem, 2.7vw, 2.75rem);
-  }
-}
-
 /* #region ReviewsSection */
 
 .swiper-container {
@@ -1142,7 +1069,7 @@ a:visited:active {
   max-width: 24rem;
 }
 
-.site-footer {
+.site-surface {
   position: relative;
   overflow: hidden;
   background:
@@ -1156,11 +1083,9 @@ a:visited:active {
       rgba(255, 255, 255, 0.98) 0%,
       rgba(244, 248, 252, 0.98) 100%
     );
-  border-top: 1px solid rgba(44, 103, 160, 0.12);
-  box-shadow: 0 -16px 34px -34px rgba(18, 50, 80, 0.45);
 }
 
-.site-footer::before {
+.site-surface::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1170,6 +1095,36 @@ a:visited:active {
     rgba(44, 103, 160, 0) 45%
   );
   pointer-events: none;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(44, 103, 160, 0.12);
+  box-shadow: 0 -16px 34px -34px rgba(18, 50, 80, 0.45);
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(44, 103, 160, 0.12);
+  box-shadow: 0 16px 34px -34px rgba(18, 50, 80, 0.45);
+  backdrop-filter: blur(10px);
+}
+
+.site-header__panel {
+  position: relative;
+  background: transparent;
+}
+
+.site-header__panel::before {
+  border-top: 1px solid rgba(44, 103, 160, 0.12);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.site-header__panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .site-footer-copy,

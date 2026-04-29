@@ -19,13 +19,13 @@ export default function Contatti() {
     <>
       <Section className="max-w-6xl space-y-10 py-14">
         <header className="max-w-3xl space-y-4">
-          <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
-            Contatti
-          </p>
-          <h1 className="mb-0">Siamo a disposizione per informazioni e appuntamenti</h1>
+          <h1 className="mb-0">
+            Siamo a disposizione per informazioni e appuntamenti
+          </h1>
           <p className="text-base leading-7 text-[var(--subtitle-info)] md:text-lg">
-            Puoi scriverci via email, contattarci su WhatsApp oppure raggiungerci nelle nostre sedi.
-            Qui trovi anche gli orari di apertura aggiornati.
+            Puoi scriverci via email, contattarci su WhatsApp oppure
+            raggiungerci nelle nostre sedi. Qui trovi anche gli orari di
+            apertura aggiornati.
           </p>
         </header>
 
