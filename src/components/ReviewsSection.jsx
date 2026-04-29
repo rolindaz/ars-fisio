@@ -28,7 +28,7 @@ export default function ReviewsSection() {
 
   return (
     <Section id="recensioni-home">
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
+      <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-0">
         Dicono di noi
       </h2>
       <div className="swiper-container">

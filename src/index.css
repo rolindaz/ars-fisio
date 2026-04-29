@@ -644,14 +644,24 @@ a:visited:active {
   scroll-margin-top: calc(var(--header-height) + 1.5rem);
 }
 
+.service-card-surface {
+  background: linear-gradient(180deg, rgba(246, 250, 253, 0.38) 0%, rgba(231, 240, 248, 0.26) 100%);
+  border: 1px solid rgba(44, 103, 160, 0.08);
+}
+
+.service-card-title {
+  color: var(--logo-main);
+}
+
 .service-card-target .inner-card {
   transform-origin: center;
+  min-height: 13rem;
 }
 
 .service-card-target--highlighted .inner-card {
   transform: scale(1.03);
   box-shadow: 0 24px 38px -24px rgba(18, 50, 80, 0.55), 0 0 0 2px rgba(44, 103, 160, 0.18);
-  background: rgba(255, 255, 255, 0.42);
+  background: linear-gradient(180deg, rgba(246, 250, 253, 0.48) 0%, rgba(231, 240, 248, 0.34) 100%);
 }
 
 .service-card-wrapper {

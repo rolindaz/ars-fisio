@@ -16,12 +16,12 @@ export default function ServiceCard({
         className={`service-card-target w-full ${isHighlighted ? "service-card-target--highlighted" : ""} ${align === "right" ? "animate-slide-right" : "animate-slide-left"}`}
       >
         <div
-          className={`inner-card group flex w-full items-center justify-between gap-2 rounded-xl bg-white/30 backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:-translate-y-1 hover:shadow-lg ${align === "right" ? "flex-row-reverse text-right" : ""}`}
+          className={`service-card-surface inner-card group flex w-full items-center justify-between gap-2 rounded-xl backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:-translate-y-1 hover:shadow-lg ${align === "right" ? "flex-row-reverse text-right" : ""}`}
         >
           {/* Text */}
           <div className={`py-5 ${align === "right" ? "pe-6" : "ps-6"}`}>
             <h3
-              className={`text-base font-heading font-semibold text-gray-800 mb-2 ${align === "right" ? "text-right" : "text-left"}`}
+              className={`service-card-title text-base font-heading font-semibold mb-2 ${align === "right" ? "text-right" : "text-left"}`}
             >
               {title}
             </h3>
