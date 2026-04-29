@@ -25,7 +25,7 @@ export default function ServiceCard({
             >
               {title}
             </h3>
-            <p className="text-sm text-gray-600">{description}</p>
+            <p className="service-card-description text-sm">{description}</p>
           </div>
 
           <div

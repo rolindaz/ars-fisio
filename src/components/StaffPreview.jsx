@@ -14,7 +14,7 @@ export default function StaffPreview({text, image}) {
           <img className="staff-preview-img" src={image} alt="" />
         </div>
         <div className="staff-preview-text">
-          <p>
+          <p className="staff-preview-copy">
             {text}
           </p>
           <div className="button-container">

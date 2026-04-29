@@ -29,7 +29,7 @@ export default function TeamCard({
               <div className="team-card-quote absolute top-0 left-0 font-quote">
                 “
               </div>
-              <div className="text-base text-gray-700">
+              <div className="team-card-description text-base">
                 {descriptionParagraphs.map((paragraph, index) => (
                   <p
                     key={`${name}-paragraph-${index}`}
@@ -55,7 +55,7 @@ export default function TeamCard({
             <h3 className="font-heading text-lg text-center">
               {name}
             </h3>
-            <h4 className="text-center text-[var(--subtitle-info)]">
+            <h4 className="team-card-caption-role text-center">
               {caption}
             </h4>
           </div>

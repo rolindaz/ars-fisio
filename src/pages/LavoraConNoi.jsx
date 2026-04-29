@@ -14,7 +14,7 @@ export default function LavoraConNoi() {
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Entra a far parte del nostro team
           </h1>
-          <p className="text-gray-700">
+          <p className="text-[var(--text-info)]">
             Siamo sempre alla ricerca di professionisti determinati con cui avviare una collaborazione duratura. Contattaci!
           </p>
           </div>
