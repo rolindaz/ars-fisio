@@ -802,6 +802,14 @@ a:visited:active {
   border: 0px;
 }
 
+@media (max-width: 1023px) {
+  .map-section .map-container {
+    width: calc(100% + 2rem);
+    margin-inline: -1rem;
+    border-radius: 0;
+  }
+}
+
 /* #endregion MapSection */
 
 /* #endregion HomePage */

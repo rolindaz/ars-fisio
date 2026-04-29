@@ -19,9 +19,7 @@ export default function StaffPreview({ text, image }) {
             Conosciamoci meglio
           </Link>
           <Link
-            to="/lavora-con-noi"
-            className="booking-button booking-button--full home-section-button"
-          >
+            to="/lavora-con-noi" className="booking-button booking-button--full home-section-button">
             Unisciti al team
           </Link>
         </div>
