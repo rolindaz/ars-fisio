@@ -1,15 +1,19 @@
 export default function ServiceCard({
+  slug,
   title,
   description,
   image,
   align,
   delay,
+  isHighlighted = false,
 }) {
   return (
     <>
       <div
+        id={slug}
+        data-service-slug={slug}
         style={{ animationDelay: `${delay}ms` }}
-        className={`w-full ${align === "right" ? "animate-slide-right" : "animate-slide-left"}`}
+        className={`service-card-target w-full ${isHighlighted ? "service-card-target--highlighted" : ""} ${align === "right" ? "animate-slide-right" : "animate-slide-left"}`}
       >
         <div
           className={`inner-card group flex w-full items-center justify-between gap-2 rounded-xl bg-white/30 backdrop-blur-md shadow-md transition-all min-h-44 duration-500 hover:-translate-y-1 hover:shadow-lg ${align === "right" ? "flex-row-reverse text-right" : ""}`}

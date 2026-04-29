@@ -12,7 +12,9 @@ const ServicesPreview = () => {
 
       <div className="mobile-grid">
         {services.map((s, i) => (
-          <HexCard key={i} {...s} />
+          <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
+            <HexCard {...s} />
+          </Link>
         ))}
       </div>
 
@@ -21,14 +23,18 @@ const ServicesPreview = () => {
         {/* Row 1 */}
         <div className="hex-row">
           {services.slice(0, 3).map((s, i) => (
-            <HexCard key={i} {...s} />
+            <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
+              <HexCard {...s} />
+            </Link>
           ))}
         </div>
         
         {/* Row 2 */}
         <div className="hex-row hex-row-closer">
           {services.slice(3, 7).map((s, i) => (
-            <HexCard key={i} {...s} />
+            <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
+              <HexCard {...s} />
+            </Link>
           ))}
         </div>
 
