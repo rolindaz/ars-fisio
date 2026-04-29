@@ -40,9 +40,6 @@ export default function Navbar() {
 
                 <div className="hidden md:flex items-center gap-5">
                     <div className="flex items-center gap-3">
-                        <span className="text-[11px] font-heading uppercase tracking-[0.18em] text-[var(--subtitle-info)]">
-                            Seguici
-                        </span>
                         <SocialLinks />
                     </div>
                     <BookingButton />
@@ -71,9 +68,6 @@ export default function Navbar() {
                         Contatti
                     </Link>
                     <div className="flex items-center justify-between border-t border-slate-200 pt-3">
-                        <span className="text-[11px] font-heading uppercase tracking-[0.18em] text-[var(--subtitle-info)]">
-                            Seguici
-                        </span>
                         <SocialLinks />
                     </div>
                 </div>
