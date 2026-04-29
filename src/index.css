@@ -1118,7 +1118,7 @@ a:visited:active {
 }
 
 .container-wwu--submitted {
-  min-height: 100svh;
+  min-height: calc(100svh - var(--header-height));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1147,6 +1147,14 @@ a:visited:active {
   align-items: center;
   justify-content: center;
   padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(1.05);
+  -webkit-backdrop-filter: blur(12px) saturate(1.05);
+}
+
+.success-page {
+  margin-bottom: -2.5rem;
 }
 
 @media (max-width: 767px) {

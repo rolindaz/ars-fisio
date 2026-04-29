@@ -21,7 +21,7 @@ export default function LavoraConNoi() {
             method="POST"
             data-netlify="true"
             encType="multipart/form-data"
-            action={"/success"}
+            /* action={"/success"} */
             className="form-wwu shadow-md space-y-6"
           >
             {/* Netlify hidden input */}
