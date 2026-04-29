@@ -46,7 +46,7 @@
   );
 
   /* Standard heights */
-  --header-height: 12vh;
+  --header-height: clamp(4.75rem, 10vw, 5.5rem);
 }
 
 html,
@@ -106,7 +106,7 @@ a:visited:active {
 }
 
 .hero {
-  height: 100vh;
+  min-height: calc(100svh - var(--header-height));
   align-items: center;
   background-image: url("/staff/grp-vertical-mobile-bg.jpeg");
   background-repeat: no-repeat;
