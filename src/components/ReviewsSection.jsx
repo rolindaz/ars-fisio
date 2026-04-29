@@ -48,7 +48,7 @@ export default function ReviewsSection() {
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={16}
-            slidesPerView={1.12}
+            slidesPerView={1.28}
             centeredSlides={true}
             navigation={{
               prevEl: ".prev-btn",
