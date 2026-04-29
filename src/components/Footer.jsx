@@ -4,21 +4,21 @@ import SiteBar from "./SiteBar";
 const footerLinks = {
   privacy: "/privacy-policy",
   cookie: "/cookie-policy",
-  developer: {
-    label: "Made by your developer",
-    href: "https://example.com",
-  },
-  artwork: {
-    label: "Artwork by your artist",
-    href: "https://example.com",
-  },
+  // developer: {
+  //   label: "Made by your developer",
+  //   href: "https://example.com",
+  // },
+  // artwork: {
+  //   label: "Artwork by your artist",
+  //   href: "https://example.com",
+  // },
 };
 
 const footerNavLinks = [
   { label: "Privacy Policy", to: footerLinks.privacy },
   { label: "Cookie Policy", to: footerLinks.cookie },
-  { label: footerLinks.developer.label, href: footerLinks.developer.href, external: true },
-  { label: footerLinks.artwork.label, href: footerLinks.artwork.href, external: true },
+  // { label: footerLinks.developer.label, href: footerLinks.developer.href, external: true },
+  // { label: footerLinks.artwork.label, href: footerLinks.artwork.href, external: true },
 ];
 
 function Footer() {
