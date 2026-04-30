@@ -16,11 +16,10 @@ export default function Home() {
         )}
         subtitle={"Professionalità, competenza e un approccio giovane per accompagnarti verso il tuo benessere."}
         ctaText="Prenota ora"
-        ctaLink="tel:+390696040737"
       />
       <ServicesPreview/>
       <ReviewsSection/>
-      <StaffPreview image={'/staff/staff_preview_no_bg_crop.webp'} text={"Abbiamo aperto Ars Fisio per portare la fisioterapia di alto livello a Roma Nord."}/>
+      <StaffPreview image={'/staff/staff_preview_no_bg_crop.webp'} text={"Con Ars Fisio portiamo la fisioterapia di alto livello a Roma Nord."}/>
       <MapSection/>
     </>
   )

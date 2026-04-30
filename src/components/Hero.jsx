@@ -1,6 +1,7 @@
 import React from "react";
+import BookingButton from "./BookingButton";
 
-export default function Hero({title, subtitle, ctaText, ctaLink}) {
+export default function Hero({title, subtitle, ctaText}) {
     return (
         <section id="top" className="hero relative">
             <div className="hero-mobile-overlay absolute inset-0" />
@@ -38,10 +39,8 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
                 }
 
                 {
-                    ctaText && ctaLink && (
-                        <a href={ctaLink} className="hero-cta base-btn btn-primary">
-                            {ctaText}
-                        </a>
+                    ctaText && (
+                        <BookingButton ctaText={ctaText} className="hero-cta" />
                     )
                 }
                 </div>

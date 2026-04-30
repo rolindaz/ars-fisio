@@ -471,12 +471,10 @@ a:visited:active {
 }
 
 .base-btn,
-.booking-button,
-.standard-btn,
-.inverted-btn,
 .service-card-cta {
   display: inline-flex;
   align-items: center;
+  font-family: "Noto Sans", "sans-serif";
   justify-content: center;
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
@@ -505,7 +503,7 @@ a:visited:active {
 
 .btn-primary {
   color: white;
-  background: linear-gradient(135deg, #2c67a0, #3f7fb8);
+  background: linear-gradient(180deg, #23527f, #144e86, #2c67a0, #5394cf);
   box-shadow:
     0 10px 25px rgba(44, 103, 160, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -603,10 +601,10 @@ a:visited:active {
   gap: 0.5rem;
 }
 
-
 .hero-cta {
   font-size: 1.5rem;
   padding-inline: 2rem;
+  padding-block: 2rem;
 }
 
 /* #endregion ReviewsSection */
@@ -710,8 +708,13 @@ a:visited:active {
 
 .mobile-grid {
   --services-preview-mobile-card-width: 8.2rem;
-  --services-preview-mobile-side-offset: calc(var(--services-preview-mobile-card-width) + var(--services-preview-mobile-neg-margin));
-  --services-preview-mobile-neg-margin: calc(var(--hex-container-neg-inline-margin) * 2);
+  --services-preview-mobile-side-offset: calc(
+    var(--services-preview-mobile-card-width) +
+      var(--services-preview-mobile-neg-margin)
+  );
+  --services-preview-mobile-neg-margin: calc(
+    var(--hex-container-neg-inline-margin) * 2
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1424,13 +1427,12 @@ a:visited:active {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(233, 242, 249, 0.88) 0%,
-      rgba(196, 220, 238, 0.7) 50%,
-      rgba(233, 242, 249, 0.88) 100%
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(233, 242, 249, 0.88) 0%,
+    rgba(196, 220, 238, 0.7) 50%,
+    rgba(233, 242, 249, 0.88) 100%
+  );
   opacity: 1;
   transition: opacity 280ms ease;
 }
@@ -1958,9 +1960,7 @@ a:visited:active {
 
 /* #endregion Animazioni */
 
-
 @media (min-width: 768px) {
-
   .mobile-grid {
     display: none;
   }
@@ -1991,6 +1991,4 @@ a:visited:active {
   .services-preview-cta--lower {
     margin-top: 0.35rem;
   }
-
-  
 }
