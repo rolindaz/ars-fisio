@@ -13,7 +13,7 @@ const ServicesPreview = () => {
       </h2>
 
       <div className="mobile-grid services-preview-content services-preview-mobile">
-        <div className="services-preview-mobile__row--center">
+        <div className="services-preview-mobile__row services-preview-mobile__row--center">
           {mobileServices.slice(0, 2).map((s, i) => (
             <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
               <HexCard {...s} />

@@ -508,7 +508,7 @@ a:visited:active {
   width: 20rem;
   height: 21rem;
   margin-top: 1rem;
-  margin-inline: -0.25rem;
+  /* margin-inline: -0.25rem; */
   position: relative;
   display: inline-block;
   background: rgba(20, 66, 109, 0.8);
@@ -594,15 +594,17 @@ a:visited:active {
 /* #region ServicesPreviewSection */
 
 .neg-mar-top {
-  margin-top: -2.75rem;
+  margin-top: -2.5rem;
 }
 
 .mobile-grid {
+  --services-preview-mobile-card-width: 8.2rem;
+  --services-preview-mobile-side-offset: var(--services-preview-mobile-card-width);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
-  margin-left: ;
+  margin-left: calc(var(--services-preview-mobile-side-offset) / 4);
 }
 
 .services-preview-content {
@@ -618,19 +620,15 @@ a:visited:active {
   justify-content: center;
   align-items: flex-start;
   gap: 0;
-}
-
-.services-preview-mobile__row--center {
   align-self: center;
 }
 
 .services-preview-mobile__row--side {
-  align-self: start;
-  margin-left: .85rem;
+  margin-right: var(--services-preview-mobile-side-offset);
 }
 
 .services-preview-mobile .hex-container {
-  width: 8.2rem;
+  width: var(--services-preview-mobile-card-width);
   height: 8.7rem;
   margin-top: 0.5rem;
 }
