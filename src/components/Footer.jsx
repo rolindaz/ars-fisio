@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import BookingButton from "./BookingButton";
 import SocialLinks from "./SocialLinks";
 import SiteBar from "./SiteBar";
 
@@ -36,8 +35,6 @@ function Footer() {
         </nav>
 
         <SocialLinks className="site-footer__mobile-socials" />
-
-        <BookingButton className="site-footer__mobile-booking" />
 
         <p className="site-footer-copy site-footer-copy--mobile text-xs">
           ⓒ 2026 Ars Fisio - Tutti i diritti riservati

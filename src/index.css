@@ -1637,7 +1637,7 @@ a:visited:active {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.847) 0%), url("/logo-fisio.svg");
   background-position: center;
-  background-size: 75%;
+  background-size: 45%;
   background-repeat: no-repeat;
   border-radius: 1.5rem;
   padding: 1.25rem 1rem 1rem;

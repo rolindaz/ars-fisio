@@ -76,16 +76,16 @@ export default function Navbar() {
 
             {/* Burger Menu */}
             <div
-                className={`md:hidden overflow-hidden bg-white px-4 transition-all duration-300 ease-out ${open ? "max-h-[28rem] pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"}`}
+                className={`md:hidden overflow-hidden bg-white px-4 transition-all duration-300 ease-out ${open ? "max-h-[28rem] border-t border-[rgba(44,103,160,0.12)] pb-4 opacity-100 shadow-[0_18px_32px_-24px_rgba(18,50,80,0.38)]" : "max-h-0 pb-0 opacity-0"}`}
                 aria-hidden={!open}
             >
-                <div className={`flex flex-col gap-4 pt-1 transition-all duration-300 ease-out ${open ? "translate-y-0" : "-translate-y-2"}`}>
+                <div className={`flex flex-col gap-5 pt-4 transition-all duration-300 ease-out ${open ? "translate-y-0" : "-translate-y-2"}`}>
                     {navLinks.map((item) => (
                         <Link
                             key={item.to}
                             to={item.to}
                             onClick={()=>setOpen(false)}
-                            className={`text-center font-heading text-[1.1rem] leading-6 uppercase text-[var(--logo-main)] transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
+                            className={`text-center font-heading text-[1.2rem] leading-7 uppercase text-[var(--logo-main)] transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}
                         >
                             {item.label}
                         </Link>
