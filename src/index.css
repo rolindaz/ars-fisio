@@ -871,7 +871,7 @@ a:visited:active {
 
 @media (max-width: 767px) {
   .staff-preview-visual {
-    width: 90%;
+    width: 100%;
   }
 }
 
