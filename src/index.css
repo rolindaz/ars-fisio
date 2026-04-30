@@ -567,13 +567,15 @@ a:visited:active {
 }
 
 .btn-secondary {
-  color: #1f2937;
-  background: rgba(255, 255, 255, 0.5);
+  color: var(--logo-dark);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 251, 254, 0.94) 42%, rgba(239, 246, 251, 0.94) 100%);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(35, 82, 127, 0.28);
   box-shadow:
-    0 8px 20px rgba(44, 103, 160, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 10px 22px -24px rgba(18, 50, 80, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    inset 0 10px 16px -14px rgba(255, 255, 255, 0.9);
   text-decoration: none;
   line-height: 1;
 }
@@ -581,17 +583,22 @@ a:visited:active {
 .btn-secondary:link,
 .btn-secondary:visited,
 .btn-secondary:active {
-  color: #1f2937;
+  color: var(--logo-dark);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-  background: rgba(255, 255, 255, 0.7);
+  color: white;
+  background: linear-gradient(180deg, rgba(92, 139, 180, 0.98) 0%, rgba(64, 109, 150, 0.98) 100%);
+  border-color: rgba(35, 82, 127, 0.46);
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(44, 103, 160, 0.18);
+  box-shadow: 0 16px 28px -22px rgba(18, 50, 80, 0.24);
 }
 
 .btn-secondary:active {
+  color: white;
+  background: linear-gradient(180deg, rgba(78, 122, 162, 0.98) 0%, rgba(54, 95, 134, 0.98) 100%);
+  border-color: rgba(35, 82, 127, 0.52);
   transform: scale(0.96);
 }
 
