@@ -29,7 +29,7 @@ export default function ServiceCard({
           />
 
           {/* Text */}
-          <div className={`service-card-copy self-stretch px-5 py-5 items-start text-left md:px-0 ${align === "right" ? "md:pe-6 md:items-end" : "md:ps-6 md:items-start"}`}>
+          <div className={`service-card-copy self-stretch px-5 py-5 items-start text-left md:px-0 ${align === "right" ? "md:pe-6 md:items-end md:text-right" : "md:ps-6 md:items-start md:text-left"}`}>
             <h3
               className={`service-card-title mb-2 text-base font-heading font-semibold text-left ${align === "right" ? "md:text-right" : "md:text-left"}`}
             >
