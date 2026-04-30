@@ -20,6 +20,8 @@ export default function StaffPreview({ text, image }) {
             className="staff-preview-img"
             src={image}
             alt="Il team Ars Fisio"
+            loading="eager"
+            decoding="sync"
           />
         </div>
         <div className="button-container">
