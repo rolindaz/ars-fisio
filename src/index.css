@@ -633,6 +633,31 @@ a:visited:active {
   width: var(--services-preview-mobile-card-width);
   height: 8.7rem;
   margin-top: 0.5rem;
+  padding: 3px;
+  background: var(--logo-dark);
+}
+
+.services-preview-mobile .hex-overlay {
+  background: #23527fab;
+}
+
+.services-preview-mobile .glass {
+  opacity: 0.8;
+  backdrop-filter: blur(0px);
+  background: linear-gradient(135deg, #2c68a0, #2c68a000);
+}
+
+.services-preview-mobile .hex-link:active .hex-container,
+.services-preview-mobile .hex-link:focus-visible .hex-container {
+  background: #23527fc4;
+  transform: none;
+  padding: 1px;
+}
+
+.services-preview-mobile .hex-link:active .glass,
+.services-preview-mobile .hex-link:focus-visible .glass {
+  opacity: 1;
+  backdrop-filter: blur(3px);
 }
 
 .services-preview-mobile .hex-title {
