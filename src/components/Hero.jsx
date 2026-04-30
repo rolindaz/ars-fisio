@@ -39,7 +39,7 @@ export default function Hero({title, subtitle, ctaText, ctaLink}) {
 
                 {
                     ctaText && ctaLink && (
-                        <a href={ctaLink} className="hero-cta base-btn btn-primary booking-button--full">
+                        <a href={ctaLink} className="hero-cta base-btn btn-primary">
                             {ctaText}
                         </a>
                     )

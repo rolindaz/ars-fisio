@@ -170,7 +170,7 @@ a:visited:active {
   text-shadow: none;
 }
 
-.hero-cta.booking-button--full {
+.hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -197,7 +197,7 @@ a:visited:active {
     background-image: url("/staff/gruppo-3.webp");
     background-repeat: no-repeat;
     background-size: auto 112%;
-    background-position: 40% center;
+    background-position: 38% center;
     z-index: 0;
   }
 
@@ -511,6 +511,16 @@ a:visited:active {
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
   text-decoration: none;
   line-height: 1;
+  padding-inline: 1.5rem;
+  height: 3.25rem;
+  min-width: 4rem;
+  justify-content: center;
+  gap: 0.55rem;
+  overflow: hidden;
+}
+
+.btn-primary--compact {
+  gap: 0;
 }
 
 .btn-primary:link,
@@ -531,6 +541,31 @@ a:visited:active {
 .btn-primary:active {
   transform: scale(0.96);
   box-shadow: 0 6px 15px rgba(44, 103, 160, 0.2);
+}
+
+.btn-primary__label {
+  white-space: nowrap;
+}
+
+.btn-primary__label--compact {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-width 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms cubic-bezier(0.22, 1, 0.36, 1) 70ms,
+    margin 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-primary--compact:hover,
+.btn-primary--compact:focus-visible {
+  gap: 0.7rem;
+}
+
+.btn-primary--compact:hover .btn-primary__label--compact,
+.btn-primary--compact:focus-visible .btn-primary__label--compact {
+  max-width: 8rem;
+  opacity: 1;
 }
 
 .btn-secondary {
@@ -568,32 +603,10 @@ a:visited:active {
   gap: 0.5rem;
 }
 
-.standard-btn {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  color: #fff;
-  background: var(--button-surface);
-  border-radius: 1.75rem;
-  border: none;
-  box-shadow: var(--button-shadow);
-}
 
-.inverted-btn {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  color: var(--logo-main);
-  background: var(--button-surface-light);
-  border: none;
-  border-radius: 1.75rem;
-  box-shadow: var(--button-shadow-light);
-}
-
-.inverted-btn:hover {
-  color: #fff;
-  background: var(--logo-main);
-  transition-property: color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 100ms;
+.hero-cta {
+  font-size: 1.5rem;
+  padding-inline: 2rem;
 }
 
 /* #endregion ReviewsSection */
