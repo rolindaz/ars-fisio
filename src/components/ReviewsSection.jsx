@@ -125,7 +125,7 @@ export default function ReviewsSection() {
         href={arsFisioGoogle}
         target="_blank"
         rel="noopener noreferrer"
-        className="booking-button booking-button--full home-section-button"
+        className="base-btn btn-secondary booking-button--full home-section-button"
         >
           Vedi tutte le nostre recensioni
         </a>

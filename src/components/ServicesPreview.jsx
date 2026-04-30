@@ -45,7 +45,7 @@ const ServicesPreview = () => {
 
       <div className="services-preview-cta services-preview-cta--mobile">
         <span className="services-preview-cta__eyebrow">... e molto altro!</span>
-        <Link to="/servizi" className="booking-button booking-button--full home-section-button services-preview-cta__button">
+        <Link to="/servizi" className="base-btn btn-secondary booking-button--full home-section-button services-preview-cta__button">
           Scopri tutti i nostri servizi
         </Link>
       </div>
@@ -72,7 +72,7 @@ const ServicesPreview = () => {
 
         <div className="services-preview-cta services-preview-cta--lower">
           <span className="services-preview-cta__eyebrow">... e molto altro!</span>
-          <Link to="/servizi" className="booking-button booking-button--full home-section-button services-preview-cta__button">
+          <Link to="/servizi" className="base-btn btn-secondary booking-button--full home-section-button services-preview-cta__button">
             Scopri tutti i nostri servizi
           </Link>
         </div>

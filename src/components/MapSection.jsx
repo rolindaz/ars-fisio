@@ -50,7 +50,7 @@ export default function MapSection({ showCta = true }) {
 
       {showCta && (
         <div className="map-button-container flex justify-center mt-8">
-          <Link to="/contatti" className="booking-button booking-button--full home-section-button">
+          <Link to="/contatti" className="base-btn btn-secondary booking-button--full home-section-button">
             Vieni a trovarci
           </Link>
         </div>

@@ -20,7 +20,7 @@ export default function NotFound() {
 
           <Link
             to="/"
-            className="booking-button booking-button--full inline-flex"
+            className="base-btn btn-secondary booking-button--full inline-flex"
           >
             Torna alla home
           </Link>

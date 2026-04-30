@@ -12,7 +12,7 @@ export default function BookingButton({ compact = false, className = "" }) {
   return (
     <a
       href={bookingHref}
-      className={`booking-button ${compact ? "booking-button--compact" : "booking-button--full"} ${className}`.trim()}
+      className={`base-btn btn-primary ${compact ? "booking-button--compact" : "booking-button--full"} ${className}`.trim()}
       aria-label="Prenota ora"
       title="Prenota ora"
     >

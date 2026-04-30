@@ -69,7 +69,7 @@ section {
 
 h1 {
   font-family: "Alan Sans", "sans-serif";
-  font-size: 45px;
+  /* font-size: 45px; */
   line-height: 2.25rem;
   font-weight: 700 !important;
   margin-bottom: 2rem !important;
@@ -99,8 +99,7 @@ img {
   max-height: 100%;
 }
 
-p,
-span {
+p {
   font-family: "Noto Sans", "sans-serif";
 }
 
@@ -471,6 +470,104 @@ a:visited:active {
   margin-top: 1.5rem;
 }
 
+.base-btn,
+.booking-button,
+.standard-btn,
+.inverted-btn,
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s ease;
+  transform: translateY(0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.base-btn:focus-visible {
+  outline: 2px solid rgba(44, 103, 160, 0.5);
+  outline-offset: 2px;
+}
+
+.base-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #2c67a0, #3f7fb8);
+  box-shadow:
+    0 10px 25px rgba(44, 103, 160, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:active {
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  transform: translateY(-2px);
+  color: white;
+  box-shadow:
+    0 14px 30px rgba(44, 103, 160, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 15px rgba(44, 103, 160, 0.2);
+}
+
+.btn-secondary {
+  color: #1f2937;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 8px 20px rgba(44, 103, 160, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn-secondary:link,
+.btn-secondary:visited,
+.btn-secondary:active {
+  color: #1f2937;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(44, 103, 160, 0.18);
+}
+
+.btn-secondary:active {
+  transform: scale(0.96);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .standard-btn {
   margin-top: 1.5rem;
   padding: 0.75rem;
@@ -712,14 +809,14 @@ a:visited:active {
   color: var(--logo-main);
 }
 
-.booking-button.home-section-button {
+.home-section-button {
   width: fit-content;
   font-family: "Open Sans", sans-serif;
   padding: 1.18rem 1.8rem;
   font-size: 1.05rem;
 }
 
-.booking-button.services-preview-cta__button {
+.services-preview-cta__button {
   width: fit-content;
   font-family: "Open Sans", sans-serif;
   padding: 1.18rem 1.8rem;
@@ -801,7 +898,7 @@ a:visited:active {
   text-align: center;
 }
 
-.button-container .booking-button {
+.button-container .base-btn {
   justify-content: center;
   text-align: center;
 }
@@ -812,7 +909,7 @@ a:visited:active {
     justify-content: center;
   }
 
-  .button-container .booking-button {
+  .button-container .base-btn {
     min-width: 12.75rem;
   }
 }
@@ -977,26 +1074,8 @@ a:visited:active {
 }
 
 .service-card-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   margin-top: auto;
   min-height: 2.5rem;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(44, 103, 160, 0.18);
-  color: var(--logo-main);
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1;
-  text-decoration: none;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    filter 180ms ease;
 }
 
 @media (max-width: 767px) {
@@ -1014,21 +1093,6 @@ a:visited:active {
   .service-card-cta {
     margin-top: 0;
   }
-}
-
-.service-card-cta:hover,
-.service-card-cta:focus-visible {
-  transform: translateY(-1px);
-  background: linear-gradient(
-    180deg,
-    rgba(111, 165, 207, 0.2) 0%,
-    rgba(44, 103, 160, 0.14) 100%
-  );
-  box-shadow:
-    0 14px 24px -24px rgba(18, 50, 80, 0.3),
-    inset 0 0 0 1px rgba(44, 103, 160, 0.22);
-  color: var(--logo-dark);
-  filter: saturate(1.02);
 }
 
 .service-card-target .inner-card {
@@ -1626,7 +1690,7 @@ a:visited:active {
   color: var(--subtitle-info);
 }
 
-.site-footer__actions .booking-button {
+.site-footer__actions .btn-primary {
   box-shadow: 0 18px 30px -20px rgba(12, 31, 49, 0.9);
 }
 

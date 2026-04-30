@@ -23,11 +23,11 @@ export default function StaffPreview({ text, image }) {
           />
         </div>
         <div className="button-container">
-          <Link to="/chi-siamo" className="booking-button booking-button--full home-section-button">
+          <Link to="/chi-siamo" className="base-btn btn-secondary booking-button--full home-section-button">
             Conosciamoci meglio
           </Link>
           <Link
-            to="/lavora-con-noi" className="booking-button booking-button--full home-section-button">
+            to="/lavora-con-noi" className="base-btn btn-secondary booking-button--full home-section-button">
             Unisciti al team
           </Link>
         </div>

@@ -128,7 +128,7 @@ export default function LavoraConNoi() {
             {/* Submit */}
             <button
               type="submit"
-              className="booking-button booking-button--full mx-auto"
+              className="base-btn btn-primary booking-button--full mx-auto"
             >
               <span className="booking-button__label">Invia</span>
             </button>

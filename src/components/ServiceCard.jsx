@@ -38,7 +38,7 @@ export default function ServiceCard({
             </div>
             <a
               href={serviceCardCtaHref}
-              className={`service-card-cta self-start ${align === "right" ? "md:self-end" : "md:self-start"}`}
+              className={`base-btn btn-secondary service-card-cta self-start ${align === "right" ? "md:self-end" : "md:self-start"}`}
             >
               Richiedi informazioni
             </a>
