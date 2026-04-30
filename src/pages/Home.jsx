@@ -20,7 +20,7 @@ export default function Home() {
       />
       <ServicesPreview/>
       <ReviewsSection/>
-      <StaffPreview image={'/staff/staff_preview_no_bg_crop.png'} text={"Abbiamo aperto Ars Fisio per portare la fisioterapia di alto livello a Roma Nord."}/>
+      <StaffPreview image={'/staff/staff_preview_no_bg_crop.webp'} text={"Abbiamo aperto Ars Fisio per portare la fisioterapia di alto livello a Roma Nord."}/>
       <MapSection/>
     </>
   )

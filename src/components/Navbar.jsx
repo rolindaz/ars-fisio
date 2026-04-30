@@ -3,6 +3,7 @@ import { useState } from "react"
 import SocialLinks from "./SocialLinks"
 import BookingButton from "./BookingButton"
 import SiteBar from "./SiteBar"
+import SmoothImage from "./SmoothImage"
 
 const navLinks = [
     { label: "Home", to: "/" },
@@ -32,11 +33,15 @@ export default function Navbar() {
 
                 <div className="flex h-full items-center justify-between gap-3 md:hidden">
                     <Link to="/" className="inline-flex items-center shrink-0">
-                        <img
+                        <SmoothImage
                         src="/logo-fisio.svg"
                         alt="Logo Ars Fisio"
+                        wrapperClassName="inline-flex items-center shrink-0"
                         className="h-[4rem] w-auto"
                         loading="eager"
+                        decoding="sync"
+                        fetchPriority="high"
+                        showPlaceholder={false}
                         onError={(e) => {
                             e.currentTarget.style.display = 'none'
                         }}

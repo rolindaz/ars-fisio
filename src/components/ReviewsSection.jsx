@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Section from "./Section";
 import { Link } from "react-router-dom";
+import SmoothImage from "./SmoothImage";
 
 const REVIEWS_URL = "/reviews.json";
 
@@ -70,7 +71,13 @@ export default function ReviewsSection() {
                       {/* Pillola con info recensione */}
                       <div className="google-review-pill">
                         <div>
-                          <img className="google-logo" src="/search.png" alt="" />
+                          <SmoothImage
+                            src="/search.png"
+                            alt=""
+                            wrapperClassName="google-logo-shell"
+                            className="google-logo"
+                            showPlaceholder={false}
+                          />
                         </div>
                         <div className="flex flex-col">
                           {/* Autore recensione */}

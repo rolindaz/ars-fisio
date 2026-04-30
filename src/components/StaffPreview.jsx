@@ -1,5 +1,6 @@
 import Section from "./Section";
 import { Link } from "react-router-dom";
+import SmoothImage from "./SmoothImage";
 
 export default function StaffPreview({ text, image }) {
   return (
@@ -14,7 +15,12 @@ export default function StaffPreview({ text, image }) {
         </div>
         <div className="staff-preview-visual">
           <div className="staff-preview-bg" />
-          <img className="staff-preview-img" src={image} alt="" />
+          <SmoothImage
+            wrapperClassName="staff-preview-img-shell"
+            className="staff-preview-img"
+            src={image}
+            alt="Il team Ars Fisio"
+          />
         </div>
         <div className="button-container">
           <Link to="/chi-siamo" className="booking-button booking-button--full home-section-button">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import BookingButton from "./BookingButton";
 import SocialLinks from "./SocialLinks";
+import SmoothImage from "./SmoothImage";
 
 function SiteBarLink({ item, className }) {
   if (item.href) {
@@ -38,11 +39,15 @@ export default function SiteBar({
   return (
     <div className={`site-bar ${wrapperClassName}`.trim()}>
       <Link to="/" className={`site-bar__brand ${logoLinkClassName}`.trim()}>
-        <img
+        <SmoothImage
           src="/logo-fisio.svg"
           alt="Ars Fisio"
           className={`site-bar__logo ${logoClassName}`.trim()}
+          wrapperClassName="inline-flex items-center"
           loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+          showPlaceholder={false}
           onError={(event) => {
             event.currentTarget.style.display = "none";
           }}

@@ -115,7 +115,7 @@ a:visited:active {
 .hero {
   height: calc(100svh - var(--header-height));
   align-items: center;
-  background-image: url("/staff/grp-vertical-mobile-bg.jpeg");
+  background-image: url("/staff/grp-vertical-mobile-bg.webp");
   background-repeat: no-repeat;
   background-position: center 30%;
   background-size: cover;
@@ -194,7 +194,7 @@ a:visited:active {
     inset-block: 0;
     right: 0;
     width: 73%;
-    background-image: url("/staff/gruppo-3.jpeg");
+    background-image: url("/staff/gruppo-3.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 60% center;
@@ -728,13 +728,19 @@ a:visited:active {
   width: 80%;
 }
 
-.staff-preview-img {
-  position: relative;
+.staff-preview-img-shell {
+  display: block;
+  overflow: hidden;
   width: 80%;
 }
 
+.staff-preview-img {
+  position: relative;
+  width: 100%;
+}
+
 @media (max-width: 767px) {
-  .staff-preview-img {
+  .staff-preview-img-shell {
     width: 100%;
   }
 }
@@ -1286,6 +1292,80 @@ a:visited:active {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
+}
+
+.team-card-image-shell {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 95%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-card-image {
+  width: auto;
+}
+
+.smooth-image {
+  position: relative;
+}
+
+.smooth-image__placeholder {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(233, 242, 249, 0.88) 0%,
+      rgba(196, 220, 238, 0.7) 50%,
+      rgba(233, 242, 249, 0.88) 100%
+    );
+  opacity: 1;
+  transition: opacity 280ms ease;
+}
+
+.smooth-image__img {
+  display: block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px) scale(1.01);
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.smooth-image--loaded .smooth-image__placeholder {
+  opacity: 0;
+}
+
+.smooth-image--loaded .smooth-image__img {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
+.smooth-image--no-placeholder .smooth-image__img {
+  filter: none;
+  transform: none;
+}
+
+.google-logo-shell {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-image__placeholder,
+  .smooth-image__img {
+    transition: none;
+  }
+
+  .smooth-image__img {
+    filter: none;
+    transform: none;
+  }
 }
 
 .team-card-inner-front-bg {

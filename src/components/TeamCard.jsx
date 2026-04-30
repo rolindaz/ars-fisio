@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import SmoothImage from "./SmoothImage";
 
 export default function TeamCard({
   name,
@@ -150,10 +151,13 @@ export default function TeamCard({
           >
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
-              <div className="h-[90%]">
-                <img className="relative z-10 object-cover object-bottom max-h-full"
+              <div className="h-[90%] team-card-image-shell">
+                <SmoothImage
+                  wrapperClassName="team-card-image-shell"
+                  className="team-card-image relative z-10 object-cover object-bottom max-h-full"
                   src={image}
-                  alt=""/>
+                  alt={name}
+                />
               </div>
             </div>
 
