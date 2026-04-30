@@ -1097,7 +1097,8 @@ a:visited:active {
 /* #region LavoraConNoi */
 
 .bg-wwu {
-  background-image: url("/grpVerticalEdited.svg");
+  background-color: #edf4fa;
+  background-image: url("/grpVerticalEdited.webp");
   background-position: 0 42%;
   background-size: cover;
   background-repeat: no-repeat;
