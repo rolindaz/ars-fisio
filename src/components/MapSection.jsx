@@ -19,7 +19,7 @@ export default function MapSection({ showCta = true }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Section id="dove-siamo-home" desktopAlign="start" className="map-section">
+    <Section id="dove-siamo-home" className="map-section">
       <h2>Dove siamo</h2>
 
       {/* Tabs */}

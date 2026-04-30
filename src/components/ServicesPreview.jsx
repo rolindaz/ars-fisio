@@ -7,7 +7,7 @@ const ServicesPreview = () => {
   const mobileServices = services.slice(0, 7);
 
   return (
-    <Section id="servizi-home" desktopAlign="start">
+    <Section id="servizi-home">
       <h2 className="font-heading">
         I nostri servizi
       </h2>
