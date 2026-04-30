@@ -1,3 +1,5 @@
+import SecondaryButton from "./SecondaryButton";
+
 
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -121,14 +123,14 @@ export default function ReviewsSection() {
         </div>
       </div>
       <div className="all-reviews">
-        <a 
+        <SecondaryButton
         href={arsFisioGoogle}
         target="_blank"
         rel="noopener noreferrer"
-        className="base-btn btn-secondary booking-button--full home-section-button"
+        className="booking-button--full home-section-button"
         >
           Vedi tutte le nostre recensioni
-        </a>
+        </SecondaryButton>
       </div>
     </Section>
   );

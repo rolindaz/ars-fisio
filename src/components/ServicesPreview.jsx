@@ -1,5 +1,6 @@
 import Section from "./Section";
 import HexCard from "./HexCard";
+import SecondaryButton from "./SecondaryButton";
 import services from "../../assets/services/services.js";
 import { Link } from "react-router-dom";
 
@@ -45,9 +46,9 @@ const ServicesPreview = () => {
 
       <div className="services-preview-cta services-preview-cta--mobile">
         <span className="services-preview-cta__eyebrow">... e molto altro!</span>
-        <Link to="/servizi" className="base-btn btn-secondary booking-button--full home-section-button services-preview-cta__button">
+        <SecondaryButton to="/servizi" className="booking-button--full home-section-button services-preview-cta__button">
           Scopri tutti i nostri servizi
-        </Link>
+        </SecondaryButton>
       </div>
 
       <div className="hex-grid services-preview-content">
@@ -72,9 +73,9 @@ const ServicesPreview = () => {
 
         <div className="services-preview-cta services-preview-cta--lower">
           <span className="services-preview-cta__eyebrow">... e molto altro!</span>
-          <Link to="/servizi" className="base-btn btn-secondary booking-button--full home-section-button services-preview-cta__button">
+          <SecondaryButton to="/servizi" className="booking-button--full home-section-button services-preview-cta__button">
             Scopri tutti i nostri servizi
-          </Link>
+          </SecondaryButton>
         </div>
 
       </div>

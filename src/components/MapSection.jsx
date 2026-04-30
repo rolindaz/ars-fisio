@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Section from "./Section";
-import { Link } from "react-router-dom";
+import SecondaryButton from "./SecondaryButton";
 
 const locations = [
   {
@@ -50,9 +50,9 @@ export default function MapSection({ showCta = true }) {
 
       {showCta && (
         <div className="map-button-container flex justify-center mt-8">
-          <Link to="/contatti" className="base-btn btn-secondary booking-button--full home-section-button">
+          <SecondaryButton to="/contatti" className="booking-button--full home-section-button">
             Vieni a trovarci
-          </Link>
+          </SecondaryButton>
         </div>
       )}
     </Section>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import SecondaryButton from "../components/SecondaryButton";
 import Section from "../components/Section";
 
 export default function NotFound() {
@@ -18,12 +18,9 @@ export default function NotFound() {
             Puoi tornare alla home page e continuare la navigazione da li.
           </p>
 
-          <Link
-            to="/"
-            className="base-btn btn-secondary booking-button--full inline-flex"
-          >
+          <SecondaryButton to="/" className="booking-button--full inline-flex">
             Torna alla home
-          </Link>
+          </SecondaryButton>
         </div>
       </div>
     </Section>

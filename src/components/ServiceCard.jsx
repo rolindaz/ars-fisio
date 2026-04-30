@@ -1,3 +1,5 @@
+import SecondaryButton from "./SecondaryButton";
+
 const serviceCardCtaHref = "tel:+390696040737";
 
 export default function ServiceCard({
@@ -36,12 +38,12 @@ export default function ServiceCard({
             <div className="service-card-description-wrap">
               <p className="service-card-description text-sm">{description}</p>
             </div>
-            <a
+            <SecondaryButton
               href={serviceCardCtaHref}
-              className={`base-btn btn-secondary service-card-cta self-start ${align === "right" ? "md:self-end" : "md:self-start"}`}
+              className={`service-card-cta self-start ${align === "right" ? "md:self-end" : "md:self-start"}`}
             >
               Richiedi informazioni
-            </a>
+            </SecondaryButton>
           </div>
 
           <div
