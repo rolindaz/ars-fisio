@@ -593,11 +593,16 @@ a:visited:active {
 
 /* #region ServicesPreviewSection */
 
+.neg-mar-top {
+  margin-top: -2.75rem;
+}
+
 .mobile-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
+  margin-left: ;
 }
 
 .services-preview-content {
@@ -616,11 +621,12 @@ a:visited:active {
 }
 
 .services-preview-mobile__row--center {
-  margin-top: -2.75rem;
+  align-self: center;
 }
 
-.services-preview-mobile__row--raised {
-  margin-top: -2.75rem;
+.services-preview-mobile__row--side {
+  align-self: start;
+  margin-left: .85rem;
 }
 
 .services-preview-mobile .hex-container {
@@ -1850,9 +1856,13 @@ a:visited:active {
 
 /* #endregion Animazioni */
 
-/* #region Responsive */
 
 @media (min-width: 768px) {
+
+  .mobile-grid {
+    display: none;
+  }
+
   .hex-container {
     margin-inline: 0;
     width: 15.7rem;
@@ -1880,9 +1890,5 @@ a:visited:active {
     margin-top: 0.35rem;
   }
 
-  .mobile-grid {
-    display: none;
-  }
+  
 }
-
-/* #endregion Responsive */

@@ -4,7 +4,7 @@ import services from "../../assets/services/services.js";
 import { Link } from "react-router-dom";
 
 const ServicesPreview = () => {
-  const mobileServices = services.slice(0, 7);
+  const mobileServices = services.slice(0, 8);
 
   return (
     <Section id="servizi-home">
@@ -13,7 +13,7 @@ const ServicesPreview = () => {
       </h2>
 
       <div className="mobile-grid services-preview-content services-preview-mobile">
-        <div className="services-preview-mobile__row">
+        <div className="services-preview-mobile__row--center">
           {mobileServices.slice(0, 2).map((s, i) => (
             <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
               <HexCard {...s} />
@@ -21,16 +21,24 @@ const ServicesPreview = () => {
           ))}
         </div>
 
-        <div className="services-preview-mobile__row services-preview-mobile__row--center">
-          {mobileServices.slice(2, 5).map((s, i) => (
+        <div className="services-preview-mobile__row services-preview-mobile__row--side neg-mar-top">
+          {mobileServices.slice(2, 4).map((s, i) => (
             <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
               <HexCard {...s} />
             </Link>
           ))}
         </div>
 
-        <div className="services-preview-mobile__row services-preview-mobile__row--raised">
-          {mobileServices.slice(5, 7).map((s, i) => (
+        <div className="services-preview-mobile__row services-preview-mobile__row--center neg-mar-top">
+          {mobileServices.slice(4, 6).map((s, i) => (
+            <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
+              <HexCard {...s} />
+            </Link>
+          ))}
+        </div>
+
+        <div className="services-preview-mobile__row services-preview-mobile__row--side neg-mar-top">
+          {mobileServices.slice(6, 8).map((s, i) => (
             <Link key={i} to={`/servizi#${s.slug}`} className="hex-link" aria-label={`Vai al servizio ${s.title}`}>
               <HexCard {...s} />
             </Link>
