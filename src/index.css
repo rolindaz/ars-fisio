@@ -196,8 +196,8 @@ a:visited:active {
     width: 73%;
     background-image: url("/staff/gruppo-3.webp");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 60% center;
+    background-size: auto 112%;
+    background-position: 40% center;
     z-index: 0;
   }
 
