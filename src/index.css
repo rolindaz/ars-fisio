@@ -757,6 +757,10 @@ a:visited:active {
   background: var(--logo-dark);
 }
 
+.services-preview-mobile .hex-container:hover {
+  transform: none;
+}
+
 .services-preview-mobile .hex-overlay {
   background: #23527fab;
 }
