@@ -14,7 +14,7 @@ export default function Home() {
             <span className="block">a Roma Nord</span>
           </>
         )}
-        subtitle={"Professionalità, competenza e un approccio giovane per accompagnarti verso il tuo benessere."}
+        subtitle={"Professionalità, competenza e un approccio giovane per il tuo benessere."}
         ctaText="Prenota ora"
       />
       <ServicesPreview/>

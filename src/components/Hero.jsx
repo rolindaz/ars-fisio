@@ -27,13 +27,13 @@ export default function Hero({title, subtitle, ctaText}) {
 
             <div className="hero-shell relative z-10">
                 <div className="hero-copy">
-                <h1 className="hero-title w-full font-heading text-4xl mb-4">
+                <h1 className="hero-title w-full font-heading text-[2.5rem] mb-4">
                     {title}
                 </h1>
 
                 {
                     subtitle &&
-                    <p className="hero-subtitle font-sans text-xl md:text-2xl mb-6">
+                    <p className="hero-subtitle font-sans text-2xl font-medium mb-6">
                         {subtitle}
                     </p>
                 }
