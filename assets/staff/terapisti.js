@@ -10,7 +10,7 @@ const terapisti = [
   },
   { 
     name: "Flaminia d'Isa",
-    caption: "Fisioterapista",
+    caption: "Fisioterapista e coordinatrice del team di fisioterapia",
     image: "/staff/terapisti/flaminiaNoBg.webp",
     description: [
       "Mi sono specializzata in posturale secondo Mézières e riabilitazione di spalla.",

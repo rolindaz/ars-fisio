@@ -9,7 +9,7 @@ export default function ChiSiamo() {
 
   return (
     <Section>
-      <div className="mx-auto max-w-7xl space-y-20 px-4 md:px-6">
+      <div className="mx-auto max-w-7xl space-y-20">
         {/* THERAPISTS */}
         <div>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8 text-center">

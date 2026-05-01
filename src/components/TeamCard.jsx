@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SmoothImage from "./SmoothImage";
 
 export default function TeamCard({
@@ -10,7 +10,10 @@ export default function TeamCard({
   variant,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [descriptionHasOverflow, setDescriptionHasOverflow] = useState(false);
+  const [descriptionIsAtEnd, setDescriptionIsAtEnd] = useState(false);
   const lastTapToggleRef = useRef(0);
+  const descriptionRef = useRef(null);
   const tapGestureRef = useRef({
     pointerId: null,
     startedAt: 0,
@@ -24,6 +27,43 @@ export default function TeamCard({
     : description
       ? [description]
       : [];
+
+  const updateDescriptionOverflowState = () => {
+    const descriptionElement = descriptionRef.current;
+
+    if (!descriptionElement) {
+      setDescriptionHasOverflow(false);
+      setDescriptionIsAtEnd(false);
+      return;
+    }
+
+    const { scrollHeight, clientHeight, scrollTop } = descriptionElement;
+    const hasOverflow = scrollHeight - clientHeight > 4;
+    const isAtEnd = !hasOverflow || scrollTop + clientHeight >= scrollHeight - 4;
+
+    setDescriptionHasOverflow(hasOverflow);
+    setDescriptionIsAtEnd(isAtEnd);
+  };
+
+  useEffect(() => {
+    updateDescriptionOverflowState();
+
+    const descriptionElement = descriptionRef.current;
+
+    if (!descriptionElement || typeof ResizeObserver === "undefined") {
+      return undefined;
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateDescriptionOverflowState();
+    });
+
+    resizeObserver.observe(descriptionElement);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [descriptionParagraphs.length, isFlipped]);
 
   const isTapFlipContext = () => {
     if (typeof window === "undefined") {
@@ -40,11 +80,31 @@ export default function TeamCard({
       return;
     }
 
-    if (event.target.closest("a")) {
+    if (event.target.closest("a, button, [data-team-card-scroll]")) {
       return;
     }
 
     setIsFlipped((current) => !current);
+  };
+
+  const handleDescriptionScroll = () => {
+    updateDescriptionOverflowState();
+  };
+
+  const handleScrollToDescriptionEnd = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const descriptionElement = descriptionRef.current;
+
+    if (!descriptionElement) {
+      return;
+    }
+
+    descriptionElement.scrollTo({
+      top: descriptionElement.scrollHeight,
+      behavior: "smooth",
+    });
   };
 
   const resetTapGesture = () => {
@@ -133,11 +193,11 @@ export default function TeamCard({
 
   return (
     <>
-      <div className="group perspective mx-auto w-fit">
+      <div className="group perspective mx-auto w-full max-w-[340px] sm:w-[362px] md:w-[372px]">
         <div className="flex flex-col items-center">
           <div
             className={`team-card-inner ${isFlipped ? "team-card-inner--flipped" : ""} corners transform-style flex items-end justify-center overflow-visible bg-transparent
-          h-[460px] w-[340px] shadow-xl mb-4 sm:h-[477px] sm:w-[362px] md:h-[487px] md:w-[372px] md:shadow-2xl md:mb-6
+          h-[460px] w-full  shadow-xl mb-4 sm:h-[477px] md:h-[487px]  md:shadow-2xl md:mb-6
         `}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
@@ -162,19 +222,49 @@ export default function TeamCard({
             </div>
 
             <div className="team-card-back absolute corners-inverted inset-0 backface-hidden rotate-y-180">
-              <div className="team-card-back-bg px-5 flex flex-col justify-center">
-                <div className="team-card-description text-base">
+              <div className="team-card-back-bg relative px-5 py-6 flex flex-col justify-center">
+                <div
+                  ref={descriptionRef}
+                  data-team-card-scroll
+                  className="team-card-description overflow-y-auto pb-12 space-y-3 text-base"
+                  onScroll={handleDescriptionScroll}
+                >
                   {descriptionParagraphs.map((paragraph, index) => (
                     <p
                       key={`${name}-paragraph-${index}`}
-                      className={
-                        index < descriptionParagraphs.length - 1 ? "mb-3" : ""
-                      }
                     >
                       {paragraph}
                     </p>
                   ))}
                 </div>
+
+                {descriptionHasOverflow && !descriptionIsAtEnd ? (
+                  <div className="pointer-events-none absolute inset-x-5 bottom-0 flex justify-center pb-3 pt-10 team-card-description-fade">
+                    <button
+                      type="button"
+                      className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(44,103,160,0.18)] bg-white/92 text-[var(--logo-main)] shadow-[0_12px_28px_-18px_rgba(18,50,80,0.6)] transition-transform duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(44,103,160,0.45)]"
+                      onClick={handleScrollToDescriptionEnd}
+                      onPointerDown={(event) => event.stopPropagation()}
+                      aria-label={`Scorri fino alla fine della descrizione di ${name}`}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 20 20"
+                        className="h-4 w-4"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.5 7.5L10 13L15.5 7.5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                ) : null}
               </div>
 
               {socials && (
