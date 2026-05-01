@@ -701,7 +701,7 @@ a:visited:active {
 .hex-title {
   color: #fff;
   font-weight: 500;
-  font-size: 1.875rem;
+  font-size: 2rem;
   line-height: 2rem;
 }
 
@@ -781,8 +781,17 @@ a:visited:active {
 }
 
 .services-preview-mobile .hex-title {
-  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+  width: min(100%, 6.6rem);
+  min-height: calc(1.08rem * 2);
+  font-size: 1rem;
   line-height: 1.08rem;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hex-grid {
