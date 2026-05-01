@@ -226,7 +226,7 @@ export default function TeamCard({
                 <div
                   ref={descriptionRef}
                   data-team-card-scroll
-                  className="team-card-description overflow-y-auto pb-12 space-y-3 text-base"
+                  className="team-card-description overflow-y-auto space-y-3 text-base"
                   onScroll={handleDescriptionScroll}
                 >
                   {descriptionParagraphs.map((paragraph, index) => (
