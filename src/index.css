@@ -123,7 +123,16 @@ a:visited:active {
 }
 
 .hero-mobile-overlay {
-  background: linear-gradient(180deg, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 50%) 25%, rgb(255 255 255 / 20%) 30%, rgb(255 255 255 / 35%) 38%, rgb(255 255 255 / 75%) 45%, rgb(255 255 255 / 80%) 50%, rgb(255 255 255 / 100%) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 30%) 0%,
+    rgb(255 255 255 / 50%) 25%,
+    rgb(255 255 255 / 20%) 30%,
+    rgb(255 255 255 / 35%) 38%,
+    rgb(255 255 255 / 75%) 45%,
+    rgb(255 255 255 / 80%) 50%,
+    rgb(255 255 255 / 100%) 100%
+  );
 }
 
 .hero-media,
@@ -564,8 +573,12 @@ a:visited:active {
 
 .btn-secondary {
   color: var(--logo-dark);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 251, 254, 0.94) 42%, rgba(239, 246, 251, 0.94) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(247, 251, 254, 0.94) 42%,
+    rgba(239, 246, 251, 0.94) 100%
+  );
   backdrop-filter: blur(8px);
   border: 1px solid rgba(35, 82, 127, 0.28);
   box-shadow:
@@ -585,7 +598,11 @@ a:visited:active {
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
   color: white;
-  background: linear-gradient(180deg, rgba(92, 139, 180, 0.98) 0%, rgba(64, 109, 150, 0.98) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(92, 139, 180, 0.98) 0%,
+    rgba(64, 109, 150, 0.98) 100%
+  );
   border-color: rgba(35, 82, 127, 0.46);
   transform: translateY(-2px);
   box-shadow: 0 16px 28px -22px rgba(18, 50, 80, 0.24);
@@ -593,7 +610,11 @@ a:visited:active {
 
 .btn-secondary:active {
   color: white;
-  background: linear-gradient(180deg, rgba(78, 122, 162, 0.98) 0%, rgba(54, 95, 134, 0.98) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(78, 122, 162, 0.98) 0%,
+    rgba(54, 95, 134, 0.98) 100%
+  );
   border-color: rgba(35, 82, 127, 0.52);
   transform: scale(0.96);
 }
@@ -1224,8 +1245,15 @@ a:visited:active {
 /* #region LavoraConNoi */
 
 .bg-wwu {
-  background-color: #edf4fa;
-  background-image: url("/grpVerticalEdited.webp");
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 100%) 0%,
+      rgb(255 255 255 / 65%) 15%,
+      rgb(255 255 255 / 20%) 25%,
+      rgb(255 255 255 / 0%) 100%
+    ),
+    url(/grpVerticalEdited.webp);
   background-position: 0 42%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1269,7 +1297,6 @@ a:visited:active {
 .header-wwu {
   text-align: center;
   margin-bottom: 2.5rem;
-  color: var(--logo-main);
 }
 
 .form-wwu {
@@ -1429,7 +1456,7 @@ a:visited:active {
   height: 95%;
   width: 100%;
   overflow: hidden;
-  padding-inline: .25rem;
+  padding-inline: 0.25rem;
 }
 
 .team-card-image {
