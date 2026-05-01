@@ -50,7 +50,8 @@ function Footer() {
             navWrapperClassName="site-footer__center flex flex-col items-center justify-center gap-6 lg:flex-1 lg:px-8"
             navClassName="site-footer__links flex flex-col gap-3 text-sm md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-5 md:gap-y-3"
             linkClassName="site-footer-link"
-            actionsClassName="site-footer__actions flex flex-col-reverse items-center justify-center gap-3 lg:min-w-[16rem]"
+            actionsClassName="site-footer__actions flex items-center justify-center lg:min-w-[8rem]"
+            showBookingButton={false}
             navSupplement={(
               <p className="site-footer-copy text-xs text-center">
                 ⓒ 2026 Ars Fisio - Tutti i diritti riservati

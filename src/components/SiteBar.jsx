@@ -35,6 +35,7 @@ export default function SiteBar({
   actionsClassName = "",
   socialTheme = "light",
   navSupplement = null,
+  showBookingButton = true,
 }) {
   return (
     <div className={`site-bar ${wrapperClassName}`.trim()}>
@@ -65,7 +66,7 @@ export default function SiteBar({
 
       <div className={`site-bar__actions ${actionsClassName}`.trim()}>
         <SocialLinks theme={socialTheme} />
-        <BookingButton />
+        {showBookingButton ? <BookingButton /> : null}
       </div>
     </div>
   );
