@@ -26,6 +26,9 @@ export default function LavoraConNoiForm() {
           type="text"
           name="nome"
           required
+          autoComplete="name"
+          pattern="^[A-Za-zÀ-ÖØ-öø-ÿ'’\-\s]+$"
+          title="Inserisci solo lettere, spazi, apostrofi o trattini."
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
       </div>
@@ -36,6 +39,7 @@ export default function LavoraConNoiForm() {
           type="email"
           name="email"
           required
+          autoComplete="email"
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
       </div>
@@ -46,16 +50,19 @@ export default function LavoraConNoiForm() {
           type="tel"
           name="telefono"
           required
+          autoComplete="tel"
+          inputMode="numeric"
+          pattern="^[0-9]+$"
+          title="Inserisci solo numeri."
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">Il tuo messaggio *</label>
+        <label className="label-form-wwu">Il tuo messaggio</label>
         <textarea
           name="messaggio"
           rows="4"
-          required
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         ></textarea>
       </div>
@@ -77,6 +84,7 @@ export default function LavoraConNoiForm() {
           id="cv-upload"
           type="file"
           name="cv"
+          required
           onChange={(event) => {
             const file = event.target.files?.[0];
             setSelectedFileName(file ? file.name : "Nessun file selezionato");
