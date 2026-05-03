@@ -1,7 +1,36 @@
+import { useEffect } from "react";
 import SecondaryButton from "../components/SecondaryButton";
 import Section from "../components/Section";
 
 export default function NotFound() {
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = "Pagina non trovata | Ars Fisio";
+
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    const hadRobotsMeta = Boolean(robotsMeta);
+    const previousRobotsContent = robotsMeta?.getAttribute("content") ?? "";
+
+    if (!robotsMeta) {
+      robotsMeta = document.createElement("meta");
+      robotsMeta.setAttribute("name", "robots");
+      document.head.appendChild(robotsMeta);
+    }
+
+    robotsMeta.setAttribute("content", "noindex, nofollow");
+
+    return () => {
+      document.title = previousTitle;
+
+      if (hadRobotsMeta) {
+        robotsMeta.setAttribute("content", previousRobotsContent);
+        return;
+      }
+
+      robotsMeta.remove();
+    };
+  }, []);
+
   return (
     <Section className="max-w-4xl py-16">
       <div className="overflow-hidden rounded-[32px] border border-[rgba(44,103,160,0.12)] bg-white/90 shadow-[0_30px_60px_-40px_rgba(18,50,80,0.55)]">
