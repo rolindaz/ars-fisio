@@ -7,8 +7,7 @@ import services from "../../assets/services/services";
 export default function Servizi() {
   const location = useLocation();
   const [highlightedService, setHighlightedService] = useState("");
-  const left = services.filter((_, i) => i % 2 === 0);
-  const right = services.filter((_, i) => i % 2 !== 0);
+  const hasOddServiceCount = services.length % 2 !== 0;
 
   useEffect(() => {
     if (!location.hash) {
@@ -46,20 +45,27 @@ export default function Servizi() {
 
         <div className="relative">
           <div className="servizi-page-bg pointer-events-none absolute inset-0 flex justify-center opacity-40"></div>
-            <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2 md:gap-32">
-              {/* LEFT COLUMN */}
-              <div className="flex flex-col gap-10 md:gap-12">
-                {left.map((s, i) => (
-                  <ServiceCard key={s.slug} {...s} align="right" delay={i*100} isHighlighted={highlightedService === s.slug} />
-                ))}
-              </div>
+            <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-32 md:gap-y-12">
+              {services.map((service, index) => {
+                const isLastOddCard = hasOddServiceCount && index === services.length - 1;
+                const align = isLastOddCard ? "left" : index % 2 === 0 ? "right" : "left";
 
-              {/* RIGHT COLUMN */}
-              <div className="flex flex-col gap-10 md:gap-12">
-                {right.map((s, i) => (
-                  <ServiceCard key={s.slug} {...s} align="left" delay={i*100} isHighlighted={highlightedService === s.slug} />
-                ))}
-              </div>
+                return (
+                  <div
+                    key={service.slug}
+                    className={isLastOddCard ? "md:col-span-2 md:flex md:justify-center" : ""}
+                  >
+                    <div className={isLastOddCard ? "md:w-full md:max-w-[calc((100%-8rem)/2)]" : "w-full"}>
+                      <ServiceCard
+                        {...service}
+                        align={align}
+                        delay={index * 100}
+                        isHighlighted={highlightedService === service.slug}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
         </div>
       </Section>

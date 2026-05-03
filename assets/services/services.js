@@ -49,6 +49,13 @@ const services = [
       "Tipo di fisioterapia di stampo anglosassone che si basa su tecniche di mobilizzazione articolare ed esercizio terapeutico.",
   },
   {
+    slug: "linfodrenaggio",
+    title: "Linfodrenaggio",
+    image: "/services/linfodrenaggio.png",
+    description:
+      "Tecnica manuale che stimola il sistema linfatico, riduce gonfiore e favorisce drenaggio dei liquidi in eccesso.",
+  },
+  {
     slug: "magneto-terapia",
     title: "Magneto-Terapia",
     image: "/services/magneto-terapia.png",
