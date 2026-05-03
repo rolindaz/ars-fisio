@@ -19,9 +19,9 @@ export default function Home() {
         ctaText="Prenota ora"
       />
       <ServicesPreview/>
+      <StaffPreview image={'/staff/staff_preview_no_bg_crop.webp'} text={"Con Ars Fisio portiamo la fisioterapia di alto livello a Roma Nord."}/>
       <ReviewsSection/>
       <Network/>
-      <StaffPreview image={'/staff/staff_preview_no_bg_crop.webp'} text={"Con Ars Fisio portiamo la fisioterapia di alto livello a Roma Nord."}/>
       <MapSection/>
     </>
   )
