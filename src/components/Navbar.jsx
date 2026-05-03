@@ -36,7 +36,7 @@ export default function Navbar() {
                 <div className="flex h-full items-center justify-between gap-3 md:hidden">
                     <Link to="/" className="inline-flex items-center shrink-0">
                         <SmoothImage
-                        src="/logo-fisio.svg"
+                        src="/logos/logo-fisio.svg"
                         alt="Logo Ars Fisio"
                         wrapperClassName="inline-flex items-center shrink-0"
                         className="h-[4rem] w-auto"
@@ -60,13 +60,13 @@ export default function Navbar() {
                     >
                         <span className="relative inline-flex h-10 w-10 items-center justify-center">
                             <img
-                                src="/hamburger.png"
+                                src="/icons/hamburger.png"
                                 alt=""
                                 className={`absolute h-10 w-10 object-contain transition-all duration-300 ease-out ${open ? "scale-75 opacity-0 rotate-90" : "scale-100 opacity-100 rotate-0"}`}
                                 aria-hidden="true"
                             />
                             <img
-                                src="/close.png"
+                                src="/icons/close.png"
                                 alt=""
                                 className={`absolute h-6 w-6 object-contain transition-all duration-300 ease-out ${open ? "scale-100 opacity-100 rotate-0" : "scale-75 opacity-0 -rotate-90"}`}
                                 aria-hidden="true"

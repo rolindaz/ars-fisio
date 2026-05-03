@@ -40,7 +40,7 @@ export default function SiteBar({
     <div className={`site-bar ${wrapperClassName}`.trim()}>
       <Link to="/" className={`site-bar__brand ${logoLinkClassName}`.trim()}>
         <SmoothImage
-          src="/logo-fisio.svg"
+          src="/logos/logo-fisio.svg"
           alt="Ars Fisio"
           className={`site-bar__logo ${logoClassName}`.trim()}
           wrapperClassName="inline-flex items-center"

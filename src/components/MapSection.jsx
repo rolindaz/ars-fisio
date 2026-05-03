@@ -45,6 +45,8 @@ export default function MapSection({ showCta = true }) {
           src={locations[activeTab].map}
           className="map-iframe"
           loading="lazy"
+          title={`Mappa di ${locations[activeTab].name}`}
+          referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
       </div>
 

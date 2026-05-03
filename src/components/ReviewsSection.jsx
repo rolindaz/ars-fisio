@@ -8,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Section from "./Section";
-import { Link } from "react-router-dom";
 import SmoothImage from "./SmoothImage";
 
 const REVIEWS_URL = "/reviews.json";
@@ -38,12 +37,12 @@ export default function ReviewsSection() {
         {/* Prev button */}
         <div className="prev-btn">
           <button type="button" className="swiper-nav-btn" aria-label="Recensione precedente">
-            <img src="/prev-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
+            <img src="/icons/prev-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
           </button>
         </div>
 
         {loading ? (
-        <div className="text-center">
+        <div className="text-center" aria-live="polite">
             Caricamento recensioni...
         </div>
         ) : (
@@ -68,13 +67,13 @@ export default function ReviewsSection() {
               const rating = review.rating || 5;
               return (
                 <SwiperSlide key={index}>
-                  <Link to={arsFisioGoogle}>
+                  <a href={arsFisioGoogle} target="_blank" rel="noopener noreferrer">
                     <div className="swiper-slide-custom">
                       {/* Pillola con info recensione */}
                       <div className="google-review-pill">
                         <div>
                           <SmoothImage
-                            src="/search.png"
+                            src="/icons/search.png"
                             alt=""
                             wrapperClassName="google-logo-shell"
                             className="google-logo"
@@ -107,7 +106,7 @@ export default function ReviewsSection() {
                         {review.text || review.review_text}
                       </p>
                     </div>
-                  </Link>
+                  </a>
                 </SwiperSlide>
               );
             })}
@@ -118,7 +117,7 @@ export default function ReviewsSection() {
         {/* Next button */}
         <div className="next-btn">
           <button type="button" className="swiper-nav-btn" aria-label="Recensione successiva">
-            <img src="/next-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
+            <img src="/icons/next-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
           </button>
         </div>
       </div>
