@@ -184,7 +184,42 @@ a:visited:active {
   font-size: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    background-image: url("/staff/gruppo-3.webp");
+    background-position: 62% center;
+    background-size: cover;
+  }
+
+  .hero-mobile-overlay {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.92) 22%,
+      rgba(255, 255, 255, 0.72) 42%,
+      rgba(255, 255, 255, 0.2) 64%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .hero-copy {
+    align-items: flex-start;
+    margin-inline: 0;
+    max-width: min(29rem, 52%);
+    text-align: left;
+  }
+
+  .hero-title {
+    text-align: left !important;
+  }
+
+  .hero-subtitle {
+    margin-inline: 0;
+  }
+}
+
+@media (min-width: 1024px) {
   .hero {
     background-image: none;
   }
@@ -389,10 +424,11 @@ a:visited:active {
   .swiper-container {
     position: relative;
     left: 50%;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: none;
     margin-inline: 0;
     transform: translateX(-50%);
+    width: min(100dvw, calc(100% + 2rem));
   }
 
   .reviews-swiper-shell {
@@ -1021,10 +1057,11 @@ a:visited:active {
   .map-section .map-container {
     position: relative;
     left: 50%;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: none;
     margin-inline: 0;
     transform: translateX(-50%);
+    width: min(100dvw, calc(100% + 2rem));
     border-radius: 0;
   }
 }
