@@ -25,9 +25,11 @@ export default function Navbar() {
                         links={navLinks}
                         wrapperClassName="w-full items-center gap-6"
                         logoClassName="h-[4.5rem] w-auto md:h-[5rem]"
-                        navClassName="hidden md:flex flex-1 items-center justify-center gap-6 font-heading uppercase"
+                        navWrapperClassName="flex flex-1 items-center justify-center gap-6"
+                        navClassName="hidden md:flex items-center justify-center gap-6 font-heading uppercase"
                         linkClassName="text-[var(--logo-main)] transition-colors hover:text-[var(--logo-dark)]"
-                        actionsClassName="hidden md:flex items-center gap-4"
+                        actionsClassName="hidden md:flex items-center"
+                        navSupplement={<SocialLinks className="hidden md:flex items-center gap-2" />}
                     />
                 </div>
 

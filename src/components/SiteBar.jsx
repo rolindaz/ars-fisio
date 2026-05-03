@@ -65,7 +65,6 @@ export default function SiteBar({
       </div>
 
       <div className={`site-bar__actions ${actionsClassName}`.trim()}>
-        <SocialLinks theme={socialTheme} />
         {showBookingButton ? <BookingButton /> : null}
       </div>
     </div>
