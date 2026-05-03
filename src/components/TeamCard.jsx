@@ -211,7 +211,7 @@ export default function TeamCard({
           >
             <div className="team-card-inner-front corners backface-hidden">
               <div className="team-card-inner-front-bg corners" />
-              <div className="h-[90%] team-card-image-shell">
+              <div className="team-card-image-shell">
                 <SmoothImage
                   wrapperClassName="team-card-image-shell"
                   className="team-card-image relative z-10 object-cover object-bottom max-h-full"
