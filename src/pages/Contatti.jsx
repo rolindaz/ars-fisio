@@ -1,4 +1,5 @@
 import MapSection from "../components/MapSection";
+import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 
 const contacts = [
@@ -22,6 +23,10 @@ const contacts = [
 export default function Contatti() {
   return (
     <>
+      <PageMeta
+        title="Contatti | Ars Fisio"
+        description="Contatta Ars Fisio per informazioni e appuntamenti: telefono, WhatsApp, email, orari di apertura e sedi a Roma Nord."
+      />
       <Section className="max-w-6xl space-y-10 py-14">
         <header className="max-w-3xl space-y-4 mb-3">
           <h1 className="font-heading text-logo text-[clamp(2.5rem,2rem+1.7vw,55px)] leading-[clamp(2.9rem,2.6rem+1vw,3.25rem)]">

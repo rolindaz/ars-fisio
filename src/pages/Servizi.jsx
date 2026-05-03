@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 import ServiceCard from "../components/ServiceCard";
 import services from "../../assets/services/services";
@@ -38,6 +39,10 @@ export default function Servizi() {
 
   return (
     <>
+      <PageMeta
+        title="Servizi di Fisioterapia | Ars Fisio"
+        description="Esplora i servizi Ars Fisio: percorsi fisioterapici personalizzati, valutazione clinica e trattamenti dedicati al recupero e al benessere."
+      />
       <Section>
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-center text-[var(--logo-main)] mb-0">
           I nostri servizi

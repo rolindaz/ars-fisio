@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import MapSection from "../components/MapSection";
 import Network from "../components/Network";
+import PageMeta from "../components/PageMeta";
 import ReviewsSection from "../components/ReviewsSection";
 import ServicesPreview from "../components/ServicesPreview";
 import StaffPreview from "../components/StaffPreview";
@@ -8,6 +9,10 @@ import StaffPreview from "../components/StaffPreview";
 export default function Home() {
   return (
     <>
+      <PageMeta
+        title="Fisioterapia a Roma Nord | Ars Fisio"
+        description="Ars Fisio è il centro di fisioterapia a Roma Nord con un team giovane e specializzato, trattamenti personalizzati e sedi facili da raggiungere."
+      />
       <Hero
         title={(
           <>

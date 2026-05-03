@@ -1,8 +1,13 @@
 import LavoraConNoiForm from "../components/LavoraConNoiForm";
+import PageMeta from "../components/PageMeta";
 
 export default function LavoraConNoi() {
   return (
     <>
+      <PageMeta
+        title="Lavora Con Noi | Ars Fisio"
+        description="Invia la tua candidatura ad Ars Fisio e proponi una collaborazione professionale con il nostro team di fisioterapia a Roma Nord."
+      />
       <div className="bg-wwu lavora-con-noi-page">
           <div className="container-wwu">
             <div className="header-wwu">

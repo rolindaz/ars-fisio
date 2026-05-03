@@ -1,8 +1,13 @@
+import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 
 export default function PrivacyPolicy() {
   return (
     <Section className="max-w-3xl space-y-6 py-12">
+      <PageMeta
+        title="Privacy Policy | Ars Fisio"
+        description="Consulta l'informativa privacy di Ars Fisio con le informazioni sul trattamento dei dati personali raccolti tramite il sito."
+      />
       <header className="space-y-3">
         <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
           Legal

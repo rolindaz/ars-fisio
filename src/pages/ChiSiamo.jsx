@@ -1,3 +1,4 @@
+import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 import TeamCard from "../components/TeamCard";
 import terapisti from "../../assets/staff/terapisti";
@@ -9,6 +10,10 @@ export default function ChiSiamo() {
 
   return (
     <Section>
+      <PageMeta
+        title="Chi Siamo | Ars Fisio"
+        description="Scopri il team Ars Fisio: fisioterapisti e reception uniti da competenza clinica, formazione continua e attenzione personalizzata al paziente."
+      />
       <div className="mx-auto max-w-7xl space-y-20">
         {/* THERAPISTS */}
         <div>

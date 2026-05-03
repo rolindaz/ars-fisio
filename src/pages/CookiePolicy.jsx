@@ -1,8 +1,13 @@
+import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 
 export default function CookiePolicy() {
   return (
     <Section className="max-w-3xl space-y-6 py-12">
+      <PageMeta
+        title="Cookie Policy | Ars Fisio"
+        description="Consulta la cookie policy di Ars Fisio con i dettagli su cookie, tecnologie di tracciamento e gestione del consenso sul sito."
+      />
       <header className="space-y-3">
         <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
           Legal
