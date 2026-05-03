@@ -3,25 +3,29 @@ const convenzioni = [
         title: "Fasdac",
         image: "/convenzioni/fasdac.png",
         caption: "",
-        type: "assicurazioni-dirette"
+        type: "assicurazioni-dirette",
+        website: "https://www.fasdac.it/"
     },
     {
         title: "AON",
         image: "/convenzioni/aon.png",
         caption: "",
-        type: "assicurazioni-dirette"
+        type: "assicurazioni-dirette",
+        website: "https://www.assicurazioni.aon.it/"
     },
     {
         title: "Health Assicurazioni",
         image: "/convenzioni/health-assicurazioni.png",
         caption: "",
-        type: "assicurazioni-dirette"
+        type: "assicurazioni-dirette",
+        website: "https://www.healthitalia.it/"
     },
     {
         title: "MBA",
         image: "/convenzioni/mba.png",
         caption: "",
-        type: "assicurazioni-dirette"
+        type: "assicurazioni-dirette",
+        website: "https://www.mbamutua.org/"
     },
     {
         title: "Ministero degli Affari Esteri",

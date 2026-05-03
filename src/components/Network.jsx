@@ -33,18 +33,36 @@ export default function Network() {
               <div className="flex flex-1 rounded-[1.75rem] justify-center gap-4 px-6 py-7 md:px-8 md:py-8 border border-[rgba(44,103,160,0.12)] bg-[linear-gradient(180deg,rgba(248,252,255,0.98)_0%,rgba(232,242,249,0.92)_100%)] shadow-[0_24px_46px_-34px_rgba(18,50,80,0.4)]">
                 {convenzioni
                   .filter((ente) => ente.type === item.type)
-                  .map((ente) => (
-                    <div
-                      key={ente.title}
-                      className="flex h-32 w-[12rem] items-center justify-center rounded-[1.2rem] border border-[rgba(44,103,160,0.12)] bg-white/80 px-4 py-3 shadow-[0_12px_28px_-22px_rgba(18,50,80,0.28)]"
-                    >
-                      <img
-                        src={ente.image}
-                        alt={ente.title}
-                        className="max-h-full w-auto max-w-full object-contain"
-                      />
-                    </div>
-                  ))}
+                  .map((ente) => {
+                    const imageCard = (
+                      <div
+                        className="flex h-32 w-[12rem] items-center justify-center rounded-[1.2rem] border border-[rgba(44,103,160,0.12)] bg-white/80 px-4 py-3 shadow-[0_12px_28px_-22px_rgba(18,50,80,0.28)]"
+                      >
+                        <img
+                          src={ente.image}
+                          alt={ente.title}
+                          className="max-h-full w-auto max-w-full object-contain"
+                        />
+                      </div>
+                    );
+
+                    if (ente.type === "assicurazioni-dirette" && ente.website) {
+                      return (
+                        <a
+                          key={ente.title}
+                          href={ente.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Apri il sito di ${ente.title}`}
+                          className="block transition-transform duration-200 ease-out hover:scale-[1.02]"
+                        >
+                          {imageCard}
+                        </a>
+                      );
+                    }
+
+                    return <div key={ente.title}>{imageCard}</div>;
+                  })}
               </div>
 
               <div className="mt-6">
