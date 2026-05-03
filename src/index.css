@@ -122,6 +122,23 @@ a:visited:active {
   overflow: hidden;
 }
 
+.hero-desktop-overlay {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(255 255 255 / 2%) 5%,
+    rgb(255 255 255 / 5%) 25%,
+    rgb(255 255 255 / 8%) 35%,
+    rgb(255 255 255 / 10%) 45%,
+    rgb(255 255 255 / 15%) 75%,
+    rgb(255 255 255 / 25%) 85%,
+    rgb(255 255 255 / 45%) 90%,
+    rgb(255 255 255 / 65%) 93%,
+    rgb(255 255 255 / 85%) 97%,
+    rgb(255 255 255 / 100%) 100%
+  );
+}
+
 .hero-mobile-overlay {
   background: linear-gradient(
     180deg,

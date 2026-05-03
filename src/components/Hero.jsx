@@ -4,6 +4,7 @@ import BookingButton from "./BookingButton";
 export default function Hero({title, subtitle, ctaText}) {
     return (
         <section id="top" className="hero relative">
+            <div className="hero-desktop-overlay absolute inset-0 z-10 sm:hidden md:hidden lg:block" />
             <div className="hero-mobile-overlay absolute inset-0" />
             <div className="hero-media" aria-hidden="true" />
             <div className="hero-panel" aria-hidden="true" />
