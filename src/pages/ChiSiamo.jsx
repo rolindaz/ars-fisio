@@ -13,6 +13,7 @@ export default function ChiSiamo() {
       <PageMeta
         title="Chi Siamo | Ars Fisio"
         description="Scopri il team Ars Fisio: fisioterapisti e reception uniti da competenza clinica, formazione continua e attenzione personalizzata al paziente."
+        path="/chi-siamo"
       />
       <div className="mx-auto max-w-7xl space-y-20">
         {/* THERAPISTS */}

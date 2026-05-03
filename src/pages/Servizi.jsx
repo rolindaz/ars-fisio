@@ -42,6 +42,7 @@ export default function Servizi() {
       <PageMeta
         title="Servizi di Fisioterapia | Ars Fisio"
         description="Esplora i servizi Ars Fisio: percorsi fisioterapici personalizzati, valutazione clinica e trattamenti dedicati al recupero e al benessere."
+        path="/servizi"
       />
       <Section>
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-center text-[var(--logo-main)] mb-0">

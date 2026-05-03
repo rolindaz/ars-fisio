@@ -7,6 +7,7 @@ export default function CookiePolicy() {
       <PageMeta
         title="Cookie Policy | Ars Fisio"
         description="Consulta la cookie policy di Ars Fisio con i dettagli su cookie, tecnologie di tracciamento e gestione del consenso sul sito."
+        path="/cookie-policy"
       />
       <header className="space-y-3">
         <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">

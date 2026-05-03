@@ -12,6 +12,9 @@ export default function Home() {
       <PageMeta
         title="Fisioterapia a Roma Nord | Ars Fisio"
         description="Ars Fisio è il centro di fisioterapia a Roma Nord con un team giovane e specializzato, trattamenti personalizzati e sedi facili da raggiungere."
+        path="/"
+        ogTitle="Ars Fisio | Fisioterapia e osteopatia a Roma Nord"
+        ogDescription="Ars Fisio: fisioterapia, osteopatia e riabilitazione a Roma Nord. Scopri servizi, team, convenzioni e contatti."
       />
       <Hero
         title={(

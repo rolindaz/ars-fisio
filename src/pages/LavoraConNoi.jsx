@@ -7,6 +7,7 @@ export default function LavoraConNoi() {
       <PageMeta
         title="Lavora Con Noi | Ars Fisio"
         description="Invia la tua candidatura ad Ars Fisio e proponi una collaborazione professionale con il nostro team di fisioterapia a Roma Nord."
+        path="/lavora-con-noi"
       />
       <div className="bg-wwu lavora-con-noi-page">
           <div className="container-wwu">

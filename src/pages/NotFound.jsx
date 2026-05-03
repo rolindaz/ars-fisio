@@ -7,7 +7,8 @@ export default function NotFound() {
     <Section className="max-w-4xl py-16">
       <PageMeta
         title="Pagina non trovata | Ars Fisio"
-        description="La pagina richiesta non e disponibile. Torna alla home Ars Fisio per continuare la navigazione."
+        description="La pagina richiesta non è disponibile. Torna alla home di Ars Fisio per continuare la navigazione."
+        path="/not-found"
         robots="noindex, nofollow"
       />
       <div className="overflow-hidden rounded-[32px] border border-[rgba(44,103,160,0.12)] bg-white/90 shadow-[0_30px_60px_-40px_rgba(18,50,80,0.55)]">

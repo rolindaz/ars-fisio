@@ -26,6 +26,7 @@ export default function Contatti() {
       <PageMeta
         title="Contatti | Ars Fisio"
         description="Contatta Ars Fisio per informazioni e appuntamenti: telefono, WhatsApp, email, orari di apertura e sedi a Roma Nord."
+        path="/contatti"
       />
       <Section className="max-w-6xl space-y-10 py-14">
         <header className="max-w-3xl space-y-4 mb-3">

@@ -7,6 +7,7 @@ export default function PrivacyPolicy() {
       <PageMeta
         title="Privacy Policy | Ars Fisio"
         description="Consulta l'informativa privacy di Ars Fisio con le informazioni sul trattamento dei dati personali raccolti tramite il sito."
+        path="/privacy-policy"
       />
       <header className="space-y-3">
         <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
