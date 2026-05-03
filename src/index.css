@@ -2002,6 +2002,21 @@ a:visited:active {
     padding: 0.9rem 1.05rem;
   }
 
+  .booking-button--compact {
+    gap: 0;
+  }
+
+  .booking-button--compact:hover,
+  .booking-button--compact:focus-visible {
+    gap: 0;
+  }
+
+  .booking-button--compact:hover .booking-button__label--compact,
+  .booking-button--compact:focus-visible .booking-button__label--compact {
+    max-width: 0;
+    opacity: 0;
+  }
+
   .mobile-nav-booking {
     max-width: 10.5rem;
     padding-inline: 0.9rem;
@@ -2014,7 +2029,7 @@ a:visited:active {
   }
 
   .booking-overlay {
-    display: none;
+    right: 0.875rem;
   }
 }
 
