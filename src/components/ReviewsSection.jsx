@@ -37,8 +37,8 @@ export default function ReviewsSection() {
       <div className="swiper-container">
         {/* Prev button */}
         <div className="prev-btn">
-          <button style={{aspectRatio: "1/1", height: "100%"}}>
-            &#10094;
+          <button type="button" className="swiper-nav-btn" aria-label="Recensione precedente">
+            <img src="/prev-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
           </button>
         </div>
 
@@ -117,8 +117,8 @@ export default function ReviewsSection() {
 
         {/* Next button */}
         <div className="next-btn">
-          <button style={{aspectRatio: "1/1", height: "100%"}}>
-            &#10095;
+          <button type="button" className="swiper-nav-btn" aria-label="Recensione successiva">
+            <img src="/next-icon.svg" alt="" className="swiper-nav-icon" aria-hidden="true" />
           </button>
         </div>
       </div>
