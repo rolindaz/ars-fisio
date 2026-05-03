@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import BookingButton from "./BookingButton";
-import SocialLinks from "./SocialLinks";
 import SmoothImage from "./SmoothImage";
 
 function SiteBarLink({ item, className }) {
@@ -33,8 +32,8 @@ export default function SiteBar({
   navClassName = "",
   linkClassName = "",
   actionsClassName = "",
-  socialTheme = "light",
   navSupplement = null,
+  actionsSupplement = null,
   showBookingButton = true,
 }) {
   return (
@@ -65,6 +64,7 @@ export default function SiteBar({
       </div>
 
       <div className={`site-bar__actions ${actionsClassName}`.trim()}>
+        {actionsSupplement}
         {showBookingButton ? <BookingButton /> : null}
       </div>
     </div>

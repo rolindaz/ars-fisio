@@ -11,13 +11,14 @@ export default function LavoraConNoiForm() {
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      netlify
       action="/success.html"
+      netlify
       encType="multipart/form-data"
       className="form-wwu shadow-md space-y-6"
     >
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="lavora-con-noi" />
+      <input type="hidden" name="redirect" value="/success.html" />
 
       <div className="w-full">
         <label className="label-form-wwu">Nome e Cognome *</label>

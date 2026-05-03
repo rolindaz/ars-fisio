@@ -51,6 +51,7 @@ function Footer() {
             navClassName="site-footer__links flex flex-col gap-3 text-sm md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-5 md:gap-y-3"
             linkClassName="site-footer-link"
             actionsClassName="site-footer__actions flex items-center justify-center lg:min-w-[8rem]"
+            actionsSupplement={<SocialLinks className="hidden md:flex items-center gap-2" theme="light" />}
             showBookingButton={false}
             navSupplement={(
               <p className="site-footer-copy text-xs text-center">

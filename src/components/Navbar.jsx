@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import SocialLinks from "./SocialLinks"
 import BookingButton from "./BookingButton"
 import SiteBar from "./SiteBar"
 import SmoothImage from "./SmoothImage"
+import SocialLinks from "./SocialLinks"
 
 const navLinks = [
     { label: "Home", to: "/" },
