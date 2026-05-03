@@ -74,7 +74,7 @@ export default function LavoraConNoiForm() {
             htmlFor="cv-upload"
             className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
           >
-            Scegli file (max. 10 MB)
+            Scegli file (max. 8 MB)
           </label>
           <span className="text-sm text-[var(--logo-dark)]/80">
             {selectedFileName}
