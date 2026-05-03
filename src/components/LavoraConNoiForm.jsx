@@ -1,22 +1,26 @@
 import { useState } from "react";
 
 export default function LavoraConNoiForm() {
-  const [selectedFileName, setSelectedFileName] = useState("Nessun file selezionato");
+  const [selectedFileName, setSelectedFileName] = useState(
+    "Nessun file selezionato",
+  );
 
   return (
     <form
       name="lavora-con-noi"
       method="POST"
       data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      netlify
+      action="/success.html"
       encType="multipart/form-data"
       className="form-wwu shadow-md space-y-6"
     >
+      <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="lavora-con-noi" />
 
       <div className="w-full">
-        <label className="label-form-wwu">
-          Nome e Cognome *
-        </label>
+        <label className="label-form-wwu">Nome e Cognome *</label>
         <input
           type="text"
           name="nome"
@@ -26,9 +30,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">
-          Indirizzo Email *
-        </label>
+        <label className="label-form-wwu">Indirizzo Email *</label>
         <input
           type="email"
           name="email"
@@ -38,9 +40,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">
-          Numero di Telefono *
-        </label>
+        <label className="label-form-wwu">Numero di Telefono *</label>
         <input
           type="tel"
           name="telefono"
@@ -50,9 +50,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">
-          Il tuo messaggio *
-        </label>
+        <label className="label-form-wwu">Il tuo messaggio *</label>
         <textarea
           name="messaggio"
           rows="4"
@@ -62,17 +60,17 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">
-          Carica il tuo CV *
-        </label>
+        <label className="label-form-wwu">Carica il tuo CV *</label>
         <div className="input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <label
             htmlFor="cv-upload"
             className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
           >
-            Scegli file
+            Scegli file (max. 10 MB)
           </label>
-          <span className="text-sm text-[var(--logo-dark)]/80">{selectedFileName}</span>
+          <span className="text-sm text-[var(--logo-dark)]/80">
+            {selectedFileName}
+          </span>
         </div>
         <input
           id="cv-upload"
@@ -91,14 +89,17 @@ export default function LavoraConNoiForm() {
           <label className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
             <input
               type="checkbox"
+              name="privacy"
               required
               className="h-4 w-4 shrink-0 accent-[var(--logo-dark)]"
             />
             <span>
-              Autorizzo il trattamento dei miei dati personali in conformità con l'
+              Autorizzo il trattamento dei miei dati personali in conformità con
+              l'
               <a href="/privacy-policy" className="underline text-logoDark">
                 informativa sulla privacy
-              </a>.
+              </a>
+              .
             </span>
           </label>
         </div>

@@ -6,7 +6,6 @@ import ChiSiamo from "./pages/ChiSiamo";
 import Servizi from "./pages/Servizi";
 import Contatti from "./pages/Contatti";
 import LavoraConNoi from "./pages/LavoraConNoi";
-import Success from "./pages/Success";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
@@ -21,7 +20,6 @@ function App() {
           <Route path="servizi" element={<Servizi />} />
           <Route path="contatti" element={<Contatti />} />
           <Route path="lavora-con-noi" element={<LavoraConNoi />} />
-          <Route path="success" element={<Success />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="cookie-policy" element={<CookiePolicy />} />
           <Route path="*" element={<NotFound />} />

@@ -35,11 +35,13 @@
   <body>
     <div id="root"></div>
     <form name="lavora-con-noi" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
       <input type="text" name="nome" />
       <input type="email" name="email" />
       <input type="tel" name="telefono" />
       <textarea name="messaggio"></textarea>
       <input type="file" name="cv" />
+      <input type="checkbox" name="privacy" />
     </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>

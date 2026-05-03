@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidatura inviata | Ars Fisio</title>
+    <style>
+      :root {
+        --logo-main: #2c67a0;
+        --logo-dark: #23527f;
+        --text-info: rgb(75 85 99);
+        --surface: rgba(255, 255, 255, 0.84);
+        --surface-border: rgba(44, 103, 160, 0.16);
+        --shadow: 0 24px 48px -32px rgba(18, 50, 80, 0.42);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        font-family: "Noto Sans", system-ui, sans-serif;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.72) 22%,
+            rgba(255, 255, 255, 0.24) 100%
+          ),
+          url("/grpVerticalEdited.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: var(--text-info);
+      }
+
+      .success-card {
+        width: min(100%, 42rem);
+        padding: 2.25rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 1.5rem;
+        background: var(--surface);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .success-logo {
+        display: block;
+        width: min(12rem, 48vw);
+        margin: 0 auto 1.5rem;
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        font-family: "Alan Sans", "Open Sans", sans-serif;
+        font-size: clamp(2rem, 5vw, 2.7rem);
+        line-height: 1.1;
+        color: var(--logo-main);
+      }
+
+      p {
+        margin: 0 auto;
+        max-width: 34rem;
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .success-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.75rem;
+        padding: 1rem 1.6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(35, 82, 127, 0.28);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(239, 246, 251, 0.94) 100%);
+        color: var(--logo-dark);
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 12px 24px -22px rgba(18, 50, 80, 0.28);
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .success-button:hover,
+      .success-button:focus-visible {
+        background: linear-gradient(180deg, rgba(92, 139, 180, 0.98) 0%, rgba(64, 109, 150, 0.98) 100%);
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 16px 26px -20px rgba(18, 50, 80, 0.32);
+      }
+
+      @media (max-width: 767px) {
+        body {
+          padding: 1.25rem;
+          background-image:
+            linear-gradient(rgba(255, 255, 255, 0.92) 0%),
+            url("/logo-fisio-no-text.svg");
+          background-position: center top;
+        }
+
+        .success-card {
+          padding: 1.75rem 1.25rem;
+          border-radius: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="success-card">
+      <img class="success-logo" src="/logo-fisio.svg" alt="Ars Fisio" />
+      <h1>Grazie per averci scritto.</h1>
+      <p>
+        Abbiamo ricevuto la tua candidatura con successo. Ti ricontatteremo il prima possibile se il tuo profilo e in linea con le nostre esigenze.
+      </p>
+      <a class="success-button" href="/">Back to homepage</a>
+    </main>
+  </body>
+  </html>
