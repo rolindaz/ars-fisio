@@ -55,7 +55,7 @@ export default function Servizi() {
                     key={service.slug}
                     className={isLastOddCard ? "md:col-span-2 md:flex md:justify-center" : ""}
                   >
-                    <div className={isLastOddCard ? "md:w-full md:max-w-[calc((100%-8rem)/2)]" : "w-full"}>
+                    <div className={isLastOddCard ? "w-full md:max-w-[36rem]" : "w-full"}>
                       <ServiceCard
                         {...service}
                         align={align}
