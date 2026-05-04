@@ -10,14 +10,8 @@ export default function PrivacyPolicy() {
         description="Consulta l'informativa privacy di Ars Fisio con le informazioni sul trattamento dei dati personali raccolti tramite il sito."
         path="/privacy-policy"
       />
-      <header className="space-y-3">
-        <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
-          Legal
-        </p>
-        <h1 className="mb-0">Privacy Policy</h1>
-        <p className="text-base leading-7 text-[var(--subtitle-info)]">
-          L&apos;informativa privacy ufficiale di Ars Fisio è visualizzata qui sotto tramite iubenda.
-        </p>
+      <header className="space-y-3 text-center">
+        <h1 className="mb-0 text-logo text-5xl">Privacy Policy</h1>
       </header>
 
       <div className="rounded-[28px] border border-[rgba(44,103,160,0.12)] bg-white/80 p-6 shadow-[0_20px_45px_-35px_rgba(18,50,80,0.55)] md:p-8">

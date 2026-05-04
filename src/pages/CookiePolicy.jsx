@@ -10,14 +10,10 @@ export default function CookiePolicy() {
         description="Consulta la cookie policy di Ars Fisio con i dettagli su cookie, tecnologie di tracciamento e gestione del consenso sul sito."
         path="/cookie-policy"
       />
-      <header className="space-y-3">
-        <p className="font-heading uppercase tracking-[0.18em] text-[var(--logo-main)]">
-          Legal
-        </p>
-        <h1 className="mb-0">Cookie Policy</h1>
-        <p className="text-base leading-7 text-[var(--subtitle-info)]">
-          La cookie policy ufficiale di Ars Fisio è visualizzata qui sotto tramite iubenda.
-        </p>
+      <header className="text-center space-y-3">
+        <h1 className="mb-0 text-logo text-5xl">
+          Cookie Policy
+          </h1>
       </header>
 
       <div className="rounded-[28px] border border-[rgba(44,103,160,0.12)] bg-white/80 p-6 shadow-[0_20px_45px_-35px_rgba(18,50,80,0.55)] md:p-8">
