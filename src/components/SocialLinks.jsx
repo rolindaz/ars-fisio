@@ -23,20 +23,23 @@ export default function SocialLinks({ className = "", theme = "light" }) {
   const isDark = theme === "dark";
 
   return (
-    <div className={`social-links ${className}`.trim()} aria-label="Social media links">
-      {socialLinks.map((social) => (
-        <a
-          key={social.name}
-          className={`social-links__item ${isDark ? "social-links__item--dark" : "social-links__item--light"}`}
-          href={social.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={social.name}
-          title={social.name}
-        >
-          {social.icon}
-        </a>
-      ))}
-    </div>
+    <nav className={`social-links ${className}`.trim()} aria-label="Social media links">
+      <ul className="social-links__list">
+        {socialLinks.map((social) => (
+          <li key={social.name} className="social-links__list-item">
+            <a
+              className={`social-links__item ${isDark ? "social-links__item--dark" : "social-links__item--light"}`}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={social.name}
+              title={social.name}
+            >
+              {social.icon}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

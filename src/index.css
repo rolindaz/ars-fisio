@@ -1949,6 +1949,19 @@ a:visited:active {
   gap: 0.6rem;
 }
 
+.social-links__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links__list-item {
+  display: flex;
+}
+
 .social-links__item {
   display: inline-flex;
   align-items: center;
