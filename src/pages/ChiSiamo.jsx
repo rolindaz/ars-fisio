@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
 import TeamCard from "../components/TeamCard";
@@ -5,8 +6,21 @@ import terapisti from "../../assets/staff/terapisti";
 import reception from "../../assets/staff/reception";
 
 export default function ChiSiamo() {
+  const [activeMobileCard, setActiveMobileCard] = useState(null);
   const firstRow = terapisti.slice(0, 2);
   const rest = terapisti.slice(2);
+
+  const renderTeamCard = (person, cardId, extraProps = {}) => (
+    <TeamCard
+      key={cardId}
+      {...person}
+      {...extraProps}
+      isFlipped={activeMobileCard === cardId}
+      onFlipChange={(nextIsFlipped) => {
+        setActiveMobileCard(nextIsFlipped ? cardId : null);
+      }}
+    />
+  );
 
   return (
     <Section>
@@ -28,20 +42,14 @@ export default function ChiSiamo() {
           <div className="space-y-16 md:space-y-20">
             {/* FIRST ROW (Ale&Flami) */}
             <div className="team-pair-row flex flex-col items-center gap-14 md:flex-row md:justify-center md:gap-20">
-              {firstRow.map((p, i) => (
-                <TeamCard
-                  key={i}
-                  {...p}
-                  variant="large"
-                />
-              ))}
+              {firstRow.map((person, index) => renderTeamCard(person, `terapisti-featured-${person.name}-${index}`, {
+                variant: "large",
+              }))}
             </div>
 
             {/* REST (2 per row) */}
             <div className="grid grid-cols-1 justify-items-center gap-14 md:grid-cols-2 md:gap-x-20 md:gap-y-16">
-              {rest.map((p, i) => (
-                <TeamCard key={i} {...p} />
-              ))}
+              {rest.map((person, index) => renderTeamCard(person, `terapisti-${person.name}-${index}`))}
             </div>
           </div>
         </div>
@@ -56,9 +64,7 @@ export default function ChiSiamo() {
           </p>
 
           <div className="team-pair-row flex flex-col items-center justify-center gap-14 pt-4 md:flex-row md:gap-20">
-            {reception.map((p, i) => (
-              <TeamCard key={i} {...p} />
-            ))}
+            {reception.map((person, index) => renderTeamCard(person, `reception-${person.name}-${index}`))}
           </div>
         </div>
       </div>

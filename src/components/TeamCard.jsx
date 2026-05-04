@@ -8,8 +8,10 @@ export default function TeamCard({
   description,
   socials,
   variant,
+  isFlipped: controlledIsFlipped,
+  onFlipChange,
 }) {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [internalIsFlipped, setInternalIsFlipped] = useState(false);
   const [descriptionHasOverflow, setDescriptionHasOverflow] = useState(false);
   const [descriptionIsAtEnd, setDescriptionIsAtEnd] = useState(false);
   const lastTapToggleRef = useRef(0);
@@ -27,6 +29,20 @@ export default function TeamCard({
     : description
       ? [description]
       : [];
+  const isControlled = typeof controlledIsFlipped === "boolean";
+  const isFlipped = isControlled ? controlledIsFlipped : internalIsFlipped;
+
+  const setIsFlipped = (nextValue) => {
+    const resolvedNextValue = typeof nextValue === "function"
+      ? nextValue(isFlipped)
+      : nextValue;
+
+    if (!isControlled) {
+      setInternalIsFlipped(resolvedNextValue);
+    }
+
+    onFlipChange?.(resolvedNextValue);
+  };
 
   const updateDescriptionOverflowState = () => {
     const descriptionElement = descriptionRef.current;
