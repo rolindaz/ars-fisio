@@ -118,6 +118,14 @@ export default function LavoraConNoiForm() {
     }
   };
 
+  const getFieldClassName = (fieldName) => {
+    const baseClassName = "input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60";
+
+    return errors[fieldName]
+      ? `${baseClassName} form-field-error`
+      : baseClassName;
+  };
+
   return (
     <form
       name="lavora-con-noi"
@@ -136,7 +144,7 @@ export default function LavoraConNoiForm() {
       <input type="hidden" name="redirect" value="/success.html" />
 
       <div className="w-full">
-        <label className="label-form-wwu" htmlFor="lavora-con-noi-nome">Nome e Cognome *</label>
+        <label className={`label-form-wwu ${errors.nome ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-nome">Nome e Cognome *</label>
         <input
           id="lavora-con-noi-nome"
           type="text"
@@ -149,7 +157,7 @@ export default function LavoraConNoiForm() {
           aria-describedby={errors.nome ? "lavora-con-noi-nome-error" : undefined}
           onBlur={handleBlur}
           onChange={handleChange}
-          className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+          className={getFieldClassName("nome")}
         />
         {errors.nome ? (
           <p id="lavora-con-noi-nome-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
@@ -159,7 +167,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu" htmlFor="lavora-con-noi-email">Indirizzo Email *</label>
+        <label className={`label-form-wwu ${errors.email ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-email">Indirizzo Email *</label>
         <input
           id="lavora-con-noi-email"
           type="email"
@@ -170,7 +178,7 @@ export default function LavoraConNoiForm() {
           aria-describedby={errors.email ? "lavora-con-noi-email-error" : undefined}
           onBlur={handleBlur}
           onChange={handleChange}
-          className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+          className={getFieldClassName("email")}
         />
         {errors.email ? (
           <p id="lavora-con-noi-email-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
@@ -180,7 +188,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu" htmlFor="lavora-con-noi-telefono">Numero di Telefono *</label>
+        <label className={`label-form-wwu ${errors.telefono ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-telefono">Numero di Telefono *</label>
         <input
           id="lavora-con-noi-telefono"
           type="tel"
@@ -194,7 +202,7 @@ export default function LavoraConNoiForm() {
           aria-describedby={errors.telefono ? "lavora-con-noi-telefono-error" : undefined}
           onBlur={handleBlur}
           onChange={handleChange}
-          className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+          className={getFieldClassName("telefono")}
         />
         {errors.telefono ? (
           <p id="lavora-con-noi-telefono-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
@@ -204,7 +212,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu" htmlFor="lavora-con-noi-messaggio">Il tuo messaggio</label>
+        <label className={`label-form-wwu ${errors.messaggio ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-messaggio">Il tuo messaggio</label>
         <textarea
           id="lavora-con-noi-messaggio"
           name="messaggio"
@@ -213,7 +221,7 @@ export default function LavoraConNoiForm() {
           aria-describedby={errors.messaggio ? "lavora-con-noi-messaggio-error" : undefined}
           onBlur={handleBlur}
           onChange={handleChange}
-          className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
+          className={getFieldClassName("messaggio")}
         ></textarea>
         {errors.messaggio ? (
           <p id="lavora-con-noi-messaggio-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
@@ -223,8 +231,8 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu" htmlFor="cv-upload">Carica il tuo CV *</label>
-        <div className="input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <label className={`label-form-wwu ${errors.cv ? "label-form-wwu--error" : ""}`.trim()} htmlFor="cv-upload">Carica il tuo CV *</label>
+        <div className={`input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between ${errors.cv ? "form-field-error" : ""}`.trim()}>
           <label
             htmlFor="cv-upload"
             className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
@@ -258,7 +266,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <div className="input-form-wwu rounded-md flex justify-center">
+        <div className={`input-form-wwu rounded-md flex justify-center ${errors.privacy ? "form-field-error" : ""}`.trim()}>
           <label htmlFor="lavora-con-noi-privacy" className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
             <input
               id="lavora-con-noi-privacy"
