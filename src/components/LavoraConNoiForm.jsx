@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-function getFieldErrorMessage(fieldName, validity) {
+const MAX_CV_FILE_SIZE = 8 * 1024 * 1024;
+
+function getFieldErrorMessage(fieldElement) {
+  const { name: fieldName, validity, files } = fieldElement;
+
+  if (fieldName === "cv" && files?.[0] && files[0].size > MAX_CV_FILE_SIZE) {
+    return "Il file supera il limite di 8 MB.";
+  }
+
   if (!validity.valid) {
     if (validity.valueMissing) {
       switch (fieldName) {
@@ -41,9 +49,31 @@ export default function LavoraConNoiForm() {
   );
   const [errors, setErrors] = useState({});
   const [touchedFields, setTouchedFields] = useState({});
+  const [fieldValues, setFieldValues] = useState({
+    nome: "",
+    email: "",
+    telefono: "",
+    messaggio: "",
+    cv: false,
+    privacy: false,
+  });
+  const [hasAttemptedSubmit, setHasAttemptedSubmit] = useState(false);
+
+  const updateFieldValue = (fieldElement) => {
+    const { name, type, checked, files, value } = fieldElement;
+
+    setFieldValues((currentValues) => ({
+      ...currentValues,
+      [name]: type === "checkbox"
+        ? checked
+        : type === "file"
+          ? Boolean(files?.length)
+          : value,
+    }));
+  };
 
   const validateField = (fieldName, fieldElement) => {
-    const nextError = getFieldErrorMessage(fieldName, fieldElement.validity);
+    const nextError = getFieldErrorMessage(fieldElement);
 
     setErrors((currentErrors) => {
       if (!nextError && !currentErrors[fieldName]) {
@@ -62,6 +92,12 @@ export default function LavoraConNoiForm() {
   const handleBlur = (event) => {
     const { name } = event.target;
 
+    if (name === "cv") {
+      return;
+    }
+
+    updateFieldValue(event.target);
+
     setTouchedFields((currentTouchedFields) => ({
       ...currentTouchedFields,
       [name]: true,
@@ -72,6 +108,8 @@ export default function LavoraConNoiForm() {
 
   const handleChange = (event) => {
     const { name } = event.target;
+
+    updateFieldValue(event.target);
 
     if (touchedFields[name]) {
       validateField(name, event.target);
@@ -92,7 +130,7 @@ export default function LavoraConNoiForm() {
         return;
       }
 
-      const nextError = getFieldErrorMessage(element.name, element.validity);
+      const nextError = getFieldErrorMessage(element);
       nextErrors[element.name] = nextError;
 
       if (!firstInvalidElement && nextError) {
@@ -102,6 +140,7 @@ export default function LavoraConNoiForm() {
 
     if (firstInvalidElement) {
       event.preventDefault();
+      setHasAttemptedSubmit(true);
       setErrors(nextErrors);
       setTouchedFields((currentTouchedFields) => {
         const nextTouchedFields = { ...currentTouchedFields };
@@ -115,15 +154,38 @@ export default function LavoraConNoiForm() {
         return nextTouchedFields;
       });
       firstInvalidElement.focus();
+      return;
     }
+
+    setHasAttemptedSubmit(false);
   };
 
   const getFieldClassName = (fieldName) => {
     const baseClassName = "input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60";
 
-    return errors[fieldName]
-      ? `${baseClassName} form-field-error`
-      : baseClassName;
+    if (hasAttemptedSubmit && errors[fieldName]) {
+      return `${baseClassName} form-field-error`;
+    }
+
+    if (touchedFields[fieldName] && fieldValues[fieldName] && !errors[fieldName]) {
+      return `${baseClassName} form-field-success`;
+    }
+
+    return baseClassName;
+  };
+
+  const getLabelClassName = (fieldName) => {
+    const baseClassName = "label-form-wwu";
+
+    if (hasAttemptedSubmit && errors[fieldName]) {
+      return `${baseClassName} label-form-wwu--error`;
+    }
+
+    if (touchedFields[fieldName] && fieldValues[fieldName] && !errors[fieldName]) {
+      return `${baseClassName} label-form-wwu--success`;
+    }
+
+    return baseClassName;
   };
 
   return (
@@ -144,7 +206,7 @@ export default function LavoraConNoiForm() {
       <input type="hidden" name="redirect" value="/success.html" />
 
       <div className="w-full">
-        <label className={`label-form-wwu ${errors.nome ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-nome">Nome e Cognome *</label>
+        <label className={getLabelClassName("nome")} htmlFor="lavora-con-noi-nome">Nome e Cognome *</label>
         <input
           id="lavora-con-noi-nome"
           type="text"
@@ -160,14 +222,14 @@ export default function LavoraConNoiForm() {
           className={getFieldClassName("nome")}
         />
         {errors.nome ? (
-          <p id="lavora-con-noi-nome-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-nome-error" className="form-wwu-field-error" aria-live="polite">
             {errors.nome}
           </p>
         ) : null}
       </div>
 
       <div className="w-full">
-        <label className={`label-form-wwu ${errors.email ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-email">Indirizzo Email *</label>
+        <label className={getLabelClassName("email")} htmlFor="lavora-con-noi-email">Indirizzo Email *</label>
         <input
           id="lavora-con-noi-email"
           type="email"
@@ -181,14 +243,14 @@ export default function LavoraConNoiForm() {
           className={getFieldClassName("email")}
         />
         {errors.email ? (
-          <p id="lavora-con-noi-email-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-email-error" className="form-wwu-field-error" aria-live="polite">
             {errors.email}
           </p>
         ) : null}
       </div>
 
       <div className="w-full">
-        <label className={`label-form-wwu ${errors.telefono ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-telefono">Numero di Telefono *</label>
+        <label className={getLabelClassName("telefono")} htmlFor="lavora-con-noi-telefono">Numero di Telefono *</label>
         <input
           id="lavora-con-noi-telefono"
           type="tel"
@@ -205,14 +267,14 @@ export default function LavoraConNoiForm() {
           className={getFieldClassName("telefono")}
         />
         {errors.telefono ? (
-          <p id="lavora-con-noi-telefono-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-telefono-error" className="form-wwu-field-error" aria-live="polite">
             {errors.telefono}
           </p>
         ) : null}
       </div>
 
       <div className="w-full">
-        <label className={`label-form-wwu ${errors.messaggio ? "label-form-wwu--error" : ""}`.trim()} htmlFor="lavora-con-noi-messaggio">Il tuo messaggio</label>
+        <label className={getLabelClassName("messaggio")} htmlFor="lavora-con-noi-messaggio">Il tuo messaggio</label>
         <textarea
           id="lavora-con-noi-messaggio"
           name="messaggio"
@@ -224,18 +286,18 @@ export default function LavoraConNoiForm() {
           className={getFieldClassName("messaggio")}
         ></textarea>
         {errors.messaggio ? (
-          <p id="lavora-con-noi-messaggio-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-messaggio-error" className="form-wwu-field-error" aria-live="polite">
             {errors.messaggio}
           </p>
         ) : null}
       </div>
 
       <div className="w-full">
-        <label className={`label-form-wwu ${errors.cv ? "label-form-wwu--error" : ""}`.trim()} htmlFor="cv-upload">Carica il tuo CV *</label>
-        <div className={`input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between ${errors.cv ? "form-field-error" : ""}`.trim()}>
+        <label className={getLabelClassName("cv")} htmlFor="cv-upload">Carica il tuo CV *</label>
+        <div className={`input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between ${hasAttemptedSubmit && errors.cv ? "form-field-error" : touchedFields.cv && fieldValues.cv && !errors.cv ? "form-field-success" : ""}`.trim()}>
           <label
             htmlFor="cv-upload"
-            className="inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10"
+            className={`inline-flex w-max cursor-pointer items-center rounded-full border border-white/45 bg-transparent px-4 py-2 text-sm font-medium text-[var(--logo-dark)] shadow-[inset_0_1px_0_rgba(255,255,255,0.24)] transition hover:border-white/70 hover:bg-white/10 ${hasAttemptedSubmit && errors.cv ? "form-file-button-error" : touchedFields.cv && fieldValues.cv && !errors.cv ? "form-file-button-success" : ""}`.trim()}
           >
             Scegli file (max. 8 MB)
           </label>
@@ -253,20 +315,24 @@ export default function LavoraConNoiForm() {
           onChange={(event) => {
             const file = event.target.files?.[0];
             setSelectedFileName(file ? file.name : "Nessun file selezionato");
+            setTouchedFields((currentTouchedFields) => ({
+              ...currentTouchedFields,
+              cv: true,
+            }));
+            validateField("cv", event.target);
             handleChange(event);
           }}
-          onBlur={handleBlur}
           className="sr-only text-logoDark"
         />
         {errors.cv ? (
-          <p id="lavora-con-noi-cv-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-cv-error" className="form-wwu-field-error" aria-live="polite">
             {errors.cv}
           </p>
         ) : null}
       </div>
 
       <div className="w-full">
-        <div className={`input-form-wwu rounded-md flex justify-center ${errors.privacy ? "form-field-error" : ""}`.trim()}>
+        <div className={`input-form-wwu rounded-md flex justify-center ${hasAttemptedSubmit && errors.privacy ? "form-field-error" : touchedFields.privacy && fieldValues.privacy && !errors.privacy ? "form-field-success" : ""}`.trim()}>
           <label htmlFor="lavora-con-noi-privacy" className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
             <input
               id="lavora-con-noi-privacy"
@@ -290,7 +356,7 @@ export default function LavoraConNoiForm() {
           </label>
         </div>
         {errors.privacy ? (
-          <p id="lavora-con-noi-privacy-error" className="mt-2 text-center text-sm text-[#8b1e2d]" aria-live="polite">
+          <p id="lavora-con-noi-privacy-error" className="form-wwu-field-error" aria-live="polite">
             {errors.privacy}
           </p>
         ) : null}
