@@ -21,8 +21,9 @@ export default function LavoraConNoiForm() {
       <input type="hidden" name="redirect" value="/success.html" />
 
       <div className="w-full">
-        <label className="label-form-wwu">Nome e Cognome *</label>
+        <label className="label-form-wwu" htmlFor="lavora-con-noi-nome">Nome e Cognome *</label>
         <input
+          id="lavora-con-noi-nome"
           type="text"
           name="nome"
           required
@@ -34,8 +35,9 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">Indirizzo Email *</label>
+        <label className="label-form-wwu" htmlFor="lavora-con-noi-email">Indirizzo Email *</label>
         <input
+          id="lavora-con-noi-email"
           type="email"
           name="email"
           required
@@ -45,8 +47,9 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">Numero di Telefono *</label>
+        <label className="label-form-wwu" htmlFor="lavora-con-noi-telefono">Numero di Telefono *</label>
         <input
+          id="lavora-con-noi-telefono"
           type="tel"
           name="telefono"
           required
@@ -59,8 +62,9 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">Il tuo messaggio</label>
+        <label className="label-form-wwu" htmlFor="lavora-con-noi-messaggio">Il tuo messaggio</label>
         <textarea
+          id="lavora-con-noi-messaggio"
           name="messaggio"
           rows="4"
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
@@ -68,7 +72,7 @@ export default function LavoraConNoiForm() {
       </div>
 
       <div className="w-full">
-        <label className="label-form-wwu">Carica il tuo CV *</label>
+        <label className="label-form-wwu" htmlFor="cv-upload">Carica il tuo CV *</label>
         <div className="input-form-wwu input-corners flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <label
             htmlFor="cv-upload"
@@ -95,8 +99,9 @@ export default function LavoraConNoiForm() {
 
       <div className="w-full">
         <div className="input-form-wwu rounded-md flex justify-center">
-          <label className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
+          <label htmlFor="lavora-con-noi-privacy" className="flex max-w-2xl items-center justify-center gap-3 text-center text-sm text-logoDark">
             <input
+              id="lavora-con-noi-privacy"
               type="checkbox"
               name="privacy"
               required
