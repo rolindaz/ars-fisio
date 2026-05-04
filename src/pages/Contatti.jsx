@@ -15,8 +15,8 @@ const contacts = [
   },
   {
     label: "Email",
-    value: "arsfisio.grottarossa@gmail.com",
-    href: "mailto:arsfisio.grottarossa@gmail.com",
+    value: "info@arsfisio.com",
+    href: "mailto:info@arsfisio.com",
   }
 ];
 
