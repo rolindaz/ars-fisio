@@ -49,8 +49,8 @@ export default function Servizi() {
           I nostri servizi
         </h1>
 
-        <div className="relative">
-          <div className="servizi-page-bg pointer-events-none absolute inset-0 flex justify-center opacity-40"></div>
+        <div className="servizi-page-shell relative overflow-hidden">
+          <div className="servizi-page-bg pointer-events-none" aria-hidden="true"></div>
             <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-32 md:gap-y-12">
               {services.map((service, index) => {
                 const isLastOddCard = hasOddServiceCount && index === services.length - 1;
