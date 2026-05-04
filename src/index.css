@@ -1745,6 +1745,29 @@ a:visited:active {
   z-index: 1;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--logo-dark);
+  border: 1px solid rgba(35, 82, 127, 0.24);
+  box-shadow: 0 16px 28px -22px rgba(18, 50, 80, 0.32);
+  text-decoration: none;
+  transform: translateY(-140%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid rgba(44, 103, 160, 0.45);
+  outline-offset: 2px;
+}
+
 .site-footer-copy,
 .site-footer-meta {
   color: var(--subtitle-info);

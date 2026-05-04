@@ -8,17 +8,20 @@ import ScrollToTop from "./ScrollToTop";
 const Layout = () => {
   return (
     <>
-  <ScrollToTop/>
-  <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
+      <a className="skip-link" href="#main-content">
+        Salta al contenuto principale
+      </a>
+      <div className="flex min-h-screen flex-col">
         <Navbar />
 
-    <main className="flex-1">
-            <Outlet />
+        <main id="main-content" className="flex-1" tabIndex={-1}>
+          <Outlet />
         </main>
 
         <Footer />
         <CallButton />
-    </div>
+      </div>
     </>
   );
 };
