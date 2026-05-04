@@ -1,9 +1,122 @@
 import { useState } from "react";
 
+function getFieldErrorMessage(fieldName, validity) {
+  if (!validity.valid) {
+    if (validity.valueMissing) {
+      switch (fieldName) {
+        case "nome":
+          return "Inserisci nome e cognome.";
+        case "email":
+          return "Inserisci l'indirizzo email.";
+        case "telefono":
+          return "Inserisci il numero di telefono.";
+        case "cv":
+          return "Carica il tuo CV.";
+        case "privacy":
+          return "Devi accettare l'informativa sulla privacy per proseguire.";
+        default:
+          return "Compila questo campo.";
+      }
+    }
+
+    if (fieldName === "nome" && validity.patternMismatch) {
+      return "Inserisci solo lettere, spazi, apostrofi o trattini.";
+    }
+
+    if (fieldName === "email" && validity.typeMismatch) {
+      return "Inserisci un indirizzo email valido.";
+    }
+
+    if (fieldName === "telefono" && validity.patternMismatch) {
+      return "Inserisci solo numeri.";
+    }
+  }
+
+  return "";
+}
+
 export default function LavoraConNoiForm() {
   const [selectedFileName, setSelectedFileName] = useState(
     "Nessun file selezionato",
   );
+  const [errors, setErrors] = useState({});
+  const [touchedFields, setTouchedFields] = useState({});
+
+  const validateField = (fieldName, fieldElement) => {
+    const nextError = getFieldErrorMessage(fieldName, fieldElement.validity);
+
+    setErrors((currentErrors) => {
+      if (!nextError && !currentErrors[fieldName]) {
+        return currentErrors;
+      }
+
+      return {
+        ...currentErrors,
+        [fieldName]: nextError,
+      };
+    });
+
+    return nextError;
+  };
+
+  const handleBlur = (event) => {
+    const { name } = event.target;
+
+    setTouchedFields((currentTouchedFields) => ({
+      ...currentTouchedFields,
+      [name]: true,
+    }));
+
+    validateField(name, event.target);
+  };
+
+  const handleChange = (event) => {
+    const { name } = event.target;
+
+    if (touchedFields[name]) {
+      validateField(name, event.target);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    const formElements = Array.from(form.elements).filter(
+      (element) => element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement,
+    );
+
+    const nextErrors = {};
+    let firstInvalidElement = null;
+
+    formElements.forEach((element) => {
+      if (!element.name || element.type === "hidden") {
+        return;
+      }
+
+      const nextError = getFieldErrorMessage(element.name, element.validity);
+      nextErrors[element.name] = nextError;
+
+      if (!firstInvalidElement && nextError) {
+        firstInvalidElement = element;
+      }
+    });
+
+    if (firstInvalidElement) {
+      event.preventDefault();
+      setErrors(nextErrors);
+      setTouchedFields((currentTouchedFields) => {
+        const nextTouchedFields = { ...currentTouchedFields };
+
+        formElements.forEach((element) => {
+          if (element.name && element.type !== "hidden") {
+            nextTouchedFields[element.name] = true;
+          }
+        });
+
+        return nextTouchedFields;
+      });
+      firstInvalidElement.focus();
+    }
+  };
 
   return (
     <form
@@ -14,6 +127,8 @@ export default function LavoraConNoiForm() {
       action="/success.html"
       netlify
       encType="multipart/form-data"
+      noValidate
+      onSubmit={handleSubmit}
       className="form-wwu shadow-md space-y-6"
     >
       <input type="hidden" name="bot-field" />
@@ -30,8 +145,17 @@ export default function LavoraConNoiForm() {
           autoComplete="name"
           pattern="^[A-Za-zÀ-ÖØ-öø-ÿ'’\-\s]+$"
           title="Inserisci solo lettere, spazi, apostrofi o trattini."
+          aria-invalid={Boolean(errors.nome)}
+          aria-describedby={errors.nome ? "lavora-con-noi-nome-error" : undefined}
+          onBlur={handleBlur}
+          onChange={handleChange}
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
+        {errors.nome ? (
+          <p id="lavora-con-noi-nome-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.nome}
+          </p>
+        ) : null}
       </div>
 
       <div className="w-full">
@@ -42,8 +166,17 @@ export default function LavoraConNoiForm() {
           name="email"
           required
           autoComplete="email"
+          aria-invalid={Boolean(errors.email)}
+          aria-describedby={errors.email ? "lavora-con-noi-email-error" : undefined}
+          onBlur={handleBlur}
+          onChange={handleChange}
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
+        {errors.email ? (
+          <p id="lavora-con-noi-email-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.email}
+          </p>
+        ) : null}
       </div>
 
       <div className="w-full">
@@ -57,8 +190,17 @@ export default function LavoraConNoiForm() {
           inputMode="numeric"
           pattern="^[0-9]+$"
           title="Inserisci solo numeri."
+          aria-invalid={Boolean(errors.telefono)}
+          aria-describedby={errors.telefono ? "lavora-con-noi-telefono-error" : undefined}
+          onBlur={handleBlur}
+          onChange={handleChange}
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         />
+        {errors.telefono ? (
+          <p id="lavora-con-noi-telefono-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.telefono}
+          </p>
+        ) : null}
       </div>
 
       <div className="w-full">
@@ -67,8 +209,17 @@ export default function LavoraConNoiForm() {
           id="lavora-con-noi-messaggio"
           name="messaggio"
           rows="4"
+          aria-invalid={Boolean(errors.messaggio)}
+          aria-describedby={errors.messaggio ? "lavora-con-noi-messaggio-error" : undefined}
+          onBlur={handleBlur}
+          onChange={handleChange}
           className="input-form-wwu input-corners focus:outline-none focus:ring-2 focus:ring-primary/70 focus:bg-white/60"
         ></textarea>
+        {errors.messaggio ? (
+          <p id="lavora-con-noi-messaggio-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.messaggio}
+          </p>
+        ) : null}
       </div>
 
       <div className="w-full">
@@ -89,12 +240,21 @@ export default function LavoraConNoiForm() {
           type="file"
           name="cv"
           required
+          aria-invalid={Boolean(errors.cv)}
+          aria-describedby={errors.cv ? "lavora-con-noi-cv-error" : undefined}
           onChange={(event) => {
             const file = event.target.files?.[0];
             setSelectedFileName(file ? file.name : "Nessun file selezionato");
+            handleChange(event);
           }}
+          onBlur={handleBlur}
           className="sr-only text-logoDark"
         />
+        {errors.cv ? (
+          <p id="lavora-con-noi-cv-error" className="mt-2 text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.cv}
+          </p>
+        ) : null}
       </div>
 
       <div className="w-full">
@@ -105,6 +265,10 @@ export default function LavoraConNoiForm() {
               type="checkbox"
               name="privacy"
               required
+              aria-invalid={Boolean(errors.privacy)}
+              aria-describedby={errors.privacy ? "lavora-con-noi-privacy-error" : undefined}
+              onBlur={handleBlur}
+              onChange={handleChange}
               className="h-4 w-4 shrink-0 accent-[var(--logo-dark)]"
             />
             <span>
@@ -117,6 +281,11 @@ export default function LavoraConNoiForm() {
             </span>
           </label>
         </div>
+        {errors.privacy ? (
+          <p id="lavora-con-noi-privacy-error" className="mt-2 text-center text-sm text-[#8b1e2d]" aria-live="polite">
+            {errors.privacy}
+          </p>
+        ) : null}
       </div>
 
       <button
