@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
             sul sito iubenda dal link seguente.
           </p>
           <IubendaPolicyEmbed
-            href="https://www.iubenda.com/privacy-policy/70661455"
+            href="https://www.iubenda.com/privacy-policy/39818566"
             title="Privacy Policy"
             className="inline-flex items-center justify-center rounded-full border border-[rgba(35,82,127,0.24)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(239,246,251,0.94)_100%)] px-6 py-3 font-semibold text-[var(--logo-dark)] no-underline shadow-[0_12px_24px_-22px_rgba(18,50,80,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_26px_-20px_rgba(18,50,80,0.32)]"
           />
