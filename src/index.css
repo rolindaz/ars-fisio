@@ -688,30 +688,49 @@ a:visited:active {
 /* #region HexCard */
 
 .hex-container {
+  --hex-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   width: 20rem;
   height: 21rem;
   margin-top: 1rem;
   margin-inline: var(--hex-container-neg-inline-margin);
   position: relative;
   display: inline-block;
-  background: rgba(20, 66, 109, 0.8);
-  padding: 7px;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   transition:
     transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
     background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  isolation: isolate;
+}
+
+.hex-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 66, 109, 0.8);
+  clip-path: var(--hex-clip-path);
+  -webkit-clip-path: var(--hex-clip-path);
+  transition: background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
 }
 
 .hex-container:hover {
-  background: var(--logo-dark);
   transform: scale(1.05);
+}
+
+.hex-container:hover::before {
+  background: var(--logo-dark);
 }
 
 .hex-link:focus-visible .hex-container,
 .hex-link:active .hex-container {
-  background: var(--logo-dark);
   transform: scale(1.05);
+}
+
+.hex-link:focus-visible .hex-container::before,
+.hex-link:active .hex-container::before {
+  background: var(--logo-dark);
 }
 
 .hex-container:hover .glass {
@@ -726,17 +745,22 @@ a:visited:active {
 }
 
 .hex-shape {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 7px;
   background-size: cover;
   background-position: center;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  clip-path: var(--hex-clip-path);
+  -webkit-clip-path: var(--hex-clip-path);
+  overflow: hidden;
+  z-index: 1;
 }
 
 .hex-overlay {
   position: absolute;
   inset: 0px;
   background-color: #2c68a09c;
+  clip-path: var(--hex-clip-path);
+  -webkit-clip-path: var(--hex-clip-path);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,6 +772,8 @@ a:visited:active {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, #2c68a088, #2c68a01a);
+  clip-path: var(--hex-clip-path);
+  -webkit-clip-path: var(--hex-clip-path);
   backdrop-filter: blur(3px);
   opacity: 1;
   transition:
@@ -759,6 +785,8 @@ a:visited:active {
   position: absolute;
   z-index: 100;
   inset: 0;
+  clip-path: var(--hex-clip-path);
+  -webkit-clip-path: var(--hex-clip-path);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -873,8 +901,16 @@ a:visited:active {
 
 .hex-link {
   display: inline-block;
+  position: relative;
+  z-index: 0;
   color: inherit;
   text-decoration: none;
+}
+
+.hex-link:hover,
+.hex-link:focus-visible,
+.hex-link:active {
+  z-index: 2;
 }
 
 .hex-link {

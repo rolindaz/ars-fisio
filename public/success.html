@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
       rel="stylesheet"
@@ -36,8 +37,7 @@
         place-items: center;
         padding: 2rem;
         font-family: "Noto Sans", system-ui, sans-serif;
-        background:
-          url("/staff/grpVerticalEdited.webp");
+        background: url("/staff/grpVerticalEdited.webp");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -78,7 +78,8 @@
         line-height: 1.75;
       }
 
-      p, a {
+      p,
+      a {
         font-family: "Open Sans", sans-serif;
       }
 
@@ -92,17 +93,29 @@
         padding: 1rem 1.6rem;
         border-radius: 999px;
         border: 1px solid rgba(35, 82, 127, 0.28);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(239, 246, 251, 0.94) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.98) 0%,
+          rgba(239, 246, 251, 0.94) 100%
+        );
         color: var(--logo-dark);
         font-weight: 600;
         text-decoration: none;
         box-shadow: 0 12px 24px -22px rgba(18, 50, 80, 0.28);
-        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease,
+          color 180ms ease;
       }
 
       .success-button:hover,
       .success-button:focus-visible {
-        background: linear-gradient(180deg, rgba(92, 139, 180, 0.98) 0%, rgba(64, 109, 150, 0.98) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(92, 139, 180, 0.98) 0%,
+          rgba(64, 109, 150, 0.98) 100%
+        );
         color: #fff;
         transform: translateY(-1px);
         box-shadow: 0 16px 26px -20px rgba(18, 50, 80, 0.32);
@@ -111,7 +124,8 @@
       @media (max-width: 767px) {
         body {
           place-items: start center;
-          padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+          padding: max(1rem, env(safe-area-inset-top)) 1rem
+            max(1rem, env(safe-area-inset-bottom));
           background-image:
             linear-gradient(rgba(255, 255, 255, 0.92) 0%),
             url("/logos/logo-fisio-no-text.svg");
@@ -165,15 +179,12 @@
     <main class="success-card">
       <img class="success-logo" src="/logos/logo-fisio.svg" alt="Ars Fisio" />
       <h1>Grazie!</h1>
+      <p>Abbiamo ricevuto la tua candidatura.</p>
       <p>
-        Abbiamo ricevuto la tua candidatura.
+        Ti ricontatteremo quanto prima se il tuo profilo è in linea con le
+        nostre esigenze.
       </p>
-      <p>
-        Ti ricontatteremo quanto prima se il tuo profilo è in linea con le nostre esigenze.
-      </p>
-      <a class="success-button" href="/">
-        Torna alla homepage
-      </a>
+      <a class="success-button" href="/"> Torna alla homepage </a>
     </main>
   </body>
-  </html>
+</html>

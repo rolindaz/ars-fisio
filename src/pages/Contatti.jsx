@@ -1,24 +1,7 @@
 import MapSection from "../components/MapSection";
 import PageMeta from "../components/PageMeta";
 import Section from "../components/Section";
-
-const contacts = [
-  {
-    label: "Telefono",
-    value: "06 9604 0737",
-    href: "tel:+390696040737",
-  },
-  {
-    label: "WhatsApp",
-    value: "347 223 5423",
-    href: "https://wa.me/393472235423",
-  },
-  {
-    label: "Email",
-    value: "info@arsfisio.com",
-    href: "mailto:info@arsfisio.com",
-  }
-];
+import contacts from "../../assets/contatti/contacts";
 
 export default function Contatti() {
   return (
@@ -31,7 +14,7 @@ export default function Contatti() {
       <Section className="max-w-6xl space-y-10 py-14">
         <header className="max-w-3xl space-y-4 mb-3">
           <h1 className="font-heading text-logo text-[clamp(2.5rem,2rem+1.7vw,55px)] leading-[clamp(2.9rem,2.6rem+1vw,3.25rem)]">
-            Siamo a disposizione per informazioni e appuntamenti
+            Siamo disponibili per informazioni e appuntamenti
           </h1>
           <p className="text-base leading-7 text-[var(--subtitle-info)] md:text-lg">
             Puoi scriverci via email, telefonarci oppure
