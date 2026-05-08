@@ -14,6 +14,7 @@ const Layout = () => {
       </a>
       <div className="flex min-h-screen flex-col">
         <Navbar />
+        <div aria-hidden="true" className="shrink-0" style={{ height: "var(--header-height)" }} />
 
         <main id="main-content" className="flex-1" tabIndex={-1}>
           <Outlet />

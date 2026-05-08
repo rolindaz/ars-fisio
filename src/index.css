@@ -115,6 +115,7 @@ a:visited:active {
 .hero {
   height: calc(100svh - var(--header-height));
   align-items: center;
+  background-color: #ffffff;
   background-image: url("/staff/grp-vertical-mobile-bg.webp");
   background-repeat: no-repeat;
   background-position: center 30%;
@@ -243,6 +244,14 @@ a:visited:active {
     background-image: none;
   }
 
+  .hero-desktop-overlay,
+  .hero-media,
+  .hero-panel,
+  .hero-seam {
+    top: -1px;
+    bottom: -1px;
+  }
+
   .hero-mobile-overlay {
     display: none;
   }
@@ -253,10 +262,12 @@ a:visited:active {
     inset-block: 0;
     right: 0;
     width: 73%;
+    background-color: #ffffff;
     background-image: url("/staff/gruppo-3.webp");
     background-repeat: no-repeat;
     background-size: auto 112%;
     background-position: 38% center;
+    transform: translateZ(0);
     z-index: 0;
   }
 
