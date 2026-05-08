@@ -4,17 +4,15 @@ import convenzioni from "../../assets/convenzioni/convenzioni";
 const network = [
   {
     title: "Assicurazioni in forma diretta",
-    eyebrow: "Network sanitario",
     type: "assicurazioni-dirette",
     description:
-      "Collaboriamo con network assicurativi che consentono di accedere ai trattamenti in forma diretta, con un percorso amministrativo piu semplice e un supporto chiaro fin dal primo contatto.",
+      "Collaboriamo con fondi e compagnie di assicurazioni che consentono di accedere ai nostri trattamenti in forma diretta, con un percorso amministrativo più semplice e la garanzia di qualità Ars Fisio.",
   },
   {
     title: "Convenzioni",
-    eyebrow: "Agevolazioni dedicate",
     type: "convenzione",
     description:
-      "Mettiamo a disposizione convenzioni pensate per aziende, enti e realta partner, cosi da offrire condizioni dedicate e un accesso piu agevole ai nostri servizi.",
+      "Offriamo convenzioni ad aziende, enti e realtà partner, per poter accedere ai servizi Ars Fisio a condizioni agevolate ed usufruire di percorsi studiati per le necessità del personale.",
   },
 ];
 
@@ -34,6 +32,15 @@ export default function Network() {
               className="overflow-hidden rounded-[1.75rem]"
             >
               <div className="flex flex-col">
+                <div className="px-2 pb-5 text-center md:pb-6">
+                  <h3 className="font-heading text-center text-2xl font-bold leading-8 text-[var(--logo-dark)] md:text-3xl md:leading-9">
+                    {item.title}
+                  </h3>
+                  <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-[var(--subtitle-info)] md:text-base md:leading-7">
+                    {item.description}
+                  </p>
+                </div>
+
                 <div className="flex flex-1 flex-wrap justify-center gap-4 rounded-[1.75rem] border border-[rgba(44,103,160,0.12)] bg-[linear-gradient(180deg,rgba(248,252,255,0.98)_0%,rgba(232,242,249,0.92)_100%)] px-4 py-6 shadow-[0_24px_46px_-34px_rgba(18,50,80,0.4)] md:px-8 md:py-8">
                   {matchingEnti.map((ente, index) => {
                     const isOddLastCard = hasOddLogos && index === matchingEnti.length - 1;
@@ -77,12 +84,6 @@ export default function Network() {
                       </div>
                     );
                   })}
-                </div>
-
-                <div className="mt-6 px-2">
-                  <h3 className="font-heading text-center text-2xl font-bold leading-8 text-[var(--logo-dark)] md:text-3xl md:leading-9">
-                    {item.title}
-                  </h3>
                 </div>
               </div>
             </article>
