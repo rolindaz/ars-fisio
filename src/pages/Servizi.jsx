@@ -49,7 +49,7 @@ export default function Servizi() {
           I nostri servizi
         </h1>
 
-        <div className="servizi-page-shell relative overflow-hidden">
+        <div className="servizi-page-shell relative">
           <div className="servizi-page-bg pointer-events-none" aria-hidden="true"></div>
             <div className="overlay-services relative mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-32 md:gap-y-12">
               {services.map((service, index) => {
