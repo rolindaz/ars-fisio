@@ -50,7 +50,13 @@ const convenzioni = [
         image: "/convenzioni/aics.png",
         caption: "",
         type: "convenzione"
-    }
+    },
+    {
+        title: "American Overseas School of Rome",
+        image: "/convenzioni/aosr.svg",
+        caption: "",
+        type: "convenzione"
+    },
 ];
 
 export default convenzioni;

@@ -700,6 +700,7 @@ a:visited:active {
 
 .hex-container {
   --hex-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  --hex-shape-inset: 7px;
   width: 20rem;
   height: 21rem;
   margin-top: 1rem;
@@ -757,7 +758,7 @@ a:visited:active {
 
 .hex-shape {
   position: absolute;
-  inset: 7px;
+  inset: var(--hex-shape-inset);
   background-size: cover;
   background-position: center;
   clip-path: var(--hex-clip-path);
@@ -859,8 +860,7 @@ a:visited:active {
   width: var(--services-preview-mobile-card-width);
   height: 8.7rem;
   margin-top: 0.5rem;
-  padding: 3px;
-  background: var(--logo-dark);
+  --hex-shape-inset: 3px;
 }
 
 .services-preview-mobile .hex-container:hover {
@@ -871,6 +871,10 @@ a:visited:active {
   background: #23527fab;
 }
 
+.services-preview-mobile .hex-container::before {
+  background: var(--logo-dark);
+}
+
 .services-preview-mobile .glass {
   opacity: 0.8;
   backdrop-filter: blur(0px);
@@ -879,9 +883,13 @@ a:visited:active {
 
 .services-preview-mobile .hex-link:active .hex-container,
 .services-preview-mobile .hex-link:focus-visible .hex-container {
-  background: #23527fc4;
   transform: none;
-  padding: 1px;
+  --hex-shape-inset: 1px;
+}
+
+.services-preview-mobile .hex-link:active .hex-container::before,
+.services-preview-mobile .hex-link:focus-visible .hex-container::before {
+  background: #23527fc4;
 }
 
 .services-preview-mobile .hex-link:active .glass,
