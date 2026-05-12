@@ -18,17 +18,17 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="site-header sticky top-0 bg-white shadow-md z-50" style={{ minHeight: "var(--header-height)" }}>
+        <header className="site-header fixed inset-x-0 top-0 bg-white shadow-md z-50" style={{ minHeight: "var(--header-height)" }}>
             <div className="max-w-6xl min-h-[var(--header-height)] mx-auto px-3 py-0.5 md:py-1">
                 <div className="hidden min-h-[var(--header-height)] md:flex md:items-center">
                     <SiteBar
                         links={navLinks}
-                        wrapperClassName="w-full items-center gap-6"
+                        wrapperClassName="site-bar--navbar w-full items-center gap-6"
                         logoClassName="h-[4.5rem] w-auto md:h-[5rem]"
                         navWrapperClassName="flex flex-1 items-center justify-center gap-6"
                         navClassName="hidden md:flex items-center justify-center gap-6 font-heading uppercase"
                         linkClassName="text-[var(--logo-main)] transition-colors hover:text-[var(--logo-dark)]"
-                        actionsClassName="hidden md:flex items-center"
+                        actionsClassName="site-bar__actions--navbar hidden md:flex items-center"
                         navSupplement={<SocialLinks className="hidden md:flex items-center gap-2" />}
                     />
                 </div>
