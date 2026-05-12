@@ -18,9 +18,9 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="site-header fixed inset-x-0 top-0 bg-white shadow-md z-50" style={{ minHeight: "var(--header-height)" }}>
-            <div className="max-w-6xl min-h-[var(--header-height)] mx-auto px-3 py-0.5 md:py-1">
-                <div className="hidden min-h-[var(--header-height)] md:flex md:items-center">
+        <header className="site-header fixed inset-x-0 top-0 bg-white shadow-md z-50" style={{ height: "var(--header-height)" }}>
+            <div className="max-w-6xl h-full mx-auto px-4">
+                <div className="hidden h-full md:flex md:items-center">
                     <SiteBar
                         links={navLinks}
                         wrapperClassName="site-bar--navbar w-full items-center gap-6"
@@ -33,7 +33,7 @@ export default function Navbar() {
                     />
                 </div>
 
-                <div className="flex min-h-[var(--header-height)] items-center justify-between gap-3 md:hidden">
+                <div className="flex h-full items-center justify-between gap-3 md:hidden">
                     <Link to="/" className="inline-flex items-center shrink-0">
                         <SmoothImage
                         src="/logos/logo-fisio.svg"

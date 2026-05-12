@@ -1958,7 +1958,7 @@ a:visited:active {
 }
 
 .site-bar--navbar {
-  grid-template-columns: minmax(11rem, 14rem) minmax(0, 1fr) minmax(11rem, 14rem);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 }
 
 .site-bar__brand {
@@ -1992,7 +1992,7 @@ a:visited:active {
 }
 
 .site-bar__actions--navbar {
-  min-width: 14rem;
+  min-width: 0;
 }
 
 .site-footer__row {
@@ -2221,10 +2221,6 @@ a:visited:active {
 @media (max-width: 1180px) {
   .site-bar {
     grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(0, 1fr);
-  }
-
-  .site-bar--navbar {
-    grid-template-columns: minmax(10rem, 12.5rem) minmax(0, 1fr) minmax(10rem, 12.5rem);
   }
 
   .site-bar__actions {
