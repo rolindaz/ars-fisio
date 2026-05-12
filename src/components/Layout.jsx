@@ -15,11 +15,14 @@ const Layout = () => {
       <div className="flex min-h-screen flex-col">
         <Navbar />
 
-        <main id="main-content" className="flex-1" tabIndex={-1}>
-          <Outlet />
-        </main>
+        <div className="site-layout-shell flex min-h-0 flex-1 flex-col">
+          <main id="main-content" className="flex-1" tabIndex={-1}>
+            <Outlet />
+          </main>
 
-        <Footer />
+          <Footer />
+        </div>
+
         <CallButton />
       </div>
     </>
