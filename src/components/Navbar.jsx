@@ -18,7 +18,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="site-header fixed inset-x-0 top-0 bg-white shadow-md z-50" style={{height: "var(--header-height)"}}>
+        <header className="site-header sticky top-0 bg-white shadow-md z-50" style={{height: "var(--header-height)"}}>
             <div className="max-w-6xl h-full mx-auto px-3 py-0.5 md:py-1">
                 <div className="hidden h-full md:flex md:items-center">
                     <SiteBar
